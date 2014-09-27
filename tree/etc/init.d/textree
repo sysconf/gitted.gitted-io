@@ -68,6 +68,13 @@ SPIN_SLEEP_TIME="100"
 OUTPUT_LOGFILE=/var/log/textree
 ERROR_LOGFILE=/var/log/textree
 
+# Git repository
+export TEXTREE_GIT_DIR=/local.repository.git
+
+# Root dir of textree data (in Git dir)
+export TEXTREE_ROOT_DIR=textree
+
+# HTTP port to listen on
 export TEXTREE_HTTP_PORT=80
 
 # Add node to the path for situations in which the environment is passed.
@@ -128,6 +135,18 @@ restart() {
     start
 }
 
+reload() {
+    # forever list
+    # ec "$APPLICATION_PATH"
+    local pids=$(forever list | grep "$APPLICATION_PATH" | awk '{ print $7 }')
+    if [ -n "$pids" ]; then
+        echo "Sending SIGHUP to: $pids"
+        kill -HUP $pids
+    else
+        echo "No process to reload."
+    fi
+}
+
 status() {
     # On Ubuntu this isn't even necessary. To find out whether the service is
     # running, use "service my-application status" which bypasses this script
@@ -164,8 +183,11 @@ case "$1" in
     restart)
         restart
         ;;
+    reload)
+        reload
+        ;;
     *)
-        echo "Usage: {start|stop|status|restart}"
+        echo "Usage: {start|stop|status|restart|reload}"
         exit 1
         ;;
 esac
