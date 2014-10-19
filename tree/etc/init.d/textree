@@ -56,17 +56,17 @@ NODE_BIN_DIR=/usr/bin
 # The application startup Javascript file path.
 APPLICATION_PATH=/usr/share/textree/bin/service
 # Process ID file path.
-PIDFILE="/var/run/textree.pid"
+PIDFILE=/var/run/textree.pid
 # Log file path.
-LOGFILE="/var/log/textree"
+LOGFILE=/var/log/textree.console.log
 # Forever settings to prevent the application spinning if it fails on launch.
 # Minimum uptime (millis) for a script to not be considered "spinning"
 MIN_UPTIME="10"
 # Time to wait (millis) between launches of a spinning script.
 SPIN_SLEEP_TIME="100"
 
-OUTPUT_LOGFILE=/var/log/textree
-ERROR_LOGFILE=/var/log/textree
+OUTPUT_LOGFILE=/var/log/textree.output.log
+ERROR_LOGFILE=/var/log/textree.error.log
 
 # Git repository
 export TEXTREE_GIT_DIR=/local.repository.git
