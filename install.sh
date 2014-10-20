@@ -1,10 +1,12 @@
-# sysconf install script for sysconf profile for this custom system
-
+# sysconf install script for sysconf profile for textree
+#
+# Uses: NodeJS and memcached
+#
 . /usr/lib/sysconf.base/common.sh
 
 # Install NodeJS and fix bon/node -> nodejs
 # python and build-essential are required to build the nodegit module
-sysconf_require_packages nodejs python build-essential
+sysconf_require_packages nodejs python build-essential memcached
 [ -x /usr/bin/node ] || ln -s nodejs /usr/bin/node
 
 # Install NPM
