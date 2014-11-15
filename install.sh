@@ -12,7 +12,7 @@ sysconf_require_packages nodejs python build-essential memcached
 # Install NPM
 if [ ! -x /usr/bin/npm ]; then
     nef_log "Installing NPM..."
-    curl https://www.npmjs.org/install.sh | sh \
+    sh npmjs.install.sh \
         || nef_fatal "could not install npm"
 fi
 
