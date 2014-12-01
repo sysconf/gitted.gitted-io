@@ -331,19 +331,38 @@ Text2trees.prototype.goAfterToken = function (token) {
 };
 
 Text2trees.prototype.goForMultiLineText = function() {
-  // var _this = this;
-  // function read() {
-  //   return _this.readTokenUntil("\n").then(function(line) {
-  //     _this.pos++;
-  //     return read();
-  //   });
-  // this.readCharCount(" ")
-  //   .then(function(count) {
-  //     _this.lineIndent = count;
-  //     // log("  -> indent =", count);
-  //   })
-  //   .then(this.goAfterToken.bind(this))
-  //   .done();
+  console.log("goForMultiLineText");
+  var _this = this;
+  var textIndent = null;
+  var readNextLine = function() {
+
+    return this.readCharCount(" ")
+      .then(function(count) {
+        if (textIndent === null) {
+          textIndent = count;
+        }
+        if (count < textIndent) {
+          // text back to last current indent: pass the hand to goAfterToken()
+          this.lineIndent = count;
+          return _this.readTokenUntil(_this.elementBreakChars)
+            .then(this.goAfterToken.bind(this));
+
+        } else {
+          // text to interpret
+          return this.readTokenUntil("\n")
+            .then(function(text) {
+              this.push({type: "text", text:
+                         Array(count - textIndent).join(" ") + text });
+              this.pos++;
+              readNextLine();
+            }.bind(this));
+        }
+      }.bind(this))
+      .done();
+  }.bind(this);
+
+  this.pos++;
+  readNextLine();
 };
 
 Text2trees.prototype.returnToIndent = function (position) {
