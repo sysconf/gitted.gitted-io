@@ -54,3 +54,26 @@ To replace all pairs of quotes which are on the same line (on Emacs):
 ```M-X query-replace-regexp```
 * then: ```"\([^"]*\)"```
 * then: ```{q \1}```
+
+
+## Various conversions from HTML
+
+### Simple elements with no attributes
+
+Replace all <b>: ```M-X query-replace-regexp```
+* replace: ```"\([^"]*\)"```
+* with: ```{q \1}```
+
+### <a> pasted MediaWiki
+
+#### Internal <a> link
+
+Replace all <b>: ```M-X query-replace-regexp```
+* replace: ```"\([^"]*\)"```
+* with: ```{q \1}```
+
+#### External <a rel="nofollow">
+
+```M-X query-replace-regexp```
+* replace ```<a [^>]*rel="nofollow" [^>]* href="\([^"]+\)">\([^<]*\)</a>```
+* with: ```{ext(href=\1) \2}```
