@@ -2,11 +2,31 @@
 
 The tips in this doc are mostly specific to the Emacs editor.
 
-## Non-breaking spaces
+## Various chars
+
+### Non-breaking spaces
 
 * See: http://en.wikipedia.org/wiki/Non-breaking_space
 
-The non-breaking space char is U+00A0 ( ), or &nbsp; in HTML entities
+The non-breaking space char is U+00A0 ( ), or &nbsp; in HTML entities.
+
+This is C-S-space with LibreOffice.
+
+It should be applied in conformance with the linguistic
+rules. Unexhaustive cases:
+* French: ```« … »``` (better to use the ```{q ...}``` textree template
+* French: ``` ;```, ``` :```
+* French: ```— ```, ```– ```
+
+
+### Three-dots (ellipsis)
+
+* See: http://en.wikipedia.org/wiki/Ellipsis
+
+The char ellipsis (U+2026 "…", HTML entity &hellip;) should be used
+instead of 3 dots (...) when it means a missing content (etc.).
+
+Emacs replace: ```M-S-%``` then replace ```...``` with ```…```
 
 ## Quotation marks
 
