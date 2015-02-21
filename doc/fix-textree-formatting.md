@@ -15,9 +15,12 @@ This is C-S-space with LibreOffice.
 It should be applied in conformance with the linguistic
 rules. Unexhaustive cases:
 * French: ```« … »``` (better to use the ```{q ...}``` textree template
-* French: ``` ;```, ``` :```
+* French: ``` ;```, ``` :```, ``` ?```, ``` !```
 * French: ```— ```, ```– ```
 
+Emacs ```M-X query-replace-regexp```:
+* replace: ``` \([;:!?]\)```
+* with: ``` \1```
 
 ### Three-dots (ellipsis)
 
