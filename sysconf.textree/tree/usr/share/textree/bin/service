@@ -1,0 +1,19 @@
+#!/usr/bin/env nodejs
+
+var http = require("http");
+var env = require("../lib/env");
+var controller = require("../lib/http-controller");
+
+function startServer() {
+  var server = http.createServer(controller.process);
+
+  try {
+    console.log("binding HTTP service to port", env.httpPort);
+    server.listen(env.httpPort);
+  }
+  catch (e) {
+    console.log("could not bind to port:", env.httpPort);
+  }
+}
+
+env.init().then(startServer).done();

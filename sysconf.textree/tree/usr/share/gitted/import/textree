@@ -1,0 +1,33 @@
+#!/bin/bash
+#
+# GITTED IMPORT: /local.repository.git -> textree HTTP service
+#
+# No data is actually "imported", as textree reads data directly from the
+# local repository.
+#
+# If the $GITTED_DATA_PATH path (in the Git tree) has changed (which means the
+# branch head has changed), a SIGHUP signal is sent to all textree service
+# daemons, telling them to read the branch ref again.
+#
+
+. /usr/share/gitted/import.init.bash || exit 2
+
+[ -z "$GITTED_DATA_PATH" ] && nef_fatal "missing variable: GITTED_DATA_PATH"
+
+state_ref=$(gitted_state_ref_name $GITTED_WORKING_TREE)
+
+if [ "$(git ls-tree $state_ref $GITTED_DATA_PATH 2>/dev/null)" \
+    != "$(git ls-tree $gitted_new_commit $GITTED_DATA_PATH)" ]; then
+
+    nef_log "$GITTED_DATA_PATH data has changed in repository. Updating local: $GITTED_WORKING_TREE"
+
+    service textree reload || nef_fatal "textree service reloading failed with status $?"
+    nef_log "Flushing memcached..."
+    echo flush_all >/dev/tcp/127.0.0.1/11211
+
+    nef_log "$GITTED_DATA_PATH data has been imported and applied."
+    git update-ref -m "import $GITTED_WORKING_TREE data from $gitted_new_commit" $state_ref $gitted_new_commit
+
+else
+    nef_log "No change for path: $GITTED_DATA_PATH"
+fi
