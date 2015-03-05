@@ -1,4 +1,4 @@
-# sysconf install script for sysconf profile for textree
+# sysconf install script for sysconf profile for textree        -*- shell-script -*-
 #
 # Uses: NodeJS and memcached
 #
