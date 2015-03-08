@@ -1,0 +1,86 @@
+#!/bin/bash
+#
+# Gitted state driver to refresh/start a textree server process at branch resets
+#
+# When textree starts or receives SIGHUP, it reads /var/lib/textree/HEAD
+# and use the content as a commit hash for the textree data tree.
+#
+# This driver provides status checking and reset action
+#
+#   - status checking against /var/lib/textree/HEAD
+#   - reset action, which affects /var/lib/textree/HEAD and starts or kill -SIGHUP
+#     the textree process
+#
+# CONFIGURATION EXAMPLE for: /etc/gitted/state/textree.config
+#
+#   [state]
+#      driver = textree
+#
+# DEFAULT OPTIONS
+#
+#   [textree]
+#      head-file = /var/lib/textree/HEAD
+#
+# Note that other settings such as HTTP port, GIT dir, public root dir as stored
+# in /etc/init.d/textree and can be overriden in /etc/default/textree.
+#
+. /usr/share/gitted/shell-driver || exit 2
+
+# Settings / default
+driver_head_file=${GITTED_CONFIG_TEXTREE_HEAD_FILE:-/var/lib/textree/HEAD}
+
+################################################################################
+# Driver / shell-driver interface
+
+gitted_driver_status_code() {
+    local _head=
+    _head=$(cat $driver_head_file 2>/dev/null)
+    if [ $? -ne 0 ]; then
+        # nef_log "textree HEAD not defined: $driver_head_file"
+        [ $GITTED_CONFIG_STATE_COMMIT = $GITTED_NULL_SHA1 ] && return
+        return 7 # 7=deletion
+    fi
+
+    [ $GITTED_CONFIG_STATE_COMMIT = $GITTED_NULL_SHA1 ] && return 6      # 6=addition
+
+    [ $GITTED_CONFIG_STATE_COMMIT = "$_head" ] && return 0      # 0=clean
+
+    return 5 # 5=modifications
+}
+
+gitted_driver_reset() {
+    gitted_driver_status_code
+    local _status=$?
+
+    if [ $GITTED_CONFIG_RESET_MODE = keep ]; then
+        if [ $_status -ne 0 ]; then
+            nef_log "textree HEAD is different from gitted branch, not resetting with --keep"
+            nef_log "HINT: use --hard to force it"
+            exit 1
+        fi
+    fi
+
+    if [ $GITTED_CONFIG_RESET_COMMIT = $GITTED_NULL_SHA1 ]; then
+        rm -f $driver_head_file \
+            || nef_fatal "could not remove textree HEAD file: $driver_head_file"
+        if service textree status >/dev/null; then
+            service textree stop || nef_fatal "could not restart textree"
+        fi
+    else
+        mkdir -p $(dirname $driver_head_file)
+        echo $GITTED_CONFIG_RESET_COMMIT > $driver_head_file \
+            || nef_fatal "could not write HEAD file: $driver_head_file"
+
+        if service textree status >/dev/null; then
+            service textree reload \
+                || nef_fatal "could not reload textree after HEAD update"
+        else
+            service textree start \
+                || nef_fatal "could not start textree after HEAD update"
+        fi
+    fi
+}
+
+################################################################################
+
+gitted_driver_run "$@"
