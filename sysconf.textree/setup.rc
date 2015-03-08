@@ -33,6 +33,10 @@ if ! npm list forever -g >/dev/null; then
     cp $_nodegit_so node_modules/nodegit/build/Release/nodegit.node \
         || nef_fatal "copy failed"
 fi
+
+## These commented lines were for building the binary node-git library.
+## As we had problems with it, it's included in resource/nodegit.node
+#
 # npm install --unsafe-perm --verbose http://registry.npmjs.org/nodegit/-/nodegit-0.1.4.tgz \
 #     || nef_fatal "could not build and install nodegit-0.1.4"
 # nef_log "Building and installing nodegit (which is really tricky)..."
@@ -54,6 +58,11 @@ cd $_actual_pwd
 
 # END doing things in share/textree
 ###
+
+# Setting branch "textree" by default as head content for the textree server
+if ! [ -r /var/lib/textree/HEAD ]; then
+    echo textree >/var/lib/textree/HEAD
+fi
 
 # Manage the textree service
 if [ 0 -eq $(find /etc/rc*.d -name '*[0-9]textree' | wc -l) ]; then
