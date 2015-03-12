@@ -22,7 +22,6 @@
 :: page
   :var _class = ""
   :: _class := @class
-  :var title = "??"
   :: title := /TEXT
   :: note
   :var css = []
@@ -49,7 +48,7 @@
       meta(itemprop=isFamilyFriendly,content=True)
       meta(name=viewport,content=width=device-width, maximum-scale=1)
       link(rel=shortcut icon,href=/favicon.ico)
-      title= title+"-Gitted"
+      title= title || "Gitted"
       link(rel=stylesheet, type=text/css)
         = 1 && \{ type: "attr", name: "href", value: url_base_path + "assets/style.css" \}
       :each stylesheet in stylesheets
