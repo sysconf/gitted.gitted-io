@@ -1,0 +1,26 @@
+/* @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic); */
+
+@font-face {
+  font-family: 'Sawasdee';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Sawasdee'), local('Sawasdee'), url(Sawasdee.woff) format('woff'), url(Sawasdee.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Sawasdee';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Sawasdee Bold'), local('Sawasdee-Bold'), url(Sawasdee-Bold.woff) format('woff'), url(Sawasdee-Bold.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Sawasdee';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Sawasdee Oblique'), local('Sawasdee-Oblique'), url(Sawasdee-Oblique.woff) format('woff'), url(Sawasdee-Oblique.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Sawasdee';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Sawasdee Bold Oblique'), local('Sawasdee-BoldOblique'), url(Sawasdee-BoldOblique.woff) format('woff'), url(Sawasdee-BoldOblique.ttf) format('truetype');
+}

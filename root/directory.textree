@@ -1,0 +1,170 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+// ROOT DIRECTORY / directory.textree
+//
+////////////////////////////////////////////////////////////////////////////////
+
+// Geonef standard: all absolute URLs should include variable 'url_base_path'
+:var url_base_path = "/"
+:if REQUEST.headers["ext-base-path"]
+  :var url_base_path = REQUEST.headers["ext-base-path"]
+
+// This is necessary to handle errors (404 Not Found, especially)
+:: error
+  = 1 && \{ type: "http", name: "status", value: 404 \}
+  :serialize
+  // check
+  :source error-404.textree
+
+:var title_components = []
+
+// Pour toutes les pages (100 % inspiré de "doc" sur x.geonef.fr)
+:: page
+  :var _class = ""
+  :: _class := @class
+  :var title = "??"
+  :: title := /TEXT
+  :: note
+  :var css = []
+  :: css
+    :: css += /TEXT
+    :through
+  :var stylesheets = []
+  :: stylesheet
+    :: stylesheets += /TEXT
+    :through
+  :var scripts = []
+  :: script
+    :: scripts += /TEXT
+    :through
+  :var content = []
+  :: content += /*/
+  :through
+  |<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\
+
+  html
+    head
+      meta(content=text/html; charset=utf-8, http-equiv=content-type)
+      meta(http-equiv=X-UA-Compatible,content=chrome=1)
+      meta(itemprop=isFamilyFriendly,content=True)
+      meta(name=viewport,content=width=device-width, maximum-scale=1)
+      link(rel=shortcut icon,href=/favicon.ico)
+      title= title+"-Gitted"
+      link(rel=stylesheet, type=text/css)
+        = 1 && \{ type: "attr", name: "href", value: url_base_path + "assets/style.css" \}
+      :each stylesheet in stylesheets
+        link(rel=stylesheet, type=text/css)
+          = 1 && \{ type: "attr", name: "href", value: url_base_path + stylesheet \}
+      :each script in scripts
+        script(type=text/javascript)
+          = 1 && \{ type: "attr", name: "src", value: url_base_path + script \}
+      style(type=text/css)
+        = css.join("")
+    body
+      = 1 && \{ type: "class", value: "page "+_class \}
+      :each el in content
+        :through el
+
+// en-tête de toutes les pages
+:: site-header
+  header.site
+    // a.logo(href=/)
+    //   asset-image
+    //     file geonef-logo.svg
+    //     height 80
+    h1
+      span.sep
+      :var _url = ""
+      :each component in title_components
+        :eval _url = _url + "../"
+        a
+          = 1 && \{ type: "attr", name: "href", value: _url \}
+          = component
+        span.sep
+      :through
+
+:: site-footer
+  footer.site
+    section.b200
+      h2 Example category
+      ul
+        li {a(href=/url1) Link name}
+
+:: bg
+  div.bg
+
+// Pour une <img> avec le bon répertoire asset
+:: asset-image
+  :var width = null
+  :: /width
+    :: width = /TEXT
+    :through
+  :var height = null
+  :: /height
+    :: height = /TEXT
+    :through
+  :var file = ""
+  :: /file
+    :: file = /TEXT
+    :through
+  :var alt = ""
+  :: /alt
+    :: alt = /TEXT
+    :through
+  :var id = ""
+  :: id := @id
+  :var _class = ""
+  :: _class := @class
+  :through
+  img
+    :if id
+      = 1 && \{ type: "id", value: id \}
+    :if _class
+      = 1 && \{ type: "class", value: _class \}
+    :if alt
+      = 1 && \{ type: "attr", name: "alt", value: alt \}
+    :if width
+      = 1 && \{ type: "attr", name: "width", value: width \}
+    :if height
+      = 1 && \{ type: "attr", name: "height", value: height \}
+    = 1 && \{ type: "attr", name: "src", value: url_base_path + "assets/image/" + file \}
+
+// Pour un <div> avec largeur proportionnelle à section
+:: varfloat
+  :var width = "20%"
+  :: width := /@width
+  :var side = "right"
+  :: side := /@side
+  :var content = []
+  :: content += /*/
+  :through
+  div
+    = 1 && \{ type: "class", value: "varfloat "+side \}
+    = 1 && \{ type: "attr", name: "style", value: "width:"+width \}
+    :each el in content
+      :through el
+
+
+////////////////////////////////////////////////////////////////////////////////
+// GEONEF COMMON TEMPLATES
+//
+// (manually shared with x.geonef.fr)
+
+// "q" comme "quote" pour un texte entre guillemets (par défaut, à la française : «—»)
+:: q {span.quote {:through}}
+
+// Make an external link (attribute "href" must be provided)
+:: ext {a(target=_blank) {:through}}
+
+// Make a raw URL clickable
+:: url
+  :: url = /TEXT
+  :through
+  ext
+    = 1 && \{ type: "attr", name: "href", value: url \}
+    = url
+
+
+////////////////////////////////////////////////////////////////////////////////
+// That's all, process URL path:
+:shift-directory

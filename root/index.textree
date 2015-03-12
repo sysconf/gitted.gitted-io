@@ -1,0 +1,46 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+// ROOT DIRECTORY / index.textree       -- homepage of gitted.io
+//
+////////////////////////////////////////////////////////////////////////////////
+
+:: tall {br}&mdash;&nbsp;
+
+|<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\
+
+html
+  head
+    meta(content = text/html; charset=utf-8, http-equiv = content-type)
+    meta(http-equiv = X-UA-Compatible, content=chrome=1)
+    meta(itemprop = isFamilyFriendly, content=True)
+    meta(name = viewport, content = width=device-width, maximum-scale=1)
+    link(rel = shortcut icon, href = /favicon.ico)
+    title Gitted
+    link(rel=stylesheet, type=text/css)
+      = 1 && \{ type: "attr", name: "href", value: url_base_path + "assets/style.css" \}
+    link(rel=stylesheet, type=text/css)
+      = 1 && \{ type: "attr", name: "href", value: url_base_path + "assets/home.css" \}
+
+  body.home
+
+    //////////////////////////////////////////////////////////////////////
+
+    // header.band
+    //   h1 Gitted
+
+    //   div#anchors
+    //     a(href=#nb1) nb1
+    //     span.sep
+    //     a(href=#nb2) nb2
+
+
+    //////////////////////////////////////////////////////////////////////
+
+    section#apps.band
+      p Lalala
+
+    //////////////////////////////////////////////////////////////////////
+
+    site-footer
+
+:end
