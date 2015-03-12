@@ -36,7 +36,13 @@ html
 
     //////////////////////////////////////////////////////////////////////
 
-    section#apps.band
+    section.band
+      h2 Commands
+      h3 sysconf
+      // a(href=bin/sysconf)
+      h3 sysconf-target
+      h3 gitted
+      h3 gitted-target
       p Lalala
 
     //////////////////////////////////////////////////////////////////////
