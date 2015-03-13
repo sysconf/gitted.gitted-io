@@ -4,49 +4,66 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-:: tall {br}&mdash;&nbsp;
+:: sysconf
+  a(href=sysconf/) Sysconf
+:: sysconf-target
+  a(href=sysconf/target/) Sysconf-target
+:: gitted
+  a(href=gitted/) Gitted
+:: gitted-target
+  a(href=gitted/target/) Gitted-target
 
-|<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\
-
-html
-  head
-    meta(content = text/html; charset=utf-8, http-equiv = content-type)
-    meta(http-equiv = X-UA-Compatible, content=chrome=1)
-    meta(itemprop = isFamilyFriendly, content=True)
-    meta(name = viewport, content = width=device-width, maximum-scale=1)
-    link(rel = shortcut icon, href = /favicon.ico)
-    title Gitted
-    link(rel=stylesheet, type=text/css)
-      = 1 && \{ type: "attr", name: "href", value: url_base_path + "assets/style.css" \}
-    link(rel=stylesheet, type=text/css)
-      = 1 && \{ type: "attr", name: "href", value: url_base_path + "assets/home.css" \}
-
-  body.home
-
-    //////////////////////////////////////////////////////////////////////
-
-    // header.band
-    //   h1 Gitted
-
-    //   div#anchors
-    //     a(href=#nb1) nb1
-    //     span.sep
-    //     a(href=#nb2) nb2
+page
 
 
-    //////////////////////////////////////////////////////////////////////
+  // header.band
+  //   h1 Gitted
 
-    section.band
-      h2 Commands
-      h3 sysconf
-      // a(href=bin/sysconf)
-      h3 sysconf-target
-      h3 gitted
+  //   div#anchors
+  //     a(href=#nb1) nb1
+  //     span.sep
+  //     a(href=#nb2) nb2
+
+
+  //////////////////////////////////////////////////////////////////////
+
+  section
+    h2 From a {b tiny shell script} to a {b
+    p This Free Software project started in early 2014 as {a(href=sysconf/) Sysconf}, a simple shell script to help managing configuration files across systems, using the minimalist {a(href=sysconf/convention/) symlink pattern convention}.
+    p Then, sysconf-target was written to help setting up sysconf on {b remote systems} while being capable of auto-creating containers and virtual machines.
+    p Gitted does something else: {b import/export machine state} as Git branches. It features push-to-deploy and pull-to-dump on various state data like MySQL, PostgreSQL, MongoDB or local directories (see: Gitted drivers).
+    p Gitted-target is to Gitted what Sysconf-target is to Sysconf: manage a remote Gitted system and git-pull-push it!
+
+    h3 4 bash scripts to rule them all
+    ul
+      li gitted-target uses sysconf-target to reach gitted on remote machine
+      li sysconf-target create virtal machines and containers and reach them all (SSH included)
+      li sysconf configures a new or existing machine
+      li sysconf installs the gitted setup
+      li gitted upgrades sysconf like other machine state
+      li driver-gitted-target makes the process recursive: manage guest machines as gitted state from a host (or peer) machine
+
+
+  section
+    h2 Sysconf
+    section
+      h3 Define and setup a machine with {sysconf}
+      p Sysconf suggests a way to organise custom system files (like /etc config or /usr/bin/ scripts) in a central directory that is easy to manage, backup and sync.
+      p The idea is to move any custom file like /etc/cron.daily/some-task) to /sysconf/actual/tree/etc/cron.daily/some-task and replace the original file with a symbolic link pointing toward its location in /sysconf/.
+      p As a shell script, the sysconf tool provides commands to manipulate the /sysconf tree.
+
+    section
+      h3 Access &amp; deploy machines with {a(href=sysconf/sysconf-target/) sysconf-target}
+
+  section
+    h2 Gitted
+    section
+      h3 {gitted}
+    section
       h3 gitted-target
-      p Lalala
 
-    //////////////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////
 
-    site-footer
+  site-footer
 
 :end

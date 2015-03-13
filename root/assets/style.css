@@ -16,6 +16,7 @@ a { color: #2867ee /*#14676f*/; text-decoration: none; }
 a:hover { color: #500; text-decoration: underline; }
 header, section, footer { position: relative; }
 img { border: 0; }
+/* section { margin: 40px 0 0; padding: 15px 0; } */
 
 /* Classes communes */
 body.page { padding-top: 80px; }
@@ -25,20 +26,10 @@ body.page { padding-top: 80px; }
 .orange { color: #ff6b20; }
 .quote:before { content: "“" }
 .quote:after { content: "”" }
-
-/* Element layout communs */
-header.site { position: fixed; top: 0; height: 80px; width: 100%; background: #fff; box-shadow: 0px 0px 10px 10px rgba(181, 213, 216, 0.22); padding: 0; border-bottom: 2px solid #FF9E6C; text-align: left; z-index: 1; }
-header.site > h1 { position: absolute; left: 200px; bottom: 0; right: 0; top: auto; font-size: 3em; margin: 0; line-height: .9em; }
-header.site .sep:before { content: "»"; padding: 0 10px; }
-footer.site { color: #fff; background: #000; box-shadow: 0 0 10px 10px rgba(181, 213, 216, 0.66); text-shadow: none; margin-top: 40px; text-align: center; }
-footer.site h2 { font-family: 'Open Sans', sans-serif; font-size: 1.2em; border-bottom: 1px solid; margin: 0 0 10px; padding: 0 0 5px; color: #aaa; }
-footer.site > section { text-align: left; }
-footer.site > section > ul { margin: 0; padding: 0; list-style-type: none; }
-footer.site a { color: #fff;}
-
-.band { text-align: center; }
-.band.link:hover { box-shadow: 0 0 10px 5px #D7E2E4; background: #D7E2E4; }
-.opacity { position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.5; background: #fff; z-index: -1; }
+.center { text-align: center; }
+/* .band { text-align: center; } */
+/* .band.link:hover { box-shadow: 0 0 10px 5px #D7E2E4; background: #D7E2E4; } */
+/* .opacity { position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.5; background: #fff; z-index: -1; } */
 .b200, .b300, .b400 { display: inline-block; margin: 10px; vertical-align: top; }
 .b200 { width: 15.4em/*200px*/; }
 .b300 { width: 23em/*300px*/; }
@@ -52,59 +43,17 @@ footer.site a { color: #fff;}
     .b300 img { width: 100%; }
 }
 a.through { color: inherit; display: block; }
-h2 > .hint { display: block; font-variant: small-caps; font-family: "Open Sans", sans-serif; font-size: 0.3em; color: #666; }
-.center { text-align: center; }
 
-section { margin: 40px 0 0; padding: 15px 0; }
 
-/* section#apps { background: url("image/triangle.svg") center 0 no-repeat; background-size: 120% auto; } */
-
-section.iti-apps .b400 { text-align: right; font-size: 1.1em; padding-top: 3em; }
-
-.end-float { clear: both; }
-.caption { text-align : center; font-weight: 600; color: rgba(44, 109, 114, 0.80); width: 100%; }
-section.publication { max-width: 1000px; margin: 10px auto; padding: 2em; }
-.varfloat img { width: 100%; }
-.varfloat.left { float: left; clear: left; margin: 0.5em 1em 0.5em 0; }
-.varfloat.right { float: right; clear: right; margin: 0.5em 0 0.5em 1em; }
-section.publication .orange-frame { border: 1px solid rgba(255, 107, 32, 0.68); }
-section.publication h2,
-section.publication h3,
-section.publication h4,
-section.publication h5 {text-align: left;}
-section.publication h1      { font-size: 2.0em; margin-left: 0; text-align: center;}
-section.publication h2      { font-size: 2.6em; margin-left: 0; color: #FF6B20}
-section.publication h3      { font-family: inherit; font-size: 1.6em; margin: 30px 0 10px; font-weight: normal; color: #1B5E6C}
-section.publication h4      { font-size: 1.4em; margin-left: 0; font-weight: normal; color: #041921}
-section.publication h5      { font-size: 1.2em; margin-left: 0; font-weight: normal; }
-section.publication p, section.publication .spaced > li {
-    margin: 13px 0;
-    text-align: justify;
-}
-section.publication li { margin: 5px 0; }
-section.publication ul li {
-    list-style-type: none; /* on annule la puce par défaut */
-    background-image: url(image/lili.svg); /* on affiche l'image souhaitée */
-    background-repeat: no-repeat; /* on annule la répétition par défaut */
-    background-position: left center; /* on positionne où l'on veut */
-    padding-left: 1.5em; /* pour éviter la superposition du contenu */
-    background-size: 1em;
-    background-size: 0.5em auto;
-    margin: 10px 0
-}
-.publication-date { font-style: italic; margin-bottom: 10px; color: #555; }
-
-/********************************************************************************/
-/** RÈGLES DE TEST / ESSSAIS
- **/
-
-/* page: /doc/iti */
-body.alt1 section.band { background: #fff; box-shadow: 0px 0px 10px 10px rgba(181, 213, 216, 0.53); padding: 15px 0; border-bottom: 1px solid rgba(181, 213, 216, 0.66); }
-body.alt2 section.band { background: #fff; box-shadow: 0 0 10px 10px #fff; }
-body.alt3 section.band { box-shadow: 0px 0px 10px 10px rgba(181, 213, 216, 0.53); }
-body.alt4 section.band { box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0.5); }
-body.alt5 section.band { box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0.8); }
-body.alt5 section.band > .bg { opacity: 0.8 }
+/* Element layout communs */
+header.site { position: fixed; top: 0; height: 80px; width: 100%; background: #fff; box-shadow: 0px 0px 10px 10px rgba(181, 213, 216, 0.22); padding: 0; border-bottom: 2px solid #FF9E6C; text-align: left; z-index: 1; }
+header.site > h1 { position: absolute; left: 200px; bottom: 0; right: 0; top: auto; font-size: 3em; margin: 0; line-height: .9em; }
+header.site .sep:before { content: "》"; padding: 0 10px; }
+footer.site { color: #fff; background: #000; box-shadow: 0 0 10px 10px rgba(181, 213, 216, 0.66); text-shadow: none; margin-top: 40px; text-align: center; }
+footer.site h2 { font-family: 'Open Sans', sans-serif; font-size: 1.2em; border-bottom: 1px solid; margin: 0 0 10px; padding: 0 0 5px; color: #aaa; }
+footer.site > section { text-align: left; }
+footer.site > section > ul { margin: 0; padding: 0; list-style-type: none; }
+footer.site a { color: #fff;}
 
 
 /******************************************************************************
