@@ -13,7 +13,7 @@ h1 { font-size: 3em; margin: 0px 0 20px; }
 h2 { font-size: 2em; margin: 0px 0 20px; }
 h3 { font-size: 1.7em; font-weight: normal; margin: 10px 0; }
 h4 { margin: 0; }
-p { margin: 0; }
+p { margin: 1em 0; }
 a { color: #F88300; text-decoration: none; }
 a:hover { color: #500; text-decoration: underline; }
 header, section, footer { position: relative; }
