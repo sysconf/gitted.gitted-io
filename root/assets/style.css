@@ -7,8 +7,8 @@
 @import url(fonts/Sawasdee.css);
 
 /* HTML Elements */
-body { font-family: 'Open Sans', sans-serif; font-size: 13px; color: #235b59; margin: 0; padding: 0; }
-h1, h2, h3 { font-family: 'Sawasdee', sans-serif; font-weight: normal; }
+body { /*font-family: 'Open Sans', sans-serif; font-size: 13px;*/ background: #000; color: #ddd; margin: 0; padding: 0; }
+/* h1, h2, h3 { font-family: 'Sawasdee', sans-serif; font-weight: normal; } */
 h2 { font-size: 3.85em; margin: 0px 0 20px; }
 h3 { font-size: 1.7em; font-weight: normal; margin: 10px; }
 p { margin: 0; }
@@ -18,14 +18,13 @@ header, section, footer { position: relative; }
 img { border: 0; }
 
 /* Classes communes */
-body.home, body.bg { background: url("image/home-bg1.png") right -50px no-repeat scroll #fff; }
 body.page { padding-top: 80px; }
 /* "stopf" stoppe le float */
 .stopf:after { clear: both; content: "."; display: block; line-height: 0; visibility: hidden; }
 /* "orange" est commun avec "publication h2" plus bas */
 .orange { color: #ff6b20; }
-.quote:before { content: "« " }
-.quote:after { content: " »" }
+.quote:before { content: "“" }
+.quote:after { content: "”" }
 
 /* Element layout communs */
 header.site { position: fixed; top: 0; height: 80px; width: 100%; background: #fff; box-shadow: 0px 0px 10px 10px rgba(181, 213, 216, 0.22); padding: 0; border-bottom: 2px solid #FF9E6C; text-align: left; z-index: 1; }

@@ -83,11 +83,11 @@
       :through
 
 :: site-footer
-  footer.site
-    section.b200
-      h2 Example category
-      ul
-        li {a(href=/url1) Link name}
+  // footer.site
+  //   section.b200
+  //     h2 Example category
+  //     ul
+  //       li {a(href=/url1) Link name}
 
 :: bg
   div.bg
