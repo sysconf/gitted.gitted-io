@@ -14,9 +14,9 @@ h2 { font-size: 2em; margin: 0px 0 20px; }
 h3 { font-size: 1.7em; font-weight: normal; margin: 10px 0; }
 h4 { margin: 0; }
 p { margin: 1em 0; }
-a { color: #F88300; text-decoration: none; }
+a { color: #F8C500; text-decoration: none; }
 a:hover { text-decoration: underline; }
-a:visited { color: #F8C500; }
+a:visited { color: #F88300; }
 header, section, footer { position: relative; }
 img { border: 0; }
 /* section { margin: 40px 0 0; padding: 15px 0; } */
