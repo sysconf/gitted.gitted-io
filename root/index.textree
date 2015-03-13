@@ -28,7 +28,7 @@ page
   //////////////////////////////////////////////////////////////////////
 
   section
-    h2 From a {b tiny shell script} to a {b
+    h2 From a {b tiny shell script} to cloud management
     p This Free Software project started in early 2014 as {a(href=sysconf/) Sysconf}, a simple shell script to help managing configuration files across systems, using the minimalist {a(href=sysconf/convention/) symlink pattern convention}.
     p Then, sysconf-target was written to help setting up sysconf on {b remote systems} while being capable of auto-creating containers and virtual machines.
     p Gitted does something else: {b import/export machine state} as Git branches. It features push-to-deploy and pull-to-dump on various state data like MySQL, PostgreSQL, MongoDB or local directories (see: Gitted drivers).
