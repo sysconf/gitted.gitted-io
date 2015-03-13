@@ -8,12 +8,13 @@
 
 /* HTML Elements */
 body { /*font-family: 'Open Sans', sans-serif; font-size: 13px;*/ background: #000; color: #ddd; margin: 0; padding: 0; font-family: sans-serif; font-size: 13px; line-height: 1.3; }
-h1, h2, h3 { /*font-family: 'Sawasdee', sans-serif; font-weight: normal;*/  }
-h2 { font-size: 3.85em; margin: 0px 0 20px; }
+/* h1, h2, h3 { /\*font-family: 'Sawasdee', sans-serif; font-weight: normal;*\/  } */
+h1 { font-size: 3em; margin: 0px 0 20px; }
+h2 { font-size: 2em; margin: 0px 0 20px; }
 h3 { font-size: 1.7em; font-weight: normal; margin: 10px 0; }
 h4 { margin: 0; }
 p { margin: 0; }
-a { color: #2867ee /*#14676f*/; text-decoration: none; }
+a { color: #F88300; text-decoration: none; }
 a:hover { color: #500; text-decoration: underline; }
 header, section, footer { position: relative; }
 img { border: 0; }
@@ -47,7 +48,7 @@ a.through { color: inherit; display: block; }
 
 
 /* Element layout communs */
-body.page > section { margin: 20px; }
+body.page > section { margin: 1em; padding: 1em; background: #162323; }
 header.site { position: fixed; top: 0; height: 80px; width: 100%; background: #fff; box-shadow: 0px 0px 10px 10px rgba(181, 213, 216, 0.22); padding: 0; border-bottom: 2px solid #FF9E6C; text-align: left; z-index: 1; }
 header.site > h1 { position: absolute; left: 200px; bottom: 0; right: 0; top: auto; font-size: 3em; margin: 0; line-height: .9em; }
 header.site .sep:before { content: "》"; padding: 0 10px; }
