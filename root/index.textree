@@ -12,7 +12,9 @@
     = name
 
 page
-  // css.
+  css.
+    #reference h4:before { content: "‣"; padding-right: 0.5em; }
+    #reference h4 { font-size: 1.2em; font-weight: bold; }
 
   site-header
 
