@@ -58,27 +58,15 @@ header.site > h1 { font-size: 2em; padding: 0.5em; /*line-height: .9em;*/ }
 header.site .sep:before { content: "»" /*"》"*/; padding: 0 10px; }
 footer.site { text-align: center; padding: 0.2em 0 1em; }
 footer.site .fsep:before { content: "—"; padding: 0 1em; }
+section.w500 {}
 
 /******************************************************************************
  ** Width-specific and density-specific rules
  **/
 
-/* @media (max-width: 800px) { */
-/* .jigGeoPopup-triaTerme { max-height: none; } */
-/* } */
-/* @media (min-resolution: 1.1dppx /\* desktop is 1dppx, Galaxy S3 is 2dppx *\/) { */
-    /* @media (max-width: 800px) { /\* for debugging *\/ */
-
-    /*** HIGH DENSITY PIXELS: we put more space, padding, etc. for visibility ***/
-
-/* /\* various spacing *\/ */
-/* div.jigDataRow-tria { background-position: 5px 9px; } */
-/* div.jigDataRow-circle { background-position: 0 9px; } */
-/* div.jigDataRow-editLogEntry { margin: 15px 0; } */
-
-/* .dijitDialogPaneContent > .jigGeoPopup-triaTerme { width: 92vw; } */
-/* } */
-
+@media (min-width: 1000px) {
+    section.w500 { }
+}
 @media (min-resolution: 1.2dppx), (min--moz-device-pixel-ratio: 1.2), (-webkit-min-device-pixel-ratio: 1.2) {
     /* @media (max-width: 800px) { /\* for debugging *\/ */
 

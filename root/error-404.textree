@@ -8,7 +8,7 @@ page Page not found
 
   section.band
     h2 Sorry, the requested location does not exist :(
-    h3 Go back to the {a(href=/) home page}
+    h3 {a(href=/) Go back to homepage}
 
   section.band
     img.bermudes(src=/assets/image/404-Bermudes.png)

@@ -5,13 +5,13 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 :: sysconf
-  a(href=sysconf/) Sysconf
+  a(href=reference/sysconf/) Sysconf
 :: sysconf-target
-  a(href=sysconf/target/) Sysconf-target
+  a(href=reference/sysconf-target/) Sysconf-target
 :: gitted
-  a(href=gitted/) Gitted
+  a(href=reference/gitted/) Gitted
 :: gitted-target
-  a(href=gitted/target/) Gitted-target
+  a(href=reference/gitted-target/) Gitted-target
 
 page
   css.
@@ -25,7 +25,7 @@ page
     h2 Setup and reproduce machine config &amp; state
     // h2 From {sysconf} to {gitted}
     p This {b Free Software project} started in early 2014 as {sysconf}, a simple shell script to help managing {b configuration files across systems}, using the minimalist {a(href=reference/sysconf/directory/) symlink pattern convention}. Then {sysconf-target} was written to help setting up {sysconf} on {b remote systems} while being capable of {b auto-creating containers} and virtual machines.
-    p {gitted} does another job: {b import/export machine state} as Git branches. It features push-to-deploy and pull-to-backup on various state data like MySQL, PostgreSQL, MongoDB or local directories (see: {a(href=gitted/drivers/) Gitted drivers}). {gitted-target} is to {gitted} what {sysconf-target} is to Sysconf: manage a remote {gitted} system and git-pull-push its data.
+    p {gitted} does another job: {b import/export machine state} as Git branches. It features push-to-deploy and pull-to-backup on various state data like databases or local directories (see: {a(href=reference/gitted/state-drivers/) Gitted drivers}). {gitted-target} is to {gitted} what {sysconf-target} is to Sysconf: manage a remote {gitted} system and git-pull-push its data.
 
     // h3 4 bash scripts to rule them all
     // ul
@@ -54,8 +54,8 @@ page
     h2 Docs
     ul
       li Checkout the {b reference} for: {sysconf}, {sysconf-target}, {gitted}, {gitted-target}
-      li {a(href=faq/) Frenquently Asked Questions}
-      li {a(href=relating/) How Sysconf/Gitted relates to other software} like Docker or Puppet
+      li {a(href=docs/faq/) Frenquently Asked Questions}
+      li {a(href=docs/relating/) How Sysconf/Gitted relates to other software} like Docker or Puppet
       li Tutorial: {a(href=tutorial/setup-sysconf/) Using Sysconf to manage custom /usr/bin scripts and /etc}
       li Tutorial: {a(href=tutorial/setup-home-sysconf/) Using Sysconf to manage ~/.bashrc and ~/bin}
       li Tutorial: {a(href=tutorial/manage-etc-hosts-d) Managing /etc/hosts.d split with sysconf-etc.d}
