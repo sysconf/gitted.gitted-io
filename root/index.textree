@@ -45,8 +45,9 @@ page
       p The {a(href=reference/sysconf/directory/) Sysconf directory convention} defines a directory structure similar to {e Dockerfile}’s or {e .deb} archives in the way to package the files that are installed on the target system and the setup scripts which run the commands needed to configure the system. Check the {ext(href=//github.com/sysconf/gitted.gitted-io) Sysconf profile of this gitted.io website} as an example.
       section.examples
         h4 Examples
-        p Setup or fix the system after sysconf: {e sysconf update}
-        p Add a custom script as managed by sysconf: {e sysconf add /usr/bin/custom-script}
+        ul
+          li {e sysconf update}: setup or fix the system after sysconf
+          li {e sysconf add /usr/bin/custom-script}: add a custom script as managed by sysconf
 
       // p A Sysconf profile (directory) is a collection of different {i Sysconf layers}, that may be shared with other sysconf profiles. As an example, checkout the {ext(href=//github.com/sysconf/gitted.gitted-io) Sysconf profile of this gitted.io website}.
       // p The {i system} Sysconf directory is located at {e /sysconf} and is orga
