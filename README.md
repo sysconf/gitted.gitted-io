@@ -27,6 +27,26 @@ http://github.com/sysconf/gitted.gitted-io
 
 * Learn more about Sysconf at: http://gitted.io/sysconf/
 
+## How to deploy on a local LXC container
+
+You may need to ```apt-get install git lxc``` if not present on your
+system already. Then run, as an priviledged user:
+```
+git https://github.com/sysconf/gitted.gitted-io.git && cd gitted.gitted-io
+./gitted-target init lxc:gitted-io
+git push gitted-io sysconf/master textree
+```
+
+That's all. Get the container IP address with ```lxc-ls -f``` then open
+a browser tab to ```http://<ip>```.
+
+### How to deploy on a SSH server
+
+Same as before, but replace ```lxc:gitted-io``` with
+```ssh:USER@HOST```, replacing USER@HOST with you case (SSH host
+aliases are allowed, like ```ssh:HOSTNAME```).
+
+
 ## Maintenance
 
 ### Git subtrees
