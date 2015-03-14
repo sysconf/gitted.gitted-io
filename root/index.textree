@@ -52,15 +52,17 @@ page
       h3 Git Push-to-deploy and pull-to-backup with {gitted-target}
 
   section
-    h2 Learn more
+    h2 Resource &amp; docs
     ul
-      li Step-by-step introduction
-      li How Sysconf/Gitted relates to other software like Docker or Puppet
+      li {a(href=sysconf/) More about {b Sysconf}}
+      li {a(href=gitted/) More about {b Gitted}}
+      li {a(href=relating/) How Sysconf/Gitted relates to other software} like Docker or Puppet
     section
+      h3 Tutorials
       ul
+        li {a(href=lalala) First steps with Sysconf to share} (no Gitted)
+        // li {a(href=) Using}
         li Deploy a LXC container from a GitHub sysconf repo
-
-
 
   //////////////////////////////////////////////////////////////////////
 
