@@ -82,10 +82,10 @@
 :: site-footer
   footer.site
     span
-      a(href=//github.com/sysconf/gitted.gitted-io) Improve this website
+      ext(href=//github.com/sysconf/gitted.gitted-io) Improve this website
     span.fsep
     span
-      a(href=//creativecommons.org/licenses/by-nc-sa/4.0/) Content under Creative Commons CC BY NC SA
+      ext(href=//creativecommons.org/licenses/by-nc-sa/4.0/) Content under Creative Commons CC BY NC SA
     span.fsep
     span
       a(href=#) Back to top

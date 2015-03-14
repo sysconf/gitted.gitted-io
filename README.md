@@ -1,15 +1,25 @@
-# This _textree_ branch: source content of the gitted.io website,
-  powered by textree
-
-This directory holds the content source for the http://gitted.io/
-website.
+# Source of the gitted.io website
 
 This *Git repository* is also a *Gitted repository* which, together
-with the [_sysconf/master_ branch](tree/sysconf/master), embeds the
-full definition of the gitted.io website server.
+with the
+[_sysconf/master_ branch](https://github.com/sysconf/gitted.gitted-io/tree/sysconf/master),
+embeds the full definition of the gitted.io website server.
 
 The official upstream repository is hosted on GitHub:
 http://github.com/sysconf/gitted.gitted-io
+
+* To deploy the website using Sysconf, *check out the
+  [sysconf/master](https://github.com/sysconf/gitted.gitted-io/tree/sysconf/master)
+  branch*
+
+
+## This _textree_ branch: textree-powered source content of the gitted.io website
+
+This directory holds the content itself of the http://gitted.io/ website.
+It uses the
+[textree text processor](https://github.com/geonef/sysconf.textree/)
+for HTML rendering.
+
 
 ## Authors & history
 
