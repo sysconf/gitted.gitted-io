@@ -68,9 +68,7 @@
 :: site-header
   header.site
     h1
-      a.logo(href=/)
-        span Gitted
-        span I/O
+      a.logo(href=/) Gitted I/O
       span.sep
       :var _url = ""
       :each component in title_components
