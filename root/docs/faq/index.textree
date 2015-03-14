@@ -18,7 +18,6 @@ page FAQ-Gitted
 
     // article table of contents
     nav
-      h2 Summary
       :: item
         :: /question
           p

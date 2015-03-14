@@ -61,7 +61,7 @@ page
 
     section
       h3 {sysconf-target}: access &amp; deploy machines
-      p While {sysconf} has minimal functionality to work on the local system, {sysconf-target} provides a common interface to {a(href=reference/sysconf-target/init/) intialize} and {a(href=reference/sysconf-target/attach/) run commands} on a given remote or virtualized target. This single script contains various {a(href=reference/sysconf-target/#drivers) target drivers}, like {target-driver ssh}, {target-driver lxc}, {target-driver docker} and others.
+      p While {sysconf} has minimal functionality to work on the local system, {sysconf-target} provides a common interface to {a(href=reference/sysconf-target/init/) intialize} and {a(href=reference/sysconf-target/attach/) run commands} on a given remote or virtualized target. This single script contains various {a(href=reference/sysconf-target/#drivers) target drivers} like {target-driver ssh}, {target-driver lxc}, {target-driver docker} and others.
       section.examples
         h4 Examples:
         ul.compact
@@ -75,7 +75,8 @@ page
 
     section
       h3 {gitted}: import/export state data as Git branches
-      p
+      p A system becomes a {q Gitted system} when its Sysconf profile contains the {ext(href=//github.com/sysconf/sysconf.gitted) {e sysconf.gitted} layer}. It provided the {e gitted} command which manage a private Git repository at {e /local.repository.git}, in sync with the state of the system according to INI-style configuration from {e /etc/gitted/stated/}.
+      p For example, {e /etc/gitted/state/www-data.config} defines a {i state branch} named {e www-data} which is a Git branch that is kept in sync with the {e /var/www} directory in b
 
     section
       h3 {gitted-target}: Git Push-to-deploy and pull-to-backup
