@@ -1,0 +1,17 @@
+page Sysconf convention
+
+  site-header
+
+  section
+    h2 A way to centralize configuration files
+    p Suppose you have a file, /etc/cron.daily/some-task, that you need to share or backup across different systems:
+    code /etc/cron.daily/some-task
+    p The idea is to move the file to a central versionned tree in /sysconf and replace /etc/cron.daily/some-task with a symbolic link pointing to it:
+    code.
+      /etc/cron.daily/some-task -> /sysconf/actual/tree/etc/cron.daily/some-task
+      /sysconf/actual/tree/etc/cron.daily/some-task
+    p With this organisation, the /sysconf directory can be versionned, backed-up and synced between different systems.
+    p And still, files can be edited in place as usual (/etc/cron.daily/some-task in this example) while being tracked easily in /sysconf, because of the symbolic links.
+
+
+:end

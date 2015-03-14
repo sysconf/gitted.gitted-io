@@ -60,6 +60,18 @@ page
     section
       h3 Push-to-deploy and pull-to-backup with {gitted-target}
 
+  section
+    h2 Use cases
+    section
+      h3 S
+      ul
+        li
+    section
+      ul
+        li Deploy a LXC container from a GitHub sysconf repo
+
+
+
   //////////////////////////////////////////////////////////////////////
 
   site-footer
