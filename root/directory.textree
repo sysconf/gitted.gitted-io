@@ -81,11 +81,11 @@
 
 :: site-footer
   footer.site
-    p.floatl
+    span
       a(href=//github.com/sysconf/gitted.gitted-io) Improve this website
-    p.floatr
+    span
       a(href=#) Back to top
-    p
+    span
       a(href=//creativecommons.org/licenses/by-nc-sa/4.0/) Content under Creative Commons CC BY NC SA
   //   section.b200
   //     h2 Example category
