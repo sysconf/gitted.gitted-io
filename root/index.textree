@@ -30,7 +30,8 @@ page
 
     section.half
       h3 {sysconf}{br}Define and setup a machine
-      h4 Simple convention to gather common files
+      h4 A simple convention for packaging common files
+      h4 No abstraction. Sysconf creates symbolic links only.
       h4 Works with /etc, /usr/* and everything, actually
       h4 Made for both production deployment and dev work
 
