@@ -1,4 +1,4 @@
-:var questions = []
+// :var questions = []
 // :: item
 //   :: question = /question/
 //   :: answer = /answer/
@@ -33,6 +33,7 @@ item
 page FAQ-Gitted
 
   site-header
+
   article
     :each item in items
       :through item
