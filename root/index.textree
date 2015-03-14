@@ -29,7 +29,7 @@ page
 
   section
     h2 From {sysconf} to {gitted}
-    p This Free Software project started in early 2014 as {sysconf}, a simple shell script to help managing configuration files across systems, using the minimalist {a(href=sysconf/convention/) symlink pattern convention}.
+    p This Free Software project started in early 2014 as {sysconf}, a simple shell script to help managing {b configuration files across systems}, using the minimalist {a(href=sysconf/convention/) symlink pattern convention}.
     p Then {sysconf-target} was written to help setting up {sysconf} on {b remote systems} while being capable of {b auto-creating containers} and virtual machines.
     p {gitted} does something else: {b import/export machine state} as Git branches. It features push-to-deploy and pull-to-backup on various state data like MySQL, PostgreSQL, MongoDB or local directories (see: Gitted drivers).
     p {gitted-target} is to {gitted} what {sysconf-target} is to Sysconf: manage a remote {gitted} system and git-pull-push it!
