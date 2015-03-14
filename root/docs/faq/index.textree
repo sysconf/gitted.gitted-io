@@ -19,7 +19,11 @@ page FAQ-Gitted
     // article table of contents
     nav
       :: item
-        :: /question {p {= (idx+1)+"."} {:through}}
+        :: /question
+          p
+            a
+              = (idx+1)+"."
+              :through
         :: /answer
         ul {:through}
 
