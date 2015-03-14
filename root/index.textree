@@ -20,23 +20,21 @@ page
   //////////////////////////////////////////////////////////////////////
 
   section
-    h2 From {sysconf} to {gitted}
-    p This Free Software project started in early 2014 as {sysconf}, a simple shell script to help managing {b configuration files across systems}, using the minimalist {a(href=sysconf/convention/) symlink pattern convention}.
-    p Then {sysconf-target} was written to help setting up {sysconf} on {b remote systems} while being capable of {b auto-creating containers} and virtual machines.
-    p {gitted} does something else: {b import/export machine state} as Git branches. It features push-to-deploy and pull-to-backup on various state data like MySQL, PostgreSQL, MongoDB or local directories (see: Gitted drivers).
-    p {gitted-target} is to {gitted} what {sysconf-target} is to Sysconf: manage a remote {gitted} system and git-pull-push it!
+    // h2 From {sysconf} to {gitted}
+    p This Free Software project started in early 2014 as {sysconf}, a simple shell script to help managing {b configuration files across systems}, using the minimalist {a(href=sysconf/convention/) symlink pattern convention}. Then {sysconf-target} was written to help setting up {sysconf} on {b remote systems} while being capable of {b auto-creating containers} and virtual machines.
+    p {gitted} does something else: {b import/export machine state} as Git branches. It features push-to-deploy and pull-to-backup on various state data like MySQL, PostgreSQL, MongoDB or local directories (see: {a(href=gitted/drivers/) Gitted drivers}). {gitted-target} is to {gitted} what {sysconf-target} is to Sysconf: manage a remote {gitted} system and git-pull-push it!
 
-    h3 4 bash scripts to rule them all
-    ul
-      li {gitted-target} uses {sysconf-target} to reach {gitted} on remote machine
-      li {sysconf-target} create virtal machines and containers and reach them all (SSH included)
-      li {sysconf} configures a new or existing machine
-      li {sysconf} installs the {gitted} setup
-      li {gitted} upgrades {sysconf} like other machine state
-      li driver-gitted-target makes the process recursive: manage guest machines as gitted state from a host (or peer) machine
-
+    // h3 4 bash scripts to rule them all
+    // ul
+    //   li {gitted-target} uses {sysconf-target} to reach {gitted} on remote machine
+    //   li {sysconf-target} create virtal machines and containers and reach them all (SSH included)
+    //   li {sysconf} configures a new or existing machine
+    //   li {sysconf} installs the {gitted} setup
+    //   li {gitted} upgrades {sysconf} like other machine state
+    //   li driver-gitted-target makes the process recursive: manage guest machines as gitted state from a host (or peer) machine
 
   section
+    h2 4 bash scripts to rule them all
     section
       h3 Define and setup a machine with {sysconf}
       p Sysconf suggests a way to organise custom system files (like /etc config or /usr/bin/ scripts) in a central directory that is easy to manage, backup and sync.
@@ -50,7 +48,7 @@ page
       h3 Import/export state data as Git branches with {gitted}
 
     section
-      h3 Push-to-deploy and pull-to-backup with {gitted-target}
+      h3 Git Push-to-deploy and pull-to-backup with {gitted-target}
 
   section
     h2 Use cases
