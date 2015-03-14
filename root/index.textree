@@ -31,16 +31,11 @@ page
   section#reference
     h2 4 bash scripts to rule them all...
     section
-      // h3 Define and setup a machine with {sysconf}
-      h3 {sysconf}: define and setup a machine
+      h3 {sysconf}{br}define and setup a machine
       p The {a(href=reference/sysconf/directory/) Sysconf directory convention} defines a directory structure similar to {e Dockerfile}’s or {e .deb} for packaging files that are installed on the target system and the setup scripts which run the commands needed to configure the system. Check the {ext(href=//github.com/sysconf/gitted.gitted-io) Sysconf profile of this gitted.io website} as an example.
 
-      // p A Sysconf profile (directory) is a collection of different {i Sysconf layers}, that may be shared with other sysconf profiles. As an example, checkout the {ext(href=//github.com/sysconf/gitted.gitted-io) Sysconf profile of this gitted.io website}.
-      // p The {i system} Sysconf directory is located at {e /sysconf} and is orga
-      // p The {e sysconf/} directory can be installed at the {i system} level at {e /sysconf}, at the user HOME level at {e ~/sysconf} or for any purpose at any location. From there, symbolic links are created on the target tree that point towards to original files in {e sysconf/}. For example, a system-wide Sysconf with the sysconf.base layer will setup {e /usr/bin/sysconf} as a symlink to {e /sysconf/sysconf.base/tree/usr/bin/sysconf}.
-
     section
-      h3 {sysconf-target}{br} access &amp; deploy machines
+      h3 {sysconf-target}{br}access &amp; deploy machines
       p While {sysconf} has minimal functionality to work on the local system, {sysconf-target} provides a common interface to {a(href=reference/sysconf-target/init/) intialize} and {a(href=reference/sysconf-target/attach/) run commands} on a given remote or virtualized target. This single script contains various {a(href=reference/sysconf-target/#drivers) target drivers} like {target-driver ssh}, {target-driver lxc}, {target-driver docker} and others.
 
     section
