@@ -105,13 +105,13 @@
       a(href=#) Back to top
 
 :: sysconf
-  a(href=reference/sysconf/) Sysconf
+  a(href=/reference/sysconf/) Sysconf
 :: sysconf-target
-  a(href=reference/sysconf-target/) Sysconf-target
+  a(href=/reference/sysconf-target/) Sysconf-target
 :: gitted
-  a(href=reference/gitted/) Gitted
+  a(href=/reference/gitted/) Gitted
 :: gitted-target
-  a(href=reference/gitted-target/) Gitted-target
+  a(href=/reference/gitted-target/) Gitted-target
 
 
 ////////////////////////////////////////////////////////////////////////////////
