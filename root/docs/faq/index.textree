@@ -3,8 +3,14 @@ page FAQ-Gitted
   site-header
   article
     :: item
-      :: question = /question/
-      :: answer = /answer/
+      // :: question = /question/
+      // :: answer = /answer/
+      :var question = []
+      :: /question/
+        :: question += /*/
+      :var answer = []
+      :: /answer/
+        :: answer += /*/
       :through
       section
         h3
