@@ -46,12 +46,12 @@ page
     section#docs.half
       h2 Docs
       ul
-        li {b Reference}: {sysconf}, {sysconf-target}, {gitted}, {gitted-target}
+        li {b {a(href=reference/) Reference overview}}
         li {a(href=docs/faq/) Frenquently Asked Questions}
-        li {a(href=docs/relating/) How Sysconf/Gitted relates to other software} like Docker or Puppet
+        // li {a(href=docs/relating/) How Sysconf/Gitted relates to other software} like Docker or Puppet
         li Tutorial: {a(href=tutorial/setup-sysconf/) Using Sysconf to manage custom /usr/bin scripts and /etc}
-        li Tutorial: {a(href=tutorial/setup-home-sysconf/) Using Sysconf to manage ~/.bashrc and ~/bin}
-        li Tutorial: {a(href=tutorial/manage-etc-hosts-d) Managing /etc/hosts.d split with sysconf-etc.d}
+        // li Tutorial: {a(href=tutorial/setup-home-sysconf/) Using Sysconf to manage ~/.bashrc and ~/bin}
+        // li Tutorial: {a(href=tutorial/manage-etc-hosts-d) Managing /etc/hosts.d split with sysconf-etc.d}
         li Tutorial: {a(href=tutorial/deploy-gitted-io/) Deploy the gitted.io website in a local container}
 
     section#status.half
