@@ -40,7 +40,8 @@ page
   section#reference
     h2 4 bash scripts to rule them all...
     section
-      h3 Define and setup a machine with {sysconf}
+      // h3 Define and setup a machine with {sysconf}
+      h3 {sysconf}: define and setup a machine
       p The {a(href=reference/sysconf/directory/) Sysconf directory convention} defines a directory structure similar to {e Dockerfile}’s or {e .deb} archives in the way to package the files that are installed on the target system and the setup scripts which run the commands needed to configure the system. Check the {ext(href=//github.com/sysconf/gitted.gitted-io) Sysconf profile of this gitted.io website} as an example.
       section.examples
         h4 Examples
@@ -52,13 +53,15 @@ page
       // p The {e sysconf/} directory can be installed at the {i system} level at {e /sysconf}, at the user HOME level at {e ~/sysconf} or for any purpose at any location. From there, symbolic links are created on the target tree that point towards to original files in {e sysconf/}. For example, a system-wide Sysconf with the sysconf.base layer will setup {e /usr/bin/sysconf} as a symlink to {e /sysconf/sysconf.base/tree/usr/bin/sysconf}.
 
     section
-      h3 Access &amp; deploy machines with {sysconf-target}
+      h3 {sysconf-target}: access &amp; deploy machines
+      // h3 Access &amp; deploy machines with {sysconf-target}
 
     section
-      h3 Import/export state data as Git branches with {gitted}
+      h3 {gitted}: import/export state data as Git branches
+      // h3 Import/export state data as Git branches with {gitted}
 
     section
-      h3 Git Push-to-deploy and pull-to-backup with {gitted-target}
+      h3 {gitted-target}: Git Push-to-deploy and pull-to-backup
 
   section#docs
     h2 Docs
