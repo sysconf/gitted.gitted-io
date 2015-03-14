@@ -1,0 +1,25 @@
+page FAQ-Gitted
+
+  site-header
+  article
+    :: item
+      :: question = /question/
+      :: answer = /answer/
+      :through
+      section
+        h3
+          :through question
+          p
+            :through answer
+
+    item
+      question question
+      answer answer
+
+    item
+      question question
+      answer answer
+
+  site-footer
+
+:end
