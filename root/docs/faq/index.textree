@@ -12,12 +12,13 @@ item
 
 page FAQ-Gitted
 
-  site-header
+  site-header Frequently Asked Questions
 
   article
 
     // article table of contents
     nav
+      h2 Summary
       :: item
         :: /question
           p
