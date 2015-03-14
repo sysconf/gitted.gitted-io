@@ -1,5 +1,11 @@
 # Source of the gitted.io website
 
+* See the live website at: http://gitted.io/
+
+* To deploy the website using Sysconf, *check out the
+  [sysconf/master](https://github.com/sysconf/gitted.gitted-io/tree/sysconf/master)
+  branch*
+
 This *Git repository* is also a *Gitted repository* which, together
 with the
 [_sysconf/master_ branch](https://github.com/sysconf/gitted.gitted-io/tree/sysconf/master),
@@ -7,10 +13,6 @@ embeds the full definition of the gitted.io website server.
 
 The official upstream repository is hosted on GitHub:
 http://github.com/sysconf/gitted.gitted-io
-
-* To deploy the website using Sysconf, *check out the
-  [sysconf/master](https://github.com/sysconf/gitted.gitted-io/tree/sysconf/master)
-  branch*
 
 
 ## This _textree_ branch: textree-powered source content of the gitted.io website

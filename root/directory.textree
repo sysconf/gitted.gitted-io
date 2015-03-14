@@ -96,7 +96,7 @@
 :: site-footer
   footer.site
     span
-      ext(href=//github.com/sysconf/gitted.gitted-io) Improve this website
+      ext(href=//github.com/sysconf/gitted.gitted-io/tree/textree) Improve this website
     span.fsep
     span
       ext(href=//creativecommons.org/licenses/by-nc-sa/4.0/) Content under Creative Commons CC BY NC SA
