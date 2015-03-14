@@ -140,4 +140,6 @@ page Overview of Sysconf/Gitted
             |USER@HOST sysconf/master mysql
           | — push branches to Gitted SSH host and update Sysconf &amp; MySQL database
 
+  site-footer
+
 :end
