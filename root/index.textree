@@ -21,7 +21,7 @@ page
   section
     h2 Setup and reproduce machine configuration &amp; data
     p This {b Free Software project} began as a research projet by {ext(href=http://www.geonef.fr/) Geonef}. The {sysconf} script was released in early 2014 as a helper tool for managing {b configuration files across systems} using the minimalist {a(href=reference/sysconf/convention/) symlink pattern convention}. Then {sysconf-target} was written to help setting up {sysconf} on {b remote systems} while being capable of {b auto-creating containers} and virtual machines.
-    p {gitted} does another job: {b import/export machine state} as Git branches. It features push-to-deploy and pull-to-backup on various state data like databases or local directories (see: {a(href=reference/gitted/state-drivers/) Gitted drivers}). {gitted-target} is to {gitted} what {sysconf-target} is to Sysconf: manage a remote {gitted} system and git-pull-push its data.
+    p {gitted} does another job: {b import/export machine state} as Git branches. It features push-to-deploy and fetch-to-backup on various state data like databases or local directories (see: {a(href=reference/gitted/state-drivers/) Gitted drivers}). {gitted-target} is to {gitted} what {sysconf-target} is to Sysconf: manage a remote {gitted} system and git-fetch-push its data.
 
   section#reference
     h2 4 bash scripts to rule them all...
@@ -39,7 +39,7 @@ page
       h4
 
     section.half
-      h3 {gitted-target}{br}Git push-to-deploy and pull-to-backup
+      h3 {gitted-target}{br}Push-to-deploy and fetch-to-backup
       h4
 
   section
