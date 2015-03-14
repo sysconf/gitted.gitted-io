@@ -81,7 +81,7 @@
 
 :: site-nav
   nav
-    h2 Table of contents
+    h2 Website contents
     ul
       li Sysconf
       li Gitted

@@ -1,0 +1,42 @@
+page Relating to other software
+
+  site-header Relating to other software
+
+  section
+    h2 LXC (Linux containers)
+    ul
+      li {ext(href=//linuxcontainers.org/) LXC project homepage}
+
+  section
+    h2 Docker.IO
+    ul
+      li {ext(href=//www.docker.com/) Docker official website}
+
+  section
+    h2 Proxmox
+    ul
+      li {ext(href=//www.proxmox.com/) Proxmox official website}
+
+  section
+    h2 CFEngine
+    ul
+      li {ext(href=//www.cfengine.com/) CFEngine official website}
+
+  section
+    h2 Puppet
+    ul
+      li {ext(href=//puppetlabs.com/) Puppet Labs website}
+
+  section
+    h2 Chef
+    ul
+      li {ext(href=//github.com/chef/chef) Chef on GitHub}
+
+  section
+    h2 Salt
+    ul
+      li {ext(href=http://saltstack.com/community/) Home page of the Salt Open Source project}
+
+  site-footer
+
+:end
