@@ -1,0 +1,26 @@
+page How Sysconf/Gitted relates to other software projects
+
+  section
+    h2 LXC (Linux containers)
+    ul
+      li {ext(href=//linuxcontainers.org/) LXC project homepage}
+
+  section
+    h2 Docker.IO
+    ul
+      li {ext(href=//www.docker.com/) Docker official website}
+
+  section
+    h2 Proxmox
+
+  section
+    h2 Puppet
+
+  section
+    h2 Chef
+
+  section
+    h2 Salt
+
+
+:end
