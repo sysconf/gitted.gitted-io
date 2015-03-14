@@ -74,32 +74,38 @@ page
           li
             e
               a(href=reference/sysconf-target/attach/) sysconf-target attach
-              | ssh:myhost -- COMMAND
+              a(href=reference/sysconf-target/driver-ssh/)  ssh:
+              |myhost -- COMMAND
             | – run {e COMMAND} on SSH host {e myhost}
           li
             e
               a(href=reference/sysconf-target/status/) sysconf-target status
-              | ssh:myhost
+              a(href=reference/sysconf-target/driver-ssh/)  ssh:
+              |myhost
             | – check Sysconf install and system status for SSH host {e myhost}
           li
             e
               a(href=reference/sysconf-target/init/) sysconf-target init
-              | lxc:mycont /path/to/sysconf
+              a(href=reference/sysconf-target/driver-lxc/)  lxc:
+              |mycont /path/to/sysconf
             | – {ext(href=https://linuxcontainers.org/lxc/manpages/man1/lxc-create.1.html) lxc-create(1)} the container {e mycont} with the given sysconf dir
           li
             e
               a(href=reference/sysconf-target/attach/) sysconf-target attach
-              | lxc:mycont -- COMMAND
+              a(href=reference/sysconf-target/driver-ssh/)  lxc:
+              |mycont -- COMMAND
             | – {ext(href=https://linuxcontainers.org/lxc/manpages/man1/lxc-attach.1.html) lxc-attach(1)} {e COMMAND} on container {e mycont}
           li
             e
               a(href=reference/sysconf-target/init/) sysconf-target init
-              | docker::myimage
+              a(href=reference/sysconf-target/driver-ssh/)  docker:
+              |:myimage
             | – build the {ext(href=https://docs.docker.com/userguide/dockerimages/) Docker image} tagged {e myimage}
           li
             e
               a(href=reference/sysconf-target/init/) sysconf-target init
-              | dockerfile:/tmp/build/
+              a(href=reference/sysconf-target/driver-ssh/)  dockerfile:
+              |/tmp/build/
             | – generate {e /tmp/build/Dockerfile} with files
 
     section
