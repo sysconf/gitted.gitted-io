@@ -2,8 +2,8 @@
 
 * See the live website at: http://gitted.io/
 
-* To deploy the website using Sysconf, *check out the
-  [sysconf/master](https://github.com/sysconf/gitted.gitted-io/tree/sysconf/master)
+* Check out the textree website content by switching to the
+  *[textree](https://github.com/sysconf/gitted.gitted-io/tree/textree)
   branch*
 
 This *Git repository* is also a *Gitted repository* which, together
