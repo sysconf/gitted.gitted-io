@@ -19,7 +19,7 @@
 //       :through answer
 
 :var items = []
-:: items += /*/
+:: items += /item/
 
 item
   question question {i lalala}
