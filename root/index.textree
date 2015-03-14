@@ -61,9 +61,16 @@ page
 
     section
       h3 {sysconf-target}: access &amp; deploy machines
-      p While {sysconf} has minimal functionality to work on the local system, {sysconf-target} provides a common interface to {a(href=reference/sysconf-target/init/) intialize} and {a(href=reference/sysconf-target/attach/) run commands} on a given remote or virtualized target.
-      p This single script contains various {a(href=reference/sysconf-target/#drivers) target drivers}, among which: {target-driver ssh}, {target-driver lxc}, {target-driver docker}
-      // h3 Access &amp; deploy machines with {sysconf-target}
+      p While {sysconf} has minimal functionality to work on the local system, {sysconf-target} provides a common interface to {a(href=reference/sysconf-target/init/) intialize} and {a(href=reference/sysconf-target/attach/) run commands} on a given remote or virtualized target. This single script contains various {a(href=reference/sysconf-target/#drivers) target drivers}, like {target-driver ssh}, {target-driver lxc}, {target-driver docker} and others.
+      section.examples
+        h4 Examples
+        ul
+          li {e sysconf-target init ssh:root@server.com .} – setup sysconf on the remote SSH host from current sysconf dir
+          li {e sysconf-target init ssh:myhost --force} – fix sysconf on the remote SSH host as defined in ssh_config
+          li {e sysconf-target init lxc:mycont /path/to/sysconf} – lxc-create(1) the container {e mycont} with the given sysconf dir
+          li {e sysconf-target attach lxc:mycont -- COMMAND} – lxc-attach(1) {e COMMAND} on container {e mycont}
+          li {e sysconf-target init docker::myimage} – build the Docker image tagged {e myimage}
+          li {e sysconf-target init dockerfile:/tmp/build/} – generate {e /tmp/build/Dockerfile}
 
     section
       h3 {gitted}: import/export state data as Git branches
