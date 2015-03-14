@@ -52,7 +52,11 @@ page
       section.examples
         h4 Examples:
         ul.compact
-          li {e sysconf update} – setup or fix the system after sysconf
+          li
+            e
+              a(href=reference/sysconf/update/) sysconf update
+            | – setup or fix the system after sysconf
+          // li {e sysconf update} – setup or fix the system after sysconf
           li {e sysconf add /usr/bin/custom-script} – add a custom script to be managed by sysconf
 
       // p A Sysconf profile (directory) is a collection of different {i Sysconf layers}, that may be shared with other sysconf profiles. As an example, checkout the {ext(href=//github.com/sysconf/gitted.gitted-io) Sysconf profile of this gitted.io website}.
