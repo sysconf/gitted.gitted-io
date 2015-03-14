@@ -55,13 +55,13 @@ page
           li
             e
               a(href=reference/sysconf/update/) sysconf update
-            | – setup or fix the system after sysconf
+            | — setup or fix the system after sysconf
           // li {e sysconf update} – setup or fix the system after sysconf
           li
             e
               a(href=reference/sysconf/add/) sysconf add
               | /usr/bin/custom-script
-            | – add a custom script to be managed by sysconf
+            | — add a custom script to be managed by sysconf
 
       // p A Sysconf profile (directory) is a collection of different {i Sysconf layers}, that may be shared with other sysconf profiles. As an example, checkout the {ext(href=//github.com/sysconf/gitted.gitted-io) Sysconf profile of this gitted.io website}.
       // p The {i system} Sysconf directory is located at {e /sysconf} and is orga
@@ -78,43 +78,43 @@ page
               a(href=reference/sysconf-target/init/) sysconf-target init
               a(href=reference/sysconf-target/driver-ssh/)  ssh:
               |root@server.com .
-            | – setup sysconf on the remote SSH host from current sysconf dir
+            | — setup sysconf on the remote SSH host from current sysconf dir
           li
             e
               a(href=reference/sysconf-target/attach/) sysconf-target attach
               a(href=reference/sysconf-target/driver-ssh/)  ssh:
               |myhost -- COMMAND
-            | – run {e COMMAND} on SSH host {e myhost}
+            | — run {e COMMAND} on SSH host {e myhost}
           li
             e
               a(href=reference/sysconf-target/status/) sysconf-target status
               a(href=reference/sysconf-target/driver-ssh/)  ssh:
               |myhost
-            | – check Sysconf install and system status for SSH host {e myhost}
+            | — check Sysconf install and system status for SSH host {e myhost}
           li
             e
               a(href=reference/sysconf-target/init/) sysconf-target init
               a(href=reference/sysconf-target/driver-lxc/)  lxc:
               |mycont /path/to/sysconf
-            | – {ext(href=https://linuxcontainers.org/lxc/manpages/man1/lxc-create.1.html) lxc-create(1)} the container {e mycont} with the given sysconf dir
+            | — {ext(href=https://linuxcontainers.org/lxc/manpages/man1/lxc-create.1.html) lxc-create(1)} the container {e mycont} with the given sysconf dir
           li
             e
               a(href=reference/sysconf-target/attach/) sysconf-target attach
               a(href=reference/sysconf-target/driver-ssh/)  lxc:
               |mycont -- COMMAND
-            | – {ext(href=https://linuxcontainers.org/lxc/manpages/man1/lxc-attach.1.html) lxc-attach(1)} {e COMMAND} on container {e mycont}
+            | — {ext(href=https://linuxcontainers.org/lxc/manpages/man1/lxc-attach.1.html) lxc-attach(1)} {e COMMAND} on container {e mycont}
           li
             e
               a(href=reference/sysconf-target/init/) sysconf-target init
               a(href=reference/sysconf-target/driver-ssh/)  docker:
               |:myimage
-            | – build the {ext(href=https://docs.docker.com/userguide/dockerimages/) Docker image} tagged {e myimage}
+            | — build the {ext(href=https://docs.docker.com/userguide/dockerimages/) Docker image} tagged {e myimage}
           li
             e
               a(href=reference/sysconf-target/init/) sysconf-target init
               a(href=reference/sysconf-target/driver-ssh/)  dockerfile:
               |/tmp/build/
-            | – generate {e /tmp/build/Dockerfile} with files
+            | — generate {e /tmp/build/Dockerfile} with files
 
     section
       h3 {gitted}: import/export state data as Git branches
@@ -122,9 +122,9 @@ page
       p For example, {e /etc/gitted/state/www-data.config} defines the {i state branch} named {e www-data}, a Git branch that is kept in sync with the {e /var/www} directory.
       p Inspired by {ext(href=http://git-scm.com/) Git}, the core 3 commands are:
       ul.compact
-        li {a(href=reference/gitted/status/) {e gitted status}} – show if system state differs from the branch(es)
-        li {a(href=reference/gitted/commit/) {e gitted commit}} – export current state data to the Git branch
-        li {a(href=reference/gitted/reset/) {e gitted reset}} – reset current state data after given Git commit
+        li {a(href=reference/gitted/status/) {e gitted status}} — show if system state differs from the branch(es)
+        li {a(href=reference/gitted/commit/) {e gitted commit}} — export current state data to the Git branch
+        li {a(href=reference/gitted/reset/) {e gitted reset}} — reset current state data after given Git commit
 
     section
       h3 {gitted-target}: Git Push-to-deploy and pull-to-backup
