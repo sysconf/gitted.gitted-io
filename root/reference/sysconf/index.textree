@@ -1,0 +1,10 @@
+page Sysconf
+
+  site-header Sysconf
+
+  section
+    p Sysconf suggests a way to organise custom system files (like /etc config or /usr/bin/ scripts) in a central directory that is easy to manage, backup and sync.
+
+  site-footer
+
+:end
