@@ -75,7 +75,7 @@ page
 
     section
       h3 {gitted}: import/export state data as Git branches
-      p A system becomes a {q Gitted system} when its Sysconf profile contains the {ext(href=//github.com/sysconf/sysconf.gitted) {e sysconf.gitted} layer}. It provided the {e gitted} command which manage a private Git repository at {e /local.repository.git}, in sync with the state of the system according to INI-style configuration from {e /etc/gitted/stated/}.
+      p A system becomes a {q Gitted system} when its Sysconf profile contains the {ext(href=//github.com/sysconf/sysconf.gitted) {e sysconf.gitted} layer}. The {gitted} command manages the synchronization between Git branches and the {i state drivers} which are dedicated to import/export a specific kind of data (MySQL, PostgreSQL, MongoDB, local dir, etc.) according to the configuration from {e /etc/gitted/stated/} in an INI-style format.
       p For example, {e /etc/gitted/state/www-data.config} defines a {i state branch} named {e www-data} which is a Git branch that is kept in sync with the {e /var/www} directory in b
 
     section
