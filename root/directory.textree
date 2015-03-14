@@ -79,6 +79,14 @@
         span.sep
       :through
 
+:: site-nav
+  nav
+    h2 Site map
+    ul
+      li Sysconf
+      li Gitted
+      li Project status
+
 :: site-footer
   footer.site
     span
