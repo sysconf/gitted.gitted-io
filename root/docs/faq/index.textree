@@ -36,6 +36,16 @@ page FAQ-Gitted
 
   article
 
+    nav
+      :: item
+        :: /question {li {:through}}
+        :: /answer
+        ul {:through}
+
+      :each item in items
+        :through item
+
+
     :: item
       :: /question {h3 {:through}}
       :: /answer {p {:through}}
