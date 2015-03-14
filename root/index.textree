@@ -39,9 +39,9 @@ page
     h2 4 bash scripts to rule them all
     section
       h3 Define and setup a machine with {sysconf}
-      p Sysconf suggests a way to organise custom system files (like /etc config or /usr/bin/ scripts) in a central directory that is easy to manage, backup and sync.
-      p The idea is to move any custom file like /etc/cron.daily/some-task) to /sysconf/actual/tree/etc/cron.daily/some-task and replace the original file with a symbolic link pointing toward its location in /sysconf/.
-      p As a shell script, the {sysconf} tool provides commands to manipulate the /sysconf tree.
+      // p Sysconf suggests a way to organise custom system files (like /etc config or /usr/bin/ scripts) in a central directory that is easy to manage, backup and sync.
+      // p The idea is to move any custom file like /etc/cron.daily/some-task) to /sysconf/actual/tree/etc/cron.daily/some-task and replace the original file with a symbolic link pointing toward its location in /sysconf/.
+      // p As a shell script, the {sysconf} tool provides commands to manipulate the /sysconf tree.
 
     section
       h3 Access &amp; deploy machines with {sysconf-target}
