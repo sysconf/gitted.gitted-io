@@ -30,7 +30,7 @@ page
 
     section.half
       h3 {sysconf}{br}Define and setup a machine
-      h4 A simple convention for packaging common files
+      h4 A {a(href=reference/sysconf/convention/) simple convention} for packaging common files
       h4 No abstraction. Works with symbolic links only.
       h4 Designed for production server as well as home use
 
@@ -38,7 +38,7 @@ page
       h3 {sysconf-target}{br}Access &amp; deploy machines
       h4 Run command on multiple targets
       h4 Multiple target drivers: local, ssh, lxc, docker...
-      h4 Create containers or initialise running machines
+      h4 Create containers or initialize running machines
 
     section.half
       h3 {gitted}{br}Import/export state as Git data
