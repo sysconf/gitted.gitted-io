@@ -1,6 +1,14 @@
 page Gitted/sysconf reference index
 
-  site-header Gitted/sysconf reference index
+  site-header Index
+
+  section
+    h2 Commands
+    ul
+      li {a(href=sysconf/) Sysconf}
+      li {a(href=sysconf-target/) Sysconf-target}
+      li {a(href=gitted/) Gitted}
+      li {a(href=gitted-target/) Gitted-target}
 
   site-footer
 

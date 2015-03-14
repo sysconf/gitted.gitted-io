@@ -164,8 +164,11 @@
 //
 // (manually shared with x.geonef.fr)
 
-// "q" comme "quote" pour un texte entre guillemets (par défaut, à la française : «—»)
+// "q" wraps content with English quotes (with CSS "content")
 :: q {span.quote {:through}}
+
+// "path" for directory and file path
+:: path {span.path {:through}}
 
 // Make an external link (attribute "href" must be provided)
 :: ext {a(target=_blank) {:through}}
