@@ -12,11 +12,7 @@
     = name
 
 page
-  css.
-    #reference > section { width: 46%; display: inline-block; vertical-align: top; margin: 0 1em 1em 1em; }
-    @media (max-width: 790px) {
-      #reference > section { width: 95% }
-    }
+  // css.
 
   site-header
 
@@ -24,31 +20,29 @@ page
 
   section
     h2 Setup and reproduce machine configuration &amp; data
-    // h2 From {sysconf} to {gitted}
     p This {b Free Software project} began as a research projet by {ext(href=http://www.geonef.fr/) Geonef}. The {sysconf} script was released in early 2014 as a helper tool for managing {b configuration files across systems} using the minimalist {a(href=reference/sysconf/convention/) symlink pattern convention}. Then {sysconf-target} was written to help setting up {sysconf} on {b remote systems} while being capable of {b auto-creating containers} and virtual machines.
     p {gitted} does another job: {b import/export machine state} as Git branches. It features push-to-deploy and pull-to-backup on various state data like databases or local directories (see: {a(href=reference/gitted/state-drivers/) Gitted drivers}). {gitted-target} is to {gitted} what {sysconf-target} is to Sysconf: manage a remote {gitted} system and git-pull-push its data.
 
   section#reference
     h2 4 bash scripts to rule them all...
-    section
+
+    section.half
       h3 {sysconf}{br}Define and setup a machine
-      p The {a(href=reference/sysconf/directory/) Sysconf directory convention} defines a directory structure similar to {e Dockerfile}’s or {e .deb} for packaging files that are installed on the target system and the setup scripts which run the commands needed to configure the system. Check the {ext(href=//github.com/sysconf/gitted.gitted-io) Sysconf profile of this gitted.io website} as an example.
+      h4
 
-    section
+    section.half
       h3 {sysconf-target}{br}Access &amp; deploy machines
-      p While {sysconf} has minimal functionality to work on the local system, {sysconf-target} provides a common interface to {a(href=reference/sysconf-target/init/) intialize} and {a(href=reference/sysconf-target/attach/) run commands} on a given remote or virtualized target. This single script contains various {a(href=reference/sysconf-target/#drivers) target drivers} like {target-driver ssh}, {target-driver lxc}, {target-driver docker} and others.
+      h4
 
-    section
+    section.half
       h3 {gitted}{br}Import/export state as Git data
-      p A system becomes a {q Gitted system} when its Sysconf profile contains the {ext(href=//github.com/sysconf/sysconf.gitted) {e sysconf.gitted} layer}. The {gitted} command manages the synchronization between Git branches and the {i state drivers} which are dedicated to import/export a specific kind of data (MySQL, PostgreSQL, MongoDB, local dir, etc.) according to INI-style configuration in {e /etc/gitted/state/}.
-      p For example, {e /etc/gitted/state/www-data.config} defines the {i state branch} named {e www-data}, a Git branch that is kept in sync with the {e /var/www} directory.
-      // p Inspired by {ext(href=http://git-scm.com/) Git}, the 3 core commands are driver-specific:
+      h4
 
-    section
+    section.half
       h3 {gitted-target}{br}Git push-to-deploy and pull-to-backup
-      p The {gitted-target} command uses {sysconf-target} to run the {e gitted} command on a specific target. It will create containers or vritual machines on the fly, as supported by {sysconf-target}. It also provides a local {e init} command which configures a local {e git ted} aliase and proper remote for easy Git fetch &amp; push operations.
+      h4
 
-  section#docs
+  section#docs.half
     h2 Docs
     ul
       li {b Reference}: {sysconf}, {sysconf-target}, {gitted}, {gitted-target}
@@ -58,14 +52,8 @@ page
       li Tutorial: {a(href=tutorial/setup-home-sysconf/) Using Sysconf to manage ~/.bashrc and ~/bin}
       li Tutorial: {a(href=tutorial/manage-etc-hosts-d) Managing /etc/hosts.d split with sysconf-etc.d}
       li Tutorial: {a(href=tutorial/deploy-gitted-io/) Deploy the gitted.io website in a local container}
-      // li Tutorials:
-      //   ul
-      //     li {a(href=tutorial/setup-sysconf/) Using Sysconf to manage custom /usr/bin scripts and /etc}
-      //     li {a(href=tutorial/setup-home-sysconf/) Using Sysconf to manage ~/.bashrc and ~/bin}
-      //     li {a(href=tutorial/manage-etc-hosts-d) Managing /etc/hosts.d split with sysconf-etc.d}
-      //     li {a(href=tutorial/deploy-gitted-io/) Deploy the gitted.io website in a local container}
 
-  section#status
+  section#status.half
     h2 Project status &amp; support
     ul
       li {a(href=contribute/) How to contribute}
