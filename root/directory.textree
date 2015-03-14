@@ -104,59 +104,14 @@
     span
       a(href=#) Back to top
 
-:: bg
-  div.bg
-
-// Pour une <img> avec le bon répertoire asset
-:: asset-image
-  :var width = null
-  :: /width
-    :: width = /TEXT
-    :through
-  :var height = null
-  :: /height
-    :: height = /TEXT
-    :through
-  :var file = ""
-  :: /file
-    :: file = /TEXT
-    :through
-  :var alt = ""
-  :: /alt
-    :: alt = /TEXT
-    :through
-  :var id = ""
-  :: id := @id
-  :var _class = ""
-  :: _class := @class
-  :through
-  img
-    :if id
-      = 1 && \{ type: "id", value: id \}
-    :if _class
-      = 1 && \{ type: "class", value: _class \}
-    :if alt
-      = 1 && \{ type: "attr", name: "alt", value: alt \}
-    :if width
-      = 1 && \{ type: "attr", name: "width", value: width \}
-    :if height
-      = 1 && \{ type: "attr", name: "height", value: height \}
-    = 1 && \{ type: "attr", name: "src", value: url_base_path + "assets/image/" + file \}
-
-// Pour un <div> avec largeur proportionnelle à section
-:: varfloat
-  :var width = "20%"
-  :: width := /@width
-  :var side = "right"
-  :: side := /@side
-  :var content = []
-  :: content += /*/
-  :through
-  div
-    = 1 && \{ type: "class", value: "varfloat "+side \}
-    = 1 && \{ type: "attr", name: "style", value: "width:"+width \}
-    :each el in content
-      :through el
+:: sysconf
+  a(href=reference/sysconf/) Sysconf
+:: sysconf-target
+  a(href=reference/sysconf-target/) Sysconf-target
+:: gitted
+  a(href=reference/gitted/) Gitted
+:: gitted-target
+  a(href=reference/gitted-target/) Gitted-target
 
 
 ////////////////////////////////////////////////////////////////////////////////

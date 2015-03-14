@@ -4,14 +4,6 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-:: sysconf
-  a(href=reference/sysconf/) Sysconf
-:: sysconf-target
-  a(href=reference/sysconf-target/) Sysconf-target
-:: gitted
-  a(href=reference/gitted/) Gitted
-:: gitted-target
-  a(href=reference/gitted-target/) Gitted-target
 :: target-driver
   :: name := TEXT
   :through
