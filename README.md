@@ -1,4 +1,5 @@
-# Textree source content of the gitted.io website
+# This _textree_ branch: source content of the gitted.io website,
+  powered by textree
 
 This directory holds the content source for the http://gitted.io/
 website.
