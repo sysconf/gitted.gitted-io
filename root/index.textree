@@ -155,15 +155,18 @@ page
             | — show summary status for all configured state branches for the upstream remote of the current Git branch (as configure by {e git branch --set-upstream-to})
           li
             e
-              a(href=reference/gitted-target/remote-commands/) gitted-target reset mysql --hard
+              a(href=reference/gitted-target/remote-commands/) gitted-target reset
+              | mysql --hard
             | — reset the MySQL database after the dumps stored in current {e mysql} branch
           li
             e
-              a(href=reference/gitted-target/remote-commands/) gitted-target commit mysql
+              a(href=reference/gitted-target/remote-commands/) gitted-target commit
+              | mysql
             | — export MySQL data to a Git commit and update the {e mysql} branch
           li
             e
-              a(href=reference/gitted-target/remote-commands/) gitted-target commit mysql sysconf/master
+              a(href=reference/gitted-target/remote-commands/) gitted-target commit
+              | mysql sysconf/master
             | — commit both states (MySQL data and {e /sysconf} master branch) to their respective Gitted branches
           li
             e
@@ -171,6 +174,12 @@ page
               a(href=reference/sysconf-target/driver-lxc/) lxc:
               |mycont
             | — fetch branches from the Gitted LXC container {e mycont}
+          li
+            e
+              | git push {a(href=reference/gitted-target/url-scheme/) gitted:
+              a(href=reference/sysconf-target/driver-ssh/) ssh:
+              |USER@HOST sysconf/master mysql
+            | — push branches to Gitted SSH host and update Sysconf &amp; MySQL database
 
 
   section#docs
