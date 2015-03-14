@@ -38,7 +38,7 @@ page FAQ-Gitted
 
     nav
       :: item
-        :: /question {li {= ""+idx}. {:through}}
+        :: /question {li {= ""+(idx+1)}. {:through}}
         :: /answer
         ul {:through}
 
@@ -47,7 +47,7 @@ page FAQ-Gitted
 
 
     :: item
-      :: /question {h3 {:through}}
+      :: /question {h3 {= ""+(idx+1)}. {:through}}
       :: /answer {p {:through}}
       section {:through}
 
