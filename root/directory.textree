@@ -67,11 +67,10 @@
 // en-tête de toutes les pages
 :: site-header
   header.site
-    // a.logo(href=/)
-    //   asset-image
-    //     file geonef-logo.svg
-    //     height 80
     h1
+      a.logo(href=/)
+        span Gitted
+        span I/O
       span.sep
       :var _url = ""
       :each component in title_components

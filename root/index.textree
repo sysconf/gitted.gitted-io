@@ -15,15 +15,7 @@
 
 page
 
-
-  // header.band
-  //   h1 Gitted
-
-  //   div#anchors
-  //     a(href=#nb1) nb1
-  //     span.sep
-  //     a(href=#nb2) nb2
-
+  site-header
 
   //////////////////////////////////////////////////////////////////////
 
