@@ -50,7 +50,7 @@ page
       h3 {sysconf}: define and setup a machine
       p The {a(href=reference/sysconf/directory/) Sysconf directory convention} defines a directory structure similar to {e Dockerfile}’s or {e .deb} for packaging files that are installed on the target system and the setup scripts which run the commands needed to configure the system. Check the {ext(href=//github.com/sysconf/gitted.gitted-io) Sysconf profile of this gitted.io website} as an example.
       section.examples
-        h4 Examples
+        h4 Examples:
         ul.compact
           li {e sysconf update} – setup or fix the system after sysconf
           li {e sysconf add /usr/bin/custom-script} – add a custom script to be managed by sysconf
@@ -63,13 +63,13 @@ page
       h3 {sysconf-target}: access &amp; deploy machines
       p While {sysconf} has minimal functionality to work on the local system, {sysconf-target} provides a common interface to {a(href=reference/sysconf-target/init/) intialize} and {a(href=reference/sysconf-target/attach/) run commands} on a given remote or virtualized target. This single script contains various {a(href=reference/sysconf-target/#drivers) target drivers}, like {target-driver ssh}, {target-driver lxc}, {target-driver docker} and others.
       section.examples
-        h4 Examples
+        h4 Examples:
         ul.compact
           li {e sysconf-target init ssh:root@server.com .} – setup sysconf on the remote SSH host from current sysconf dir
           li {e sysconf-target init ssh:myhost --force} – fix sysconf on the remote SSH host as defined in ssh_config
           li {e sysconf-target attach ssh:myhost -- COMMAND} – run {e COMMAND} on SSH host {e myhost}
-          li {e sysconf-target init lxc:mycont /path/to/sysconf} – lxc-create(1) the container {e mycont} with the given sysconf dir
-          li {e sysconf-target attach lxc:mycont -- COMMAND} – lxc-attach(1) {e COMMAND} on container {e mycont}
+          li {e sysconf-target init lxc:mycont /path/to/sysconf} – {ext(href=https://linuxcontainers.org/lxc/manpages/man1/lxc-create.1.html) lxc-create(1)} the container {e mycont} with the given sysconf dir
+          li {e sysconf-target attach lxc:mycont -- COMMAND} – {ext(href=https://linuxcontainers.org/lxc/manpages/man1/lxc-attach.1.html) lxc-attach(1)} {e COMMAND} on container {e mycont}
           li {e sysconf-target init docker::myimage} – build the Docker image tagged {e myimage}
           li {e sysconf-target init dockerfile:/tmp/build/} – generate {e /tmp/build/Dockerfile}
 
