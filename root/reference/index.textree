@@ -1,3 +1,5 @@
+:var title_components = []
+
 page Sysconf/Gitted Reference overview
 
   site-header Reference overview
@@ -26,7 +28,7 @@ page Sysconf/Gitted Reference overview
 
   section
     h3 {sysconf-target}: access &amp; deploy machines
-    p While {sysconf} has minimal functionality to work on the local system, {sysconf-target} provides a common interface to {a(href=reference/sysconf-target/init/) intialize} and {a(href=reference/sysconf-target/attach/) run commands} on a given remote or virtualized target. This single script contains various {a(href=reference/sysconf-target/#drivers) target drivers} like {target-driver ssh}, {target-driver lxc}, {target-driver docker} and others.
+    p While {sysconf} has minimal functionality and work on the local system, {sysconf-target} provides a common interface to {a(href=reference/sysconf-target/init/) intialize} and {a(href=reference/sysconf-target/attach/) run commands} on a given remote or virtualized target. This single script contains various {a(href=reference/sysconf-target/#drivers) target drivers} like {target-driver ssh}, {target-driver lxc}, {target-driver docker} and others.
     section.examples
       h4 Examples:
       ul.compact
