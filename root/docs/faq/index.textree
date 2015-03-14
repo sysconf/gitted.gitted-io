@@ -1,32 +1,68 @@
+:var questions = []
+// :: item
+//   :: question = /question/
+//   :: answer = /answer/
+//   // :var question = []
+//   // :: /question/
+//   //   :: question += /*/
+//   // :var answer = []
+//   // :: /answer/
+//   //   :: answer += /*/
+//   :through
+//   :eval questions.push(question)
+//   section
+//     :: question {:through}
+//     :: answer {:through}
+//     h3
+//       :through question
+//     p
+//       :through answer
+
+:var items = []
+:: items += /*/
+
+item
+  question question {i lalala}
+  answer answer
+
+item
+  question question2 {b lalala}
+  answer answer2
+
+
 page FAQ-Gitted
 
   site-header
   article
-    :: item
-      :: question = /question/
-      :: answer = /answer/
-      // :var question = []
-      // :: /question/
-      //   :: question += /*/
-      // :var answer = []
-      // :: /answer/
-      //   :: answer += /*/
-      :through
-      section
-        :: question {:through}
-        :: answer {:through}
-        h3
-          :through question
-        p
-          :through answer
+    :each item in items
+      :through item
 
-    item
-      question question {i lalala}
-      answer answer
+    // :: item
+    //   :: question = /question/
+    //   :: answer = /answer/
+    //   // :var question = []
+    //   // :: /question/
+    //   //   :: question += /*/
+    //   // :var answer = []
+    //   // :: /answer/
+    //   //   :: answer += /*/
+    //   :through
+    //   :eval questions.push(question)
+    //   section
+    //     :: question {:through}
+    //     :: answer {:through}
+    //     h3
+    //       :through question
+    //     p
+    //       :through answer
 
-    item
-      question question
-      answer answer
+    // item
+    //   question question {i lalala}
+    //   answer answer
+
+    // item
+    //   question question
+    //   answer answer
 
   site-footer
 
