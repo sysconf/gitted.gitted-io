@@ -36,6 +36,12 @@ page FAQ-Gitted
 
   article
     :: item
+      :: /question
+        h3
+          :through
+      :: /answer
+        p
+          :through
       :through
     :each item in items
       :through item
