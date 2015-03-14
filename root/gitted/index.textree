@@ -1,5 +1,7 @@
 page Gitted
-  h1 Gitted
 
+  site-header The Gitted method
+
+  site-footer
 
 :end

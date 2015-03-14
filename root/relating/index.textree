@@ -1,5 +1,7 @@
 page How Sysconf/Gitted relates to other software projects
 
+  site-header How Sysconf/Gitted relates to other software projects
+
   section
     h2 LXC (Linux containers)
     ul
@@ -22,5 +24,6 @@ page How Sysconf/Gitted relates to other software projects
   section
     h2 Salt
 
+  site-footer
 
 :end
