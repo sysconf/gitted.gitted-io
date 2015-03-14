@@ -15,7 +15,7 @@ using 2 branches:
 
 * _[textree](https://github.com/sysconf/gitted.gitted-io/tree/textree)_
   for the website content, powered by the
-  [textree text processor](https://github.com/geonef/sysconf.textree/)
+  [Textree text processor](https://github.com/geonef/sysconf.textree/)
   to render into HTML.
 
 The official upstream repository is hosted on GitHub:
@@ -33,4 +33,4 @@ for HTML rendering.
 ## Authors & history
 
 * Designed and implemented is maintained by: Jean-Francois Gigand jf@gigand.fr.
-* First release of the gitted.io website on 20150314
+* First release of the http://gitted.io website on 20150314
