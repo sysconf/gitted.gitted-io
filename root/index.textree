@@ -66,12 +66,20 @@ page
         h4 Examples:
         ul.compact
           li
-            e {a(href=reference/sysconf-target/init/) sysconf-target init} ssh:root@server.com .
+            e
+              a(href=reference/sysconf-target/init/) sysconf-target init
+              | ssh:root@server.com .
             | – setup sysconf on the remote SSH host from current sysconf dir
           li
-            e {a(href=reference/sysconf-target/attach/) sysconf-target attach} ssh:myhost -- COMMAND}
+            e
+              a(href=reference/sysconf-target/attach/) sysconf-target attach
+              | ssh:myhost -- COMMAND
             | – run {e COMMAND} on SSH host {e myhost}
-          li {e {a(href=reference/sysconf-target/status/) sysconf-target status} ssh:myhost} – check Sysconf install and system status for SSH host {e myhost}
+          li
+            e
+              a(href=reference/sysconf-target/status/) sysconf-target status
+              | ssh:myhost
+            | – check Sysconf install and system status for SSH host {e myhost}
           li
             e sysconf-target init lxc:mycont /path/to/sysconf
             | – {ext(href=https://linuxcontainers.org/lxc/manpages/man1/lxc-create.1.html) lxc-create(1)} the container {e mycont} with the given sysconf dir
