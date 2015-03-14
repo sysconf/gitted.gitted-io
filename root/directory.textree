@@ -81,11 +81,17 @@
 
 :: site-nav
   nav
-    h2 Site map
+    h2 Table of contents
     ul
       li Sysconf
       li Gitted
       li Project status
+      li Command reference
+        ul
+          li {sysconf}
+          li {sysconf-target}
+          li {gitted}
+          li {gitted-target}
 
 :: site-footer
   footer.site
