@@ -68,7 +68,8 @@ page
           li
             e
               a(href=reference/sysconf-target/init/) sysconf-target init
-              | ssh:root@server.com .
+              a(href=reference/sysconf-target/driver-ssh/) ssh:
+              |root@server.com .
             | – setup sysconf on the remote SSH host from current sysconf dir
           li
             e
@@ -83,7 +84,7 @@ page
           li
             e
               a(href=reference/sysconf-target/init/) sysconf-target init
-              |lxc:mycont /path/to/sysconf
+              | lxc:mycont /path/to/sysconf
             | – {ext(href=https://linuxcontainers.org/lxc/manpages/man1/lxc-create.1.html) lxc-create(1)} the container {e mycont} with the given sysconf dir
           li
             e
