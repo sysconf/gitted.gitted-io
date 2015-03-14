@@ -68,7 +68,7 @@ page
           li
             e
               a(href=reference/sysconf-target/init/) sysconf-target init
-              a(href=reference/sysconf-target/driver-ssh/) ssh:
+              a(href=reference/sysconf-target/driver-ssh/)  ssh:
               |root@server.com .
             | – setup sysconf on the remote SSH host from current sysconf dir
           li
