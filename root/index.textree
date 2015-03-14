@@ -13,7 +13,7 @@
 
 page
   css.
-    #reference > section { width: 45%; display: inline-block; vertical-align: top; }
+    #reference > section { width: 45%; display: inline-block; vertical-align: top; margin: 0 1em 1em 1em; }
     @media (max-width: 790px) {
       #reference > section { width: 95% }
     }
