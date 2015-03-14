@@ -2,12 +2,16 @@
 :: items += /item/
 
 item
-  question question {i lalala}
-  answer answer
-
-item
-  question question2 {b lalala}
-  answer answer2
+  question How are Sysconf and Gitted related?
+  answer
+    p Sysconf does not depend on Gitted and Gitted does not depend on Sysconf. Although Gitted is commonly distributed through the {e sysconf.gitted} layer, it can be installed by other means and work properly without Sysconf at all.
+    ul
+      li {gitted-target} uses {sysconf-target} to reach {gitted} on remote machine
+      li {sysconf-target} create virtal machines and containers and reach them all (SSH included)
+      li {sysconf} configures a new or existing machine
+      li {sysconf} installs the {gitted} setup
+      li {gitted} upgrades {sysconf} like other machine state
+      li driver-gitted-target makes the process recursive: manage guest machines as gitted state from a host (or peer) machine
 
 
 page FAQ-Gitted
