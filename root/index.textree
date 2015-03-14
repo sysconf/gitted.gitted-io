@@ -15,7 +15,7 @@
 
 page
   css.
-    #reference { text-align: right; }
+    // #reference { text-align: right; }
     // #reference section.examples { text-align: left; }
 
   site-header
