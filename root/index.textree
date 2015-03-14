@@ -79,9 +79,9 @@ page
       p For example, {e /etc/gitted/state/www-data.config} defines the {i state branch} named {e www-data}, a Git branch that is kept in sync with the {e /var/www} directory.
       p Inspired by {ext(href=http://git-scm.com/) Git}, the core 3 commands are:
       ul.compact
-        li {a(href=reference/gitted/status/) gitted status} – show if system state differs from the branch(es)
-        li {a(href=reference/gitted/commit/) gitted commit} – export current state data to the Git branch
-        li {a(href=reference/gitted/reset/) gitted reset} – reset current state data after given Git commit
+        li {a(href=reference/gitted/status/) {e gitted status}} – show if system state differs from the branch(es)
+        li {a(href=reference/gitted/commit/) {e gitted commit}} – export current state data to the Git branch
+        li {a(href=reference/gitted/reset/) {e gitted reset}} – reset current state data after given Git commit
 
     section
       h3 {gitted-target}: Git Push-to-deploy and pull-to-backup
