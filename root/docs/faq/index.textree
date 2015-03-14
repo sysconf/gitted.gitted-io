@@ -16,12 +16,12 @@ page FAQ-Gitted
         :: question {:through}
         :: answer {:through}
         h3
-          :through question {i lalal}
+          :through question
           p
             :through answer
 
     item
-      question question
+      question question {i lalala}
       answer answer
 
     item
