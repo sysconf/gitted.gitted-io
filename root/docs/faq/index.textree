@@ -35,14 +35,12 @@ page FAQ-Gitted
   site-header
 
   article
+
     :: item
-      :: /question
-        h3
-          :through
-      :: /answer
-        p
-          :through
-      :through
+      :: /question {h3 {:through}}
+      :: /answer {p {:through}}
+      section {:through}
+
     :each item in items
       :through item
 
