@@ -17,8 +17,8 @@ page FAQ-Gitted
         :: answer {:through}
         h3
           :through question
-          p
-            :through answer
+        p
+          :through answer
 
     item
       question question {i lalala}
