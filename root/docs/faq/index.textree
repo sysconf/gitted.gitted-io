@@ -22,6 +22,7 @@ page FAQ-Gitted
         :: /question
           p
             a
+              = 1 && \{ type: "attr", name: "href", value: "#a"+(idx+1) \}
               = (idx+1)+"."
               :through
         :: /answer
@@ -33,7 +34,13 @@ page FAQ-Gitted
 
     // contents
     :: item
-      :: /question {h3 {= (idx+1)+"."} {:through}}
+      :: /question
+        h3
+          = 1 && \{ type: "id", value: "a"+(idx+1) \}
+          a
+            = 1 && \{ type: "attr", name: "href", value: "#q"+(idx+1) \}
+            = (idx+1)+"."
+          :through
       :: /answer {p {:through}}
       section {:through}
 
