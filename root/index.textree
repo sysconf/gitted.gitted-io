@@ -66,16 +66,16 @@ page
         h4 Examples:
         ul.compact
           li {e sysconf-target init ssh:root@server.com .} – setup sysconf on the remote SSH host from current sysconf dir
-          li {e sysconf-target init ssh:myhost --force} – fix sysconf on the remote SSH host as defined in ssh_config
           li {e sysconf-target attach ssh:myhost -- COMMAND} – run {e COMMAND} on SSH host {e myhost}
+          li {e sysconf-target status ssh:myhost} – check Sysconf install and system status for SSH host {e myhost}
           li {e sysconf-target init lxc:mycont /path/to/sysconf} – {ext(href=https://linuxcontainers.org/lxc/manpages/man1/lxc-create.1.html) lxc-create(1)} the container {e mycont} with the given sysconf dir
           li {e sysconf-target attach lxc:mycont -- COMMAND} – {ext(href=https://linuxcontainers.org/lxc/manpages/man1/lxc-attach.1.html) lxc-attach(1)} {e COMMAND} on container {e mycont}
-          li {e sysconf-target init docker::myimage} – build the Docker image tagged {e myimage}
-          li {e sysconf-target init dockerfile:/tmp/build/} – generate {e /tmp/build/Dockerfile}
+          li {e sysconf-target init docker::myimage} – build the {ext(href=https://docs.docker.com/userguide/dockerimages/) Docker image} tagged {e myimage}
+          li {e sysconf-target init dockerfile:/tmp/build/} – generate {e /tmp/build/Dockerfile} with files
 
     section
       h3 {gitted}: import/export state data as Git branches
-      // h3 Import/export state data as Git branches with {gitted}
+      p
 
     section
       h3 {gitted-target}: Git Push-to-deploy and pull-to-backup
@@ -83,7 +83,7 @@ page
   section#docs
     h2 Docs
     ul
-      li Checkout the {b reference} for: {sysconf}, {sysconf-target}, {gitted}, {gitted-target}
+      li {b Reference}: {sysconf}, {sysconf-target}, {gitted}, {gitted-target}
       li {a(href=docs/faq/) Frenquently Asked Questions}
       li {a(href=docs/relating/) How Sysconf/Gitted relates to other software} like Docker or Puppet
       li Tutorial: {a(href=tutorial/setup-sysconf/) Using Sysconf to manage custom /usr/bin scripts and /etc}
