@@ -38,11 +38,11 @@ page FAQ-Gitted
 
     nav
       :: item
-        :: /question {li {:through}}
+        :: /question {li {= ""+idx}. {:through}}
         :: /answer
         ul {:through}
 
-      :each item in items
+      :each item, idx in items
         :through item
 
 
