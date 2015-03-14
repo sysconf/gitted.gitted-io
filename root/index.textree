@@ -13,7 +13,7 @@
 
 page
   css.
-    #reference > section { width: 45%; display: inline-block; vertical-align: top; margin: 0 1em 1em 1em; }
+    #reference > section { width: 46%; display: inline-block; vertical-align: top; margin: 0 1em 1em 1em; }
     @media (max-width: 790px) {
       #reference > section { width: 95% }
     }
@@ -40,11 +40,11 @@ page
       // p The {e sysconf/} directory can be installed at the {i system} level at {e /sysconf}, at the user HOME level at {e ~/sysconf} or for any purpose at any location. From there, symbolic links are created on the target tree that point towards to original files in {e sysconf/}. For example, a system-wide Sysconf with the sysconf.base layer will setup {e /usr/bin/sysconf} as a symlink to {e /sysconf/sysconf.base/tree/usr/bin/sysconf}.
 
     section
-      h3 {sysconf-target}: access &amp; deploy machines
+      h3 {sysconf-target}{br} access &amp; deploy machines
       p While {sysconf} has minimal functionality to work on the local system, {sysconf-target} provides a common interface to {a(href=reference/sysconf-target/init/) intialize} and {a(href=reference/sysconf-target/attach/) run commands} on a given remote or virtualized target. This single script contains various {a(href=reference/sysconf-target/#drivers) target drivers} like {target-driver ssh}, {target-driver lxc}, {target-driver docker} and others.
 
     section
-      h3 {gitted}: import/export state data as Git branches
+      h3 {gitted}{br}import/export state data as Git branches
       p A system becomes a {q Gitted system} when its Sysconf profile contains the {ext(href=//github.com/sysconf/sysconf.gitted) {e sysconf.gitted} layer}. The {gitted} command manages the synchronization between Git branches and the {i state drivers} which are dedicated to import/export a specific kind of data (MySQL, PostgreSQL, MongoDB, local dir, etc.) according to INI-style configuration in {e /etc/gitted/state/}.
       p For example, {e /etc/gitted/state/www-data.config} defines the {i state branch} named {e www-data}, a Git branch that is kept in sync with the {e /var/www} directory.
       // p Inspired by {ext(href=http://git-scm.com/) Git}, the 3 core commands are driver-specific:
