@@ -75,8 +75,13 @@ page
 
     section
       h3 {gitted}: import/export state data as Git branches
-      p A system becomes a {q Gitted system} when its Sysconf profile contains the {ext(href=//github.com/sysconf/sysconf.gitted) {e sysconf.gitted} layer}. The {gitted} command manages the synchronization between Git branches and the {i state drivers} which are dedicated to import/export a specific kind of data (MySQL, PostgreSQL, MongoDB, local dir, etc.) according to the configuration from {e /etc/gitted/stated/} in an INI-style format.
-      p For example, {e /etc/gitted/state/www-data.config} defines a {i state branch} named {e www-data} which is a Git branch that is kept in sync with the {e /var/www} directory in b
+      p A system becomes a {q Gitted system} when its Sysconf profile contains the {ext(href=//github.com/sysconf/sysconf.gitted) {e sysconf.gitted} layer}. The {gitted} command manages the synchronization between Git branches and the {i state drivers} which are dedicated to import/export a specific kind of data (MySQL, PostgreSQL, MongoDB, local dir, etc.) according to INI-style configuration in {e /etc/gitted/state/}.
+      p For example, {e /etc/gitted/state/www-data.config} defines the {i state branch} named {e www-data}, a Git branch that is kept in sync with the {e /var/www} directory.
+      p Inspired by {ext(href=http://git-scm.com/) Git}, the core 3 commands are:
+      ul.compact
+        li {a(href=reference/gitted/status/) gitted status} – show if system state differs from the branch(es)
+        li {a(href=reference/gitted/commit/) gitted commit} – export current state data to the Git branch
+        li {a(href=reference/gitted/reset/) gitted reset} – reset current state data after given Git commit
 
     section
       h3 {gitted-target}: Git Push-to-deploy and pull-to-backup
