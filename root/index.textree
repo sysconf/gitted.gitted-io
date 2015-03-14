@@ -12,6 +12,12 @@
   a(href=reference/gitted/) Gitted
 :: gitted-target
   a(href=reference/gitted-target/) Gitted-target
+:: target-driver
+  :: name := TEXT
+  :through
+  a
+    = 1 && \{ type: "attr", name: "href", value: "/reference/sysconf-target/driver-" + name + "/" \}
+    = name
 
 page
   css.
@@ -23,7 +29,7 @@ page
   //////////////////////////////////////////////////////////////////////
 
   section
-    h2 Setup and reproduce machine config &amp; state
+    h2 Setup and reproduce machine configuration &amp; data
     // h2 From {sysconf} to {gitted}
     p This {b Free Software project} began as a research projet by {ext=http://www.geonef.fr/) Geonef}. The {sysconf} script was released in early 2014 as a helper tool for managing {b configuration files across systems} using the minimalist {a(href=reference/sysconf-spec/) symlink pattern convention}. Then {sysconf-target} was written to help setting up {sysconf} on {b remote systems} while being capable of {b auto-creating containers} and virtual machines.
     p {gitted} does another job: {b import/export machine state} as Git branches. It features push-to-deploy and pull-to-backup on various state data like databases or local directories (see: {a(href=reference/gitted/state-drivers/) Gitted drivers}). {gitted-target} is to {gitted} what {sysconf-target} is to Sysconf: manage a remote {gitted} system and git-pull-push its data.
@@ -42,12 +48,12 @@ page
     section
       // h3 Define and setup a machine with {sysconf}
       h3 {sysconf}: define and setup a machine
-      p The {a(href=reference/sysconf/directory/) Sysconf directory convention} defines a directory structure similar to {e Dockerfile}’s or {e .deb} archives in the way to package the files that are installed on the target system and the setup scripts which run the commands needed to configure the system. Check the {ext(href=//github.com/sysconf/gitted.gitted-io) Sysconf profile of this gitted.io website} as an example.
+      p The {a(href=reference/sysconf/directory/) Sysconf directory convention} defines a directory structure similar to {e Dockerfile}’s or {e .deb} for packaging files that are installed on the target system and the setup scripts which run the commands needed to configure the system. Check the {ext(href=//github.com/sysconf/gitted.gitted-io) Sysconf profile of this gitted.io website} as an example.
       section.examples
         h4 Examples
         ul
-          li {e sysconf update}: setup or fix the system after sysconf
-          li {e sysconf add /usr/bin/custom-script}: add a custom script as managed by sysconf
+          li {e sysconf update} – setup or fix the system after sysconf
+          li {e sysconf add /usr/bin/custom-script} – add a custom script to be managed by sysconf
 
       // p A Sysconf profile (directory) is a collection of different {i Sysconf layers}, that may be shared with other sysconf profiles. As an example, checkout the {ext(href=//github.com/sysconf/gitted.gitted-io) Sysconf profile of this gitted.io website}.
       // p The {i system} Sysconf directory is located at {e /sysconf} and is orga
@@ -55,6 +61,8 @@ page
 
     section
       h3 {sysconf-target}: access &amp; deploy machines
+      p While {sysconf} has minimal functionality to work on the local system, {sysconf-target} provides a common interface to {a(href=reference/sysconf-target/init/) intialize} and {a(href=reference/sysconf-target/attach/) run commands} on a given remote or virtualized target.
+      p This single script contains various {a(href=reference/sysconf-target/#drivers) target drivers}, among which: {target-driver ssh}, {target-driver lxc}, {target-driver docker}
       // h3 Access &amp; deploy machines with {sysconf-target}
 
     section
