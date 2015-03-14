@@ -167,8 +167,8 @@
 // "q" wraps content with English quotes (with CSS "content")
 :: q {span.quote {:through}}
 
-// "path" for directory and file path
-:: path {span.path {:through}}
+// "e" like "expression": file path, variable name, command pipe, etc.
+:: e {span.expr {:through}}
 
 // Make an external link (attribute "href" must be provided)
 :: ext {a(target=_blank) {:through}}

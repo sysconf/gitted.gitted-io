@@ -28,9 +28,9 @@ li { margin: 0.5em; }
 /* "stopf" stoppe le float */
 .stopf:after { clear: both; content: "."; display: block; line-height: 0; visibility: hidden; }
 /* "orange" est commun avec "publication h2" plus bas */
-.orange { color: #ff6b20; }
 .quote:before { content: "“" }
 .quote:after { content: "”" }
+.expr { color: #fff; font-family: monospace; padding: 0 3px; }
 .center { text-align: center; }
 .band { text-align: center; }
 /* .band.link:hover { box-shadow: 0 0 10px 5px #D7E2E4; background: #D7E2E4; } */
