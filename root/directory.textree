@@ -83,14 +83,12 @@
   footer.site
     span
       a(href=//github.com/sysconf/gitted.gitted-io) Improve this website
-    span
-      a(href=#) Back to top
+    span.fsep
     span
       a(href=//creativecommons.org/licenses/by-nc-sa/4.0/) Content under Creative Commons CC BY NC SA
-  //   section.b200
-  //     h2 Example category
-  //     ul
-  //       li {a(href=/url1) Link name}
+    span.fsep
+    span
+      a(href=#) Back to top
 
 :: bg
   div.bg
