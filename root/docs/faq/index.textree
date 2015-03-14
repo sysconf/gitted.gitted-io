@@ -13,10 +13,10 @@ page FAQ-Gitted
       //   :: answer += /*/
       :through
       section
-        :: question
-          :through
+        :: question {:through}
+        :: answer {:through}
         h3
-          :through question
+          :through question {i lalal}
           p
             :through answer
 
