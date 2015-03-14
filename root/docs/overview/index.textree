@@ -1,0 +1,143 @@
+page Overview of Sysconf/Gitted
+
+  site-header Overview
+
+  h1 4 bash scripts to rule them all...
+
+  section
+    // h3 Define and setup a machine with {sysconf}
+    h3 {sysconf}: define and setup a machine
+    p The {a(href=reference/sysconf/directory/) Sysconf directory convention} defines a directory structure similar to {e Dockerfile}’s or {e .deb} for packaging files that are installed on the target system and the setup scripts which run the commands needed to configure the system. Check the {ext(href=//github.com/sysconf/gitted.gitted-io) Sysconf profile of this gitted.io website} as an example.
+    section.examples
+      h4 Examples:
+      ul.compact
+        li
+          e
+            a(href=reference/sysconf/update/) sysconf update
+          | — setup or fix the system after sysconf
+        // li {e sysconf update} – setup or fix the system after sysconf
+        li
+          e
+            a(href=reference/sysconf/add/) sysconf add
+            | /usr/bin/custom-script
+          | — add a custom script to be managed by sysconf
+
+    // p A Sysconf profile (directory) is a collection of different {i Sysconf layers}, that may be shared with other sysconf profiles. As an example, checkout the {ext(href=//github.com/sysconf/gitted.gitted-io) Sysconf profile of this gitted.io website}.
+    // p The {i system} Sysconf directory is located at {e /sysconf} and is orga
+    // p The {e sysconf/} directory can be installed at the {i system} level at {e /sysconf}, at the user HOME level at {e ~/sysconf} or for any purpose at any location. From there, symbolic links are created on the target tree that point towards to original files in {e sysconf/}. For example, a system-wide Sysconf with the sysconf.base layer will setup {e /usr/bin/sysconf} as a symlink to {e /sysconf/sysconf.base/tree/usr/bin/sysconf}.
+
+  section
+    h3 {sysconf-target}: access &amp; deploy machines
+    p While {sysconf} has minimal functionality to work on the local system, {sysconf-target} provides a common interface to {a(href=reference/sysconf-target/init/) intialize} and {a(href=reference/sysconf-target/attach/) run commands} on a given remote or virtualized target. This single script contains various {a(href=reference/sysconf-target/#drivers) target drivers} like {target-driver ssh}, {target-driver lxc}, {target-driver docker} and others.
+    section.examples
+      h4 Examples:
+      ul.compact
+        li
+          e
+            a(href=reference/sysconf-target/init/) sysconf-target init
+            a(href=reference/sysconf-target/driver-ssh/)  ssh:
+            |root@server.com .
+          | — setup sysconf on the remote SSH host from current sysconf dir
+        li
+          e
+            a(href=reference/sysconf-target/attach/) sysconf-target attach
+            a(href=reference/sysconf-target/driver-ssh/)  ssh:
+            |myhost -- COMMAND
+          | — run {e COMMAND} on SSH host {e myhost}
+        li
+          e
+            a(href=reference/sysconf-target/status/) sysconf-target status
+            a(href=reference/sysconf-target/driver-ssh/)  ssh:
+            |myhost
+          | — check Sysconf install and system status for SSH host {e myhost}
+        li
+          e
+            a(href=reference/sysconf-target/init/) sysconf-target init
+            a(href=reference/sysconf-target/driver-lxc/)  lxc:
+            |mycont /path/to/sysconf
+          | — {ext(href=https://linuxcontainers.org/lxc/manpages/man1/lxc-create.1.html) lxc-create(1)} the container {e mycont} with the given sysconf directory
+        li
+          e
+            a(href=reference/sysconf-target/attach/) sysconf-target attach
+            a(href=reference/sysconf-target/driver-ssh/)  lxc:
+            |mycont -- COMMAND
+          | — {ext(href=https://linuxcontainers.org/lxc/manpages/man1/lxc-attach.1.html) lxc-attach(1)} {e COMMAND} on container {e mycont}
+        li
+          e
+            a(href=reference/sysconf-target/init/) sysconf-target init
+            a(href=reference/sysconf-target/driver-docker/)  docker:
+            |:myimage
+          | — build the {ext(href=https://docs.docker.com/userguide/dockerimages/) Docker image} tagged {e myimage}
+        li
+          e
+            a(href=reference/sysconf-target/init/) sysconf-target init
+            a(href=reference/sysconf-target/driver-dockerfile/)  dockerfile:
+            |/tmp/build/
+          | — generate {e /tmp/build/Dockerfile} with files
+
+  section
+    h3 {gitted}: import/export state data as Git branches
+    p A system becomes a {q Gitted system} when its Sysconf profile contains the {ext(href=//github.com/sysconf/sysconf.gitted) {e sysconf.gitted} layer}. The {gitted} command manages the synchronization between Git branches and the {i state drivers} which are dedicated to import/export a specific kind of data (MySQL, PostgreSQL, MongoDB, local dir, etc.) according to INI-style configuration in {e /etc/gitted/state/}.
+    p For example, {e /etc/gitted/state/www-data.config} defines the {i state branch} named {e www-data}, a Git branch that is kept in sync with the {e /var/www} directory.
+    // p Inspired by {ext(href=http://git-scm.com/) Git}, the 3 core commands are driver-specific:
+    h4 Examples:
+    ul.compact
+      li {a(href=reference/gitted/status/) {e gitted status}} — show if system state differs from the branch(es)
+      li {a(href=reference/gitted/commit/) {e gitted commit}} — export current state data to the Git branch
+      li {a(href=reference/gitted/reset/) {e gitted reset}} — reset current state data after given Git commit
+    p Other commands are for management and Git interfacing (for the {gitted-target} client, especially):
+    ul.compact
+      li {a(href=reference/gitted/init/) {e gitted init}} — initialize/fix local Gitted system and drivers
+      li {a(href=reference/gitted/git-remote-commands/) {e gitted git-receive-pack}} — wraps {ext(href=http://git-scm.com/docs/git-receive-pack) {e git-receive-pack}}
+      li {a(href=reference/gitted/git-remote-commands/) {e gitted git-upload-pack}} — wraps {ext(href=http://git-scm.com/docs/git-upload-pack) {e git-upload-pack}}
+
+  section
+    h3 {gitted-target}: Git push-to-deploy and pull-to-backup
+    p The {gitted-target} command uses {sysconf-target} to run the {e gitted} command on a specific target. It will create containers or vritual machines on the fly, as supported by {sysconf-target}. It also provides a local {e init} command which configures a local {e git ted} aliase and proper remote for easy Git fetch &amp; push operations.
+    h4 Examples:
+    ul.compact
+        li
+          e
+            a(href=reference/gitted-target/init/) gitted-target init
+            a(href=reference/sysconf-target/driver-lxc/)  lxc:
+            |mycont
+          | — {ext(href=https://linuxcontainers.org/lxc/manpages/man1/lxc-create.1.html) lxc-create(1)} the container {e mycont} and register it as a Git remote
+        li
+          e
+            a(href=reference/gitted-target/remote-commands/) gitted-target status
+            a(href=reference/sysconf-target/driver-lxc/)  lxc:
+            |other '**'
+          | — show detailed status for all configured state branches, on LXC container {e other}
+        li
+          e
+            a(href=reference/gitted-target/remote-commands/) gitted-target status
+          | — show summary status for all configured state branches for the upstream remote of the current Git branch (as configure by {e git branch --set-upstream-to})
+        li
+          e
+            a(href=reference/gitted-target/remote-commands/) gitted-target reset
+            | mysql --hard
+          | — reset the MySQL database after the dumps stored in current {e mysql} branch
+        li
+          e
+            a(href=reference/gitted-target/remote-commands/) gitted-target commit
+            | mysql
+          | — export MySQL data to a Git commit and update the {e mysql} branch
+        li
+          e
+            a(href=reference/gitted-target/remote-commands/) gitted-target commit
+            | mysql sysconf/master
+          | — commit both states (MySQL data and {e /sysconf} master branch) to their respective Gitted branches
+        li
+          e
+            | git fetch {a(href=reference/gitted-target/url-scheme/) gitted:
+            a(href=reference/sysconf-target/driver-lxc/) lxc:
+            |mycont
+          | — fetch branches from the Gitted LXC container {e mycont}
+        li
+          e
+            | git push {a(href=reference/gitted-target/url-scheme/) gitted:
+            a(href=reference/sysconf-target/driver-ssh/) ssh:
+            |USER@HOST sysconf/master mysql
+          | — push branches to Gitted SSH host and update Sysconf &amp; MySQL database
+
+:end
