@@ -21,6 +21,7 @@ header, section, footer { position: relative; }
 img { border: 0; }
 ul { padding: 0 0 0 1em; }
 li { margin: 0.5em; }
+ul.compact > li { margin: 0 0 0 0.5em; }
 /* section { margin: 40px 0 0; padding: 15px 0; } */
 
 /* Classes communes */
