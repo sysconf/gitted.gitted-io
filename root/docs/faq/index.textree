@@ -35,8 +35,9 @@ page FAQ-Gitted
   site-header
 
   article
+    :: item
+      :through
     :each item in items
-
       :through item
 
     // :: item
