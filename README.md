@@ -15,7 +15,7 @@ using 2 branches:
 
 * _[textree](https://github.com/sysconf/gitted.gitted-io/tree/textree)_
   for the website content, powered by the
-  [textree text processor](https://github.com/geonef/sysconf.textree/)
+  [Textree text processor](https://github.com/geonef/sysconf.textree/)
   to render into HTML.
 
 
@@ -32,7 +32,8 @@ http://github.com/sysconf/gitted.gitted-io
 You may need to ```apt-get install git lxc``` if not present on your
 system already. Then run, as an priviledged user:
 ```
-git https://github.com/sysconf/gitted.gitted-io.git && cd gitted.gitted-io
+git clone https://github.com/sysconf/gitted.gitted-io.git
+cd gitted.gitted-io
 ./gitted-target init lxc:gitted-io
 git push gitted-io sysconf/master textree
 ```
@@ -58,7 +59,7 @@ git subtree pull -P sysconf.gitted git@github.com:geonef/sysconf.gitted.git mast
 git subtree pull -P sysconf.textree git@github.com:geonef/sysconf.textree.git master
 ```
 
-To push updated of the different Sysconf layers to their GitHub upstream:
+To push updates of the different Sysconf layers to their GitHub upstream:
 ```
 git subtree push -P sysconf.base git@github.com:geonef/sysconf.base.git master
 git subtree push -P sysconf.gitted git@github.com:geonef/sysconf.gitted.git master
