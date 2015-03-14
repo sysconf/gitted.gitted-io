@@ -59,7 +59,6 @@ header.site .sep:before { content: "»" /*"》"*/; padding: 0 10px; }
 footer.site { text-align: center; padding: 0.2em 0 1em; }
 footer.site .fsep:before { content: "—"; padding: 0 1em; }
 
-
 /******************************************************************************
  ** Width-specific and density-specific rules
  **/
