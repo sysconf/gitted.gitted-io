@@ -168,7 +168,7 @@ page
           li
             e
               | git fetch {a(href=reference/gitted-target/url-scheme/) gitted:
-              a(href=reference/sysconf-target/driver-lxc/)  lxc:
+              a(href=reference/sysconf-target/driver-lxc/) lxc:
               |mycont
             | — fetch branches from the Gitted LXC container {e mycont}
 
