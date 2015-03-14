@@ -52,7 +52,7 @@ a.through { color: inherit; display: block; }
 
 
 /* Element layout communs */
-/*body.page > section, article > section, article > nav*/ .plain { margin: 1em; padding: 1em; background: #162323; }
+body.page > section, article > section, article > nav { margin: 1em; padding: 1em; background: #162323; }
 /* body.page > section > section + section { margin-top: 2em; } */
 header.site { background: #0b433c /*turquoise=3e2544*/; padding: 0; }
 header.site > h1 { font-size: 2em; padding: 0.5em; /*line-height: .9em;*/ }
