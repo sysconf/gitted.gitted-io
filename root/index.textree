@@ -92,12 +92,12 @@ page
             | – {ext(href=https://linuxcontainers.org/lxc/manpages/man1/lxc-attach.1.html) lxc-attach(1)} {e COMMAND} on container {e mycont}
           li
             e
-              a(href=reference/sysconf-target/status/) sysconf-target init
+              a(href=reference/sysconf-target/init/) sysconf-target init
               | docker::myimage
             | – build the {ext(href=https://docs.docker.com/userguide/dockerimages/) Docker image} tagged {e myimage}
           li
             e
-              a(href=reference/sysconf-target/status/) sysconf-target init
+              a(href=reference/sysconf-target/init/) sysconf-target init
               | dockerfile:/tmp/build/
             | – generate {e /tmp/build/Dockerfile} with files
 
