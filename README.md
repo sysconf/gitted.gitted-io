@@ -6,10 +6,17 @@
   [sysconf/master](https://github.com/sysconf/gitted.gitted-io/tree/sysconf/master)
   branch*
 
-This *Git repository* is also a *Gitted repository* which, together
-with the
-[_sysconf/master_ branch](https://github.com/sysconf/gitted.gitted-io/tree/sysconf/master),
-embeds the full definition of the gitted.io website server.
+This *Git repository* is also a *Gitted repository* which embeds the
+full definition of the [gitted.io](http://gitted.io/) website server
+using 2 branches:
+
+* _[sysconf/master](https://github.com/sysconf/gitted.gitted-io/tree/sysconf/master)_
+  for the Sysconf definition of the website server
+
+* _[textree](https://github.com/sysconf/gitted.gitted-io/tree/textree)_
+  for the website content, powered by the
+  [textree text processor](https://github.com/geonef/sysconf.textree/)
+  to render into HTML.
 
 The official upstream repository is hosted on GitHub:
 http://github.com/sysconf/gitted.gitted-io
