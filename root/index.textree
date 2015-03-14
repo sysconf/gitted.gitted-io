@@ -28,7 +28,9 @@ page
 
     section.half
       h3 {sysconf}{br}Define and setup a machine
-      h4
+      h4 Simple convention to gather common files
+      h4 Works with /etc, /usr/* and everything, actually
+      h4 Made for both production deployment and dev work
 
     section.half
       h3 {sysconf-target}{br}Access &amp; deploy machines
@@ -40,6 +42,7 @@ page
 
     section.half
       h3 {gitted-target}{br}Push-to-deploy and fetch-to-backup
+      h4 Use Gitted as a Git remote
       h4
 
   section
