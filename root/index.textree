@@ -14,7 +14,7 @@
 page
   css.
     // #reference { text-align: right; }
-    // #reference section.examples { text-align: left; }
+    // #reference > section { ; }
 
   site-header
 
@@ -28,7 +28,7 @@ page
 
   section#reference
     h2 4 bash scripts to rule them all...
-    section
+    section.b400
       // h3 Define and setup a machine with {sysconf}
       h3 {sysconf}: define and setup a machine
       p The {a(href=reference/sysconf/directory/) Sysconf directory convention} defines a directory structure similar to {e Dockerfile}’s or {e .deb} for packaging files that are installed on the target system and the setup scripts which run the commands needed to configure the system. Check the {ext(href=//github.com/sysconf/gitted.gitted-io) Sysconf profile of this gitted.io website} as an example.
@@ -50,7 +50,7 @@ page
       // p The {i system} Sysconf directory is located at {e /sysconf} and is orga
       // p The {e sysconf/} directory can be installed at the {i system} level at {e /sysconf}, at the user HOME level at {e ~/sysconf} or for any purpose at any location. From there, symbolic links are created on the target tree that point towards to original files in {e sysconf/}. For example, a system-wide Sysconf with the sysconf.base layer will setup {e /usr/bin/sysconf} as a symlink to {e /sysconf/sysconf.base/tree/usr/bin/sysconf}.
 
-    section
+    section.b400
       h3 {sysconf-target}: access &amp; deploy machines
       p While {sysconf} has minimal functionality to work on the local system, {sysconf-target} provides a common interface to {a(href=reference/sysconf-target/init/) intialize} and {a(href=reference/sysconf-target/attach/) run commands} on a given remote or virtualized target. This single script contains various {a(href=reference/sysconf-target/#drivers) target drivers} like {target-driver ssh}, {target-driver lxc}, {target-driver docker} and others.
       section.examples
@@ -99,7 +99,7 @@ page
               |/tmp/build/
             | — generate {e /tmp/build/Dockerfile} with files
 
-    section
+    section.b400
       h3 {gitted}: import/export state data as Git branches
       p A system becomes a {q Gitted system} when its Sysconf profile contains the {ext(href=//github.com/sysconf/sysconf.gitted) {e sysconf.gitted} layer}. The {gitted} command manages the synchronization between Git branches and the {i state drivers} which are dedicated to import/export a specific kind of data (MySQL, PostgreSQL, MongoDB, local dir, etc.) according to INI-style configuration in {e /etc/gitted/state/}.
       p For example, {e /etc/gitted/state/www-data.config} defines the {i state branch} named {e www-data}, a Git branch that is kept in sync with the {e /var/www} directory.
@@ -115,7 +115,7 @@ page
         li {a(href=reference/gitted/git-remote-commands/) {e gitted git-receive-pack}} — wraps {ext(href=http://git-scm.com/docs/git-receive-pack) {e git-receive-pack}}
         li {a(href=reference/gitted/git-remote-commands/) {e gitted git-upload-pack}} — wraps {ext(href=http://git-scm.com/docs/git-upload-pack) {e git-upload-pack}}
 
-    section
+    section.b400
       h3 {gitted-target}: Git push-to-deploy and pull-to-backup
       p The {gitted-target} command uses {sysconf-target} to run the {e gitted} command on a specific target. It will create containers or vritual machines on the fly, as supported by {sysconf-target}. It also provides a local {e init} command which configures a local {e git ted} aliase and proper remote for easy Git fetch &amp; push operations.
       h4 Examples:
