@@ -1,0 +1,67 @@
+page gitted reset-reference
+
+  site-header {e reset}
+
+  section
+    h2 Usage instructions
+    p.expr
+      | usage: gitted reset  &lt;state branches&gt;  [--to &lt;commit&gt;] [&lt;mode&gt;]
+    p.expr
+      | WORK STATE COMMAND:
+      | Reset the work state of &lt;state branch&gt; to the state of given Git commit
+    p.expr
+      | Works like git-reset(1) except there is no staging index. The Git "working tree" is
+      | like the Gitted "working state" whose type depend on the driver (sysconf, mysql, etc.).
+    p.expr
+      | When --to &lt;commit&gt; is used, &lt;state branches&gt; must expand to a single branch
+      | which is updated to point to &lt;commit&gt;. If &lt;mode&gt; is different from --soft,
+      | an attempt is made to update the working state to &lt;commit&gt;, behaving according
+      | to &lt;mode&gt; like explained below.
+    p.expr
+      | The &lt;mode&gt; must be one of the following, or defaults to --keep:
+    p.expr
+      |   --soft
+      |       Do not update the working state, update Git branch ref only.
+      |       Working state is ignored. In this mode, &lt;commit&gt; needs to be different
+      |       from branch HEAD or the command will warn there is "nothing to do".
+    p.expr
+      |       Doing this and then "gitted commit" will save the current state onto
+      |       the commit given to "gitted reset".
+    p.expr
+      |       Use while pushing to accept the next push on &lt;state branch&gt; like pure Git.
+    p.expr
+      |   --hard
+      |       Reinitialize working state from given &lt;commit&gt; or HEAD.
+      |       Any changes are lost (use "gitted status" for checking).
+    p.expr
+      |       Use while pushing to &lt;state branch&gt; to fully overwrite the working state.
+    p.expr
+      |   --keep
+      |       If the working state had not changed since HEAD, update it from the new
+      |       &lt;commit&gt; and update the Git branch ref.
+      |       If any change is to be committed, fail with error and do not update the Git branch.
+    p.expr
+      |   --merge
+      |       Ask the state driver to make a smart, but safe, merge of the working state
+      |       with the changes from current HEAD to &lt;commit&gt;.
+    p.expr
+      |       It is up to the driver how the merge is made and what is a conflict.
+    p.expr
+      |       For example, MySQL state changes may affect some tables while other
+      |       tables can be updated to new HEAD.
+    p.expr
+      |       Use while pushing on &lt;state branch&gt; to get a "smarter" behaviour, by
+      |       trying to merge the push instead of rejecting it in case of "dirty state".
+    p.expr
+      | Options can be given at any position:
+    p.expr
+      |   --to &lt;commit&gt;
+      |       Reset branch working state to &lt;commit&gt; instead of current branch value
+    p.expr
+      |   --state-only
+      |       Do not update branch ref, just act on state. Incompatible with --soft,
+      |       which does the opposite.
+
+  site-footer
+
+:end

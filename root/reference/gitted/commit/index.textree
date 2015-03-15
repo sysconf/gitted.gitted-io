@@ -1,0 +1,65 @@
+page gitted commit-reference
+
+  site-header {e commit}
+
+  section
+    h2 Usage instructions
+    p.expr
+      | usage: gitted commit  &lt;state branches&gt;  [-m &lt;message&gt;]
+    p.expr
+      | WORK STATE COMMAND:
+      | Commit state from driver(s) to the Git branch(es)
+    p.expr
+      | For each &lt;state branch&gt; provided, request the driver to turn the present state
+      | into a Git commit and update the branch in /local.repository.git/refs/heads/.
+    p.expr
+      | Depending on the driver, the state can be a live database, a local directory,
+      | rotated logs, etc.
+    p.expr
+      | Each &lt;state branch&gt; may contain "*" or "**" wildcards, causing wildcard
+      | expansion to be performed:
+    p.expr
+      |   "*"   Where present, a single-star will match one or more directory components
+      |         through the existing refs in the repository refs/heads/.
+      |         Ex: "*/sysconf" will match both "state/sysconf" and "state/sub/sysconf".
+    p.expr
+      |   "**"  A double-star acts like a single-star except it will match branches against
+      |         the configuration instead of the existing refs. This is the recommanded
+      |         method to "commit all" from /etc/gitted/state, by doing: commit '**'
+    p.expr
+      |         Additionally, the double-star expansion will recurse into "driver domains"
+      |         where a config defines a *directory* of branches whose list if defined
+      |         by the driver (behaving like UNIX mounts).
+    p.expr
+      | All branches are updated in an atomic all-or-none operation: if any commit
+      | fails, the command fails too and no branch is updated, even if some commits
+      | were done with success. Commits are made in the same order as specified.
+    p.expr
+      | git-commit(1)-like options:
+    p.expr
+      |   --message &lt;msg&gt;, -m &lt;msg&gt;
+      |               Use the given &lt;msg&gt; as the commit message (like 'git commit -m').
+      |               The same message is used to commit each &lt;state branch&gt;. To use a
+      |               different message, run 'gitted commit -m' on each branch with a
+      |               specific message.
+    p.expr
+      |   --author &lt;author&gt;
+      |               Override the author as specified in the state branch
+      |               configuration or defaults to git-config "user.name" and "user.email"
+    p.expr
+      |   --allow-empty
+      |               Create a commit even if no change (same as "git commit --allow-empty")
+    p.expr
+      | Other options:
+    p.expr
+      |   --existing
+      |               Never create a branch which does not exist already in Git,
+      |               fails with error instead.
+    p.expr
+      |   --stdout
+      |               Print successful commits on stdout, in plain lines in the form:
+      |               &lt;branch&gt; 0cd54dedcda4d07fa48d24d54e55bc2098698c8e
+
+  site-footer
+
+:end

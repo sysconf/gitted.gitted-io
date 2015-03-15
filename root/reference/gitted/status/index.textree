@@ -1,0 +1,60 @@
+page gitted status-reference
+
+  site-header {e status}
+
+  section
+    h2 Usage instructions
+    p.expr
+      | usage: gitted status [&lt;state branches&gt;] [--quiet | --branches | --list | --diff]
+    p.expr
+      | WORK STATE COMMAND:
+      | Show status of configured state branch(es) in different view modes
+    p.expr
+      | Branch arguments are matched against the configuration from /etc/gitted/state/,
+      | which may exist or not as real Git branches in /local.repository.git/refs/heads/.
+    p.expr
+      | Giving no &lt;state branch&gt; expands to all branches from configuration (or all
+      | branches in Git’s refs/heads/ if --existing is set).
+    p.expr
+      | Each &lt;state branch&gt; may contain "*" or "**" wildcards, causing wildcard
+      | expansion to be performed:
+    p.expr
+      |   "*"   Where present, a single-star will match one or more directory components
+      |         through the existing refs in the repository refs/heads/.
+      |         Ex: "*/sysconf" will match both "state/sysconf" and "state/sub/sysconf".
+    p.expr
+      |   "**"  A double-star acts like a single-star except it will match branches against
+      |         the configuration instead of the existing refs. This is the recommanded
+      |         method to list the "logical branches" from /etc/gitted/state.
+    p.expr
+      |         Additionally, the double-star expansion will recurse into "driver domains"
+      |         where a config defines a *directory* of branches whose list if defined
+      |         by the driver (behaving like UNIX mounts).
+    p.expr
+      | Options can be given at any position:
+    p.expr
+      |   -vq, --quiet
+      |               Do not ouput anything, just return status code 0 if clean, 1 if dirty
+    p.expr
+      |   -vb, --branches
+      |               Print the list of branches with a status letter like 'git status'
+      |               does: (space)/M/A/D for (clean/edited/added/deleted).
+      |               This is the default with no &lt;state branch&gt; is given.
+    p.expr
+      |   -vl, --list
+      |               List state-level differences from branch to working state, in a
+      |               format similar to 'git status --porcelain'.
+      |               This is the default when &lt;state branch&gt; is given.
+    p.expr
+      |   -vd, --diff
+      |               Show full differences from branch to work state. The format
+      |               will vary across drivers, be it like 'git diff' or whatever.
+      |               Some drivers won’t support it and will print a --list instead.
+    p.expr
+      |   --ref &lt;commit&gt;
+      |               Use &lt;commit&gt; as the base of comparison, instead of current branch value.
+      |               &lt;commit&gt; must resolve to a valid Git commit (can be a branch or ref name).
+
+  site-footer
+
+:end

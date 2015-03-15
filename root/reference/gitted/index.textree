@@ -16,8 +16,8 @@ page Gitted-reference
       | This is the server, responsible for managing system state around a central repository
       | located at: /local/repository.git.
     p.expr
-      | IO are defined in /etc/gitted/state/ where the state branch <name> is defined
-      | by a <name>.conf file. See examples in /usr/share/doc/gitted/state.examples/.
+      | IO are defined in /etc/gitted/state/ where the state branch &lt;name&gt; is defined
+      | by a &lt;name&gt;.conf file. See examples in /usr/share/doc/gitted/state.examples/.
     p.expr
       | State drivers are usually found in /usr/lib/gitted (driver-sysconf, driver-mysql, etc.)
     p.expr
@@ -25,9 +25,9 @@ page Gitted-reference
     p.expr
       | WORK STATE COMMANDS
     p.expr
-      |     status	[<state branches>] [--quiet | --branches | --list | --diff]
-      |     commit	 <state branches>  [-m <message>]
-      |     reset	 <state branches>  [--to <commit>] [<mode>]
+      |     {a(href=status/) status}	[&lt;state branches&gt;] [--quiet | --branches | --list | --diff]
+      |     {a(href=commit/) commit}	 &lt;state branches&gt;  [-m &lt;message&gt;]
+      |     {a(href=reset/) reset}	 &lt;state branches&gt;  [--to &lt;commit&gt;] [&lt;mode&gt;]
     p.expr
       | MANAGEMENT COMMANDS
     p.expr
@@ -38,7 +38,7 @@ page Gitted-reference
       |     git-upload-pack
       |     git-receive-pack
       |     git-hook-pre-receive
-      |     git-hook-update	<ref-name> <old-commit> <new-commit>
+      |     git-hook-update	&lt;ref-name&gt; &lt;old-commit&gt; &lt;new-commit&gt;
     p.expr
       | OTHER COMMANDS
     p.expr
