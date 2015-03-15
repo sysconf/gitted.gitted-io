@@ -28,7 +28,7 @@ page
             // li {ext(href=https://github.com/sysconf/sysconf.base/blob/master/tree/usr/bin/sysconf-target) Direct link} to {e bin/sysconf-target}
     :: s {span.source [{ext {:through}source}]}
     section.half
-      h3 {sysconf}{s https://github.com/sysconf/sysconf.base/blob/master/tree/usr/bin/sysconf}{br}Define and setup a machine
+      h3 {sysconf}{s(href=https://github.com/sysconf/sysconf.base/blob/master/tree/usr/bin/sysconf)}{br}Define and setup a machine
       h4 A {a(href=reference/sysconf/convention/) simple convention} for packaging common files
       h4 No abstraction. Works with symbolic links only.
       h4 Designed for production server as well as home use
