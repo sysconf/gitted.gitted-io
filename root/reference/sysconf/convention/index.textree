@@ -76,4 +76,6 @@ page Sysconf convention
       li {e /etc/gitconfig} out of {e /etc/gitconfig.d/*.gitconfig}
     p Other files can be acted upon, when specified through a {e .meta.conf} file in {e /etc/sysconf/etc.d}: see {e etc/sysconf/etc.d/README.md} for more information.
 
+  site-footer
+
 :end
