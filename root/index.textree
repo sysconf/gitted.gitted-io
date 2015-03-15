@@ -36,9 +36,9 @@ page
 
     section.half
       h3 {sysconf-target}{br}Access &amp; deploy machines
-      h4 Run command on multiple targets
-      h4 Multiple target drivers: local, ssh, lxc, docker...
-      h4 Create containers or initialize running machines
+      h4 Multiple {a(href=/reference/sysconf-target/#drivers) target drivers}: local, ssh, lxc, docker...
+      h4 Run commands or setup {sysconf} on target
+      h4 Auto-create containers and virtual machines
 
     section.half
       h3 {gitted}{br}Import/export state as Git data
@@ -63,8 +63,11 @@ page
 
     section#status.half
       h2 Project status &amp; support
-      ul
-        li {a(href=contribute/) How to contribute}
+      p The Gitted project is relatively new. It has been used since October, 2014 on (small) production servers but {sysconf-target} has been written and {gitted} rewritten in February 2015 after some design changes.
+      p {sysconf} has been {b stable} for a long time, which is not surprising given its simplicity.
+      p Any feedback is much welcome! Use Github to communicate with {ext(href=//github.com/jfgigand) the author}
+      // ul
+      //   li {a(href=contribute/) How to contribute}
 
   //////////////////////////////////////////////////////////////////////
 
