@@ -69,6 +69,8 @@ page
             li {ext(href=https://github.com/sysconf/sysconf.gitted/blob/master/tree/usr/bin/gitted) Direct link} to {e bin/gitted}
             li {ext(href=https://github.com/sysconf/sysconf.base/blob/master/tree/usr/bin/gitted-target) Direct link} to {e bin/gitted-target}
 
+      h3 Sources of this {e gitted.io} website
+      ul
         li The sources of this {a(href=/) gitted.io} website are {ext(href=http://github.com/sysconf/gitted.gitted-io/tree/textree) available on GitHub}. The repository comes with 2 branches:
           ul
             li {ext(href=http://github.com/sysconf/gitted.gitted-io/tree/sysconf/master) {e sysconf/master}} for the Sysconf profile of the server running the website
