@@ -71,8 +71,9 @@
       a.logo(href=/) Gitted I/O
       span.sep
       :var _url = ""
-      :each component in title_components
+      :each component, idx in title_components
         :eval _url = _url + "../"
+        :var _url = "../".repeat(2)
         a
           = 1 && \{ type: "attr", name: "href", value: _url \}
           = component
