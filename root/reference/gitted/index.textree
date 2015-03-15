@@ -1,0 +1,49 @@
+:eval title_components.pop()
+
+page Gitted-reference
+
+  site-header {e gitted}
+
+  section
+    h2 Usage instructions
+    p.expr
+      | gitted - manage the Gitted system like a Git repository -- http://gitted.net
+    p.expr
+      | Gitted is a shell framework that turn a UNIX system into a Git repository
+      | where the machine state is seen as a "Git work data" which can be
+      | checked out/commited from/to Git branches (the "state branches").
+    p.expr
+      | This is the server, responsible for managing system state around a central repository
+      | located at: /local/repository.git.
+    p.expr
+      | IO are defined in /etc/gitted/state/ where the state branch <name> is defined
+      | by a <name>.conf file. See examples in /usr/share/doc/gitted/state.examples/.
+    p.expr
+      | State drivers are usually found in /usr/lib/gitted (driver-sysconf, driver-mysql, etc.)
+    p.expr
+      | Add -h or --help to any command for detailed information.
+    p.expr
+      | WORK STATE COMMANDS
+    p.expr
+      |     status	[<state branches>] [--quiet | --branches | --list | --diff]
+      |     commit	 <state branches>  [-m <message>]
+      |     reset	 <state branches>  [--to <commit>] [<mode>]
+    p.expr
+      | MANAGEMENT COMMANDS
+    p.expr
+      |     init
+    p.expr
+      | GIT INTEGRATION COMMANDS
+    p.expr
+      |     git-upload-pack
+      |     git-receive-pack
+      |     git-hook-pre-receive
+      |     git-hook-update	<ref-name> <old-commit> <new-commit>
+    p.expr
+      | OTHER COMMANDS
+    p.expr
+      |     help	[command]
+
+  site-footer
+
+:end
