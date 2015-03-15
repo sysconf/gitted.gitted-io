@@ -2,7 +2,7 @@
 :: items += /item/
 
 item
-  question Is Git mandatory? Can I use SubVersion, Bazaar or nothing at all?
+  question Is Git mandatory for Sysconf? Can I use SubVersion, Bazaar or nothing at all?
   answer
     p You are free. Sysconf is not tight with any version management system.
     p The logic of Sysconf defines how the /sysconf directory is organised, not how it should be versionned or synced.
