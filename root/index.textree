@@ -26,7 +26,7 @@ page
   section#reference
     h2 4 bash scripts to rule them all...
             // li {ext(href=https://github.com/sysconf/sysconf.base/blob/master/tree/usr/bin/sysconf-target) Direct link} to {e bin/sysconf-target}
-    :: s {span.source [{ext {:through}}]}
+    :: s {span.source [{ext {:through}source}]}
     section.half
       h3 {sysconf}{s https://github.com/sysconf/sysconf.base/blob/master/tree/usr/bin/sysconf}{br}Define and setup a machine
       h4 A {a(href=reference/sysconf/convention/) simple convention} for packaging common files
