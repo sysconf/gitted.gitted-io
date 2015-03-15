@@ -7,6 +7,7 @@
 
 page
   css.
+    #reference h2 { margin: 0; }
     #reference h3 { margin: 0.5em 0; }
     #reference h4 { font-size: 1.1em; font-weight: normal; margin: 0.2em 0; }
     #reference h4:before { content: "‣"; padding-right: 0.5em; font: 1.2em bold; }
