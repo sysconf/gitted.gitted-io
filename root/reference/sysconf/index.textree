@@ -13,7 +13,6 @@ page Sysconf
     p As a shell script, the sysconf tool provides commands to manipulate the /sysconf tree:
     p.expr.
       Usage: /usr/bin/sysconf [-options] &lt;command&gt; [-options] [command_args]
-
       Where &lt;command&gt; is one of:
 
       //     compile
