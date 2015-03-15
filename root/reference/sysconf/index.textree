@@ -11,10 +11,16 @@ page Sysconf
   section
     h2 Just a bash script
     p As a shell script, the sysconf tool provides commands to manipulate the /sysconf tree:
+    p.expr.
+      Usage: /usr/bin/sysconf [-options] &lt;command&gt; [-options] [command_args]
+
     p.expr
       | Usage: /usr/bin/sysconf [-options] &lt;command&gt; [-options] [command_args]
       |
       | Where &lt;command> is one of:
+      |
+      |     update
+      |         Perform the 3 operations at once: compile, install, setup
       |
       |     compile
       |         (re)populates the general "compiled" directory with symlinks
@@ -26,9 +32,6 @@ page Sysconf
       |
       |     setup
       |         Execute updates (setup.rc) for given config and recursive deps
-      |
-      |     update
-      |         Perform the 3 operations at once: compile, install, setup
       |
       |     add file_1 [file_2 [file_N]]
       | 	      Move given (real) files to CONFIG’s tree and replace them with a symlink.
