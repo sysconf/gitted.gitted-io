@@ -1,0 +1,32 @@
+page Sysconf-target
+
+  site-header {a(href=../) sysconf-target} attach
+
+  section
+    h2 Command line
+    p.expr
+      | usage: sysconf-target attach &lt;target&gt; { -c &lt;shell code> | [--] COMMAND ... }
+    p.expr
+      | Start target if needed and run the given command inside
+    p.expr
+      | Examples:
+      |   sysconf-target attach lxc:container -- ps aux
+      |   sysconf-target attach ssh:user@host -c "cd /some/path && ./server"
+    p.expr
+      | It is a pure EXEC command:
+      |   - return status code is the one that is returned by COMMAND
+      |   - stdin, stdout and stderr are all preserved
+      |   - for most drivers, the terminal is forwarded
+      |   - use "--" to make sure all following args are forwarded well
+      |   - to execute shell syntax code, use the -c option instead of explicit "sh -c"
+    p.expr
+      | Options can be given at any position:
+    p.expr
+      |   -c                  Code to run in a shell (like sh -c, see sh(1))
+      |                       (instead of a "physical" command)
+      |   --no-start          Don't start a stopped machine
+      |   --no-resume       Don't resume a paused machine
+
+  site-footer
+
+:end

@@ -1,10 +1,96 @@
 page Sysconf-target
 
-  site-header Sysconf-target
+  site-header {a(href=../) sysconf-target} init
 
   section
     h2 Main command line
     p.expr
+      | usage: sysconf-target init &lt;target&gt; [&lt;sysconf-dir&gt;]
+    p.expr
+      | Initialise &lt;target&gt; from &lt;sysconf-dir&gt;
+    p.expr
+      |   &lt;target&gt;            Target spec in the form of "driver:name"
+      |       More information about this on root help.
+    p.expr
+      |   &lt;sysconf-dir&gt; defaults to "." (current directory)
+      |       It is a local sysconf directory that is used to initialize target,
+      |       and copied to it using tar(1).
+    p.expr
+      |       If Git is available and &lt;sysconf-dir&gt; is a Git working dir,
+      |       the GIT SPECIAL BEHAVIOR is enabled unless --no-git is given.
+    p.expr
+      |       Instead of "tar c | attach tar x"’ing, what happens is:
+      |         1. if &lt;sysconf-dir&gt; differs from HEAD, show fatal error
+      |            unless --git-ignore-changes is given
+      |         2. a clone is made with the single branch
+      |         3. tar(1) is used to send it (with the .git and everything inside)
+    p.expr
+      | Options can be given at any position:
+    p.expr
+      |   --force, -f                         Overwrite existing /sysconf on target
+    p.expr
+      |   --no-copy                           Do not copy/fix sysconf
+    p.expr
+      |       It is useful to create a machine with a fresh distribution, as well
+      |       as patching an existing target with --force --custom &lt;...&gt;
+    p.expr
+      |   --no-install                        Do not install sysconf, just make the copy
+    p.expr
+      |   --no-setup                          Do not setup sysconf, just install it
+    p.expr
+      |   --no-git                            Disable the GIT SPECIAL BEHAVIOR
+      |       If &lt;sysconf-dir&gt; is the working dir of a Git repository,
+      |       &lt;sysconf-dir&gt; will be treated as a normal flat repository
+      |       instead of copying the whole Git history to the target.
+    p.expr
+      |   --git-ignore-changes                Keep using Git HEAD when dir or index is dirty.
+    p.expr
+      |   --git-ref &lt;name&gt;                    Enable PURE-Git for Sysconf source
+    p.expr
+      |       In this mode, &lt;sysconf-dir&gt; is expected to be a Git repository (either
+      |       bare, checked out, or somewhere in the working tree).
+      |       The index or working tree status, if any, is not checked at all.
+      |       Sysconf files are read from the commit specified by &lt;name&gt;.
+    p.expr
+      |   --git-target-branch &lt;name&gt;          Set HEAD branch name on target /sysconf
+      |       Default is "master".
+    p.expr
+      |   --distrib &lt;name&gt;[:&lt;release&gt;[:&lt;arch&gt;]]
+    p.expr
+      |       Override distribution spec from &lt;sysconf-dir&gt;/type.
+    p.expr
+      |       It is managed by the driver in its own specific ways
+      |       which can include caching at different levels.
+    p.expr
+      |         Driver "ssh": N/A
+      |         Driver "lxc": arg is parsed and given to lxc-create like:
+      |                       -t download -- -d &lt;distrib&gt; -r &lt;release&gt; -a &lt;arch&gt;
+      |        Examples:
+      |          --distrib debian:wheezy:amd64
+      |          --distrib ubuntu:precise             (arch is guessed from 'uname')
+      |          --distrib debian                     ('wheezy' is default for 'debian')
+    p.expr
+      |   --custom &lt;comma-separated&gt;          Apply custom settings to target
+      |      (multiple keys can be given separated with commas,
+      |       the --custom option can appear multiple times as well)
+    p.expr
+      |      Valid keys for --custom:
+    p.expr
+      |        "ssh-pubkey"   SSH public key of the running user is copied
+      |                       to ~root/.ssh/authorized_keys inside target
+    p.expr
+      |        "git-user"     Git config settings user.name and user.email are copied
+      |                       into ~root/.gitconfig inside target
+    p.expr
+      |        "lxc:unconfined"   Enable container to create nested containers,
+      |                       by adding "lxc.aa_profile = unconfined" to the container
+      |                       configuration. This is only supported by the LXC driver.
+      |                       Warning: this will make container processes able to escape
+      |                       escape the isolation; check: lxc.container.conf(5).
+    p.expr
+      |   --lxc-create-opts '&lt;options&gt;'       Pass &lt;options&gt; as arguments to lxc-create
+    p.expr
+      |        Example:  --lxc-create-opts "-B lvm --vgname vgname1 --fssize 4G"
 
   site-footer
 

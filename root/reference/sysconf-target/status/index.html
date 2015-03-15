@@ -1,0 +1,19 @@
+page Sysconf-target
+
+  site-header {a(href=../) sysconf-target} status
+
+  section
+    h2 Command line
+    p.expr
+      | usage: sysconf-target status &lt;target&gt; [--state] [--driver] [--system] [--sysconf]
+    p.expr
+      | Show the status of given target
+    p.expr
+      |   --state     Show (only) the target name and state
+      |   --driver    Show (only) target driver-specific information
+      |   --system    Show (only) target system informatioo
+      |   --sysconf   Show (only) target sysconf information
+      |
+  site-footer
+
+:end
