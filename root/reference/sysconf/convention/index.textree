@@ -56,4 +56,24 @@ page Sysconf convention
     p To do that, profiles may define an {e install.sh} file containing shell commands which are executed the command sysconf update.
     p For multiple profiles, the {e install.sh} scripts of the dependencies are executed before the {e install.sh} script of the profile that depend on them.
     p In other words, if {e A} depends on {e B}, the order will be: (1) {e /sysconf/sysconf.A/install.sh}, then (2) {e /sysconf/sysconf.B/install.sh} .
+
+
+  section
+    h2 Splitting config into config.d/*.config
+    p The conf.d pattern, widely used on the Debian GNU/Linux distribution among others, is about turning a configuration file (like conf) into a directory (like conf.d) where the config lies into multiple files.
+    p Where the pattern is enabled, it is easy to have sysconf-managed files, for example: /etc/nginx/sites-available/, /etc/logrotate.d/, etc.
+    p But there are programs distributed with a unique config file:
+    ul
+      li some allow include directives with wildcards: it is the case of /etc/network/interfaces to which we can add: source /etc/network/interfaces.d/*.interfaces;
+      li some allow include directives without wildcard: it is the case of /etc/gitconfig where included files need to be listed explicitely under the [include] section;
+      li some do not allow any includes anyway: it is the case of /etc/hosts which need to be updated in place with the concatenation of /etc/hosts/*.hosts.
+    p Once the mecanism is enabled for a particular file (for example, /etc/hosts), every Sysconf profile can take advantage of it by providing its specific config (/etc/hosts/profile-a.hosts for example) in a clean and non-obstrusive way.
+    p This is why Sysconf provides sysconf-etc.d, a generic tool that fix the required config files, which are by default:
+    ul
+      li {e /etc/hosts} out of {e /etc/hosts/*.hosts}
+      li {e /etc/ssh/ssh_config} out of {e /etc/ssh/ssh_config.d/*.ssh_config}
+      li {e /etc/ssh/sshd_config} out of {e /etc/ssh/sshd_config.d/*.sshd_config}
+      li {e /etc/gitconfig} out of {e /etc/gitconfig.d/*.gitconfig}
+    p Other files can be acted upon, when specified through a {e .meta.conf} file in {e /etc/sysconf/etc.d}: see {e etc/sysconf/etc.d/README.md} for more information.
+
 :end
