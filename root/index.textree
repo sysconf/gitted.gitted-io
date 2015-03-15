@@ -30,12 +30,6 @@ page
 
     :: title
     section.half
-      // title(gh=sysconf.base/blob/master/tree/usr/bin/sysconf)
-      // h3
-      //   span.source [{ext(href=https://github.com/sysconf/sysconf.base/blob/master/tree/usr/bin/sysconf) source code}]
-      //   sysconf
-      //   br
-      //   | Define and setup a machine
       h3 {sysconf}{span.source [{ext(href=https://github.com/sysconf/sysconf.base/blob/master/tree/usr/bin/sysconf) source code}]}{br}Define and setup a machine
       h4 A {a(href=reference/sysconf/convention/) simple convention} for packaging common files
       h4 No abstraction. Works with symbolic links only.
@@ -65,14 +59,7 @@ page
       h2 Download Sources &amp; Resources
       ul
         li {ext(href=https://github.com/sysconf/sysconf.base) GitHub repository} of the {e sysconf.base} layer containing Sysconf
-          ul.compact
-            li {ext(href=https://github.com/sysconf/sysconf.base/blob/master/tree/usr/bin/sysconf) Direct link} to {e bin/sysconf}
-            li {ext(href=https://github.com/sysconf/sysconf.base/blob/master/tree/usr/bin/sysconf-target) Direct link} to {e bin/sysconf-target}
-
         li {ext(href=https://github.com/sysconf/sysconf.gitted) GitHub repository} of the {e sysconf.gitted} layer containing Gitted
-          ul.compact
-            li {ext(href=https://github.com/sysconf/sysconf.gitted/blob/master/tree/usr/bin/gitted) Direct link} to {e bin/gitted}
-            li {ext(href=https://github.com/sysconf/sysconf.base/blob/master/tree/usr/bin/gitted-target) Direct link} to {e bin/gitted-target}
 
       h3 Sources of this {e gitted.io} website
       p The sources of this {a(href=/) gitted.io} website are {ext(href=http://github.com/sysconf/gitted.gitted-io/tree/textree) available on GitHub}. The repository comes with 2 branches:
