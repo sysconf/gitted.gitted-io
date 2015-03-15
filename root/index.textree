@@ -10,6 +10,7 @@ page
     #reference h2 { margin: 0; }
     #reference h3 { margin: 0.5em 0; }
     #reference h3 > a { font-weight: bold; }
+    #reference h3 .source { font-weight: normal; font-size: 0.4em; }
     #reference h4 { font-size: 1.1em; font-weight: normal; margin: 0.2em 0; }
     #reference h4:before { content: "‣"; padding-right: 0.5em; font: 1.2em bold; }
 
@@ -24,9 +25,10 @@ page
 
   section#reference
     h2 4 bash scripts to rule them all...
-
+            // li {ext(href=https://github.com/sysconf/sysconf.base/blob/master/tree/usr/bin/sysconf-target) Direct link} to {e bin/sysconf-target}
+    :: s {span.source [{ext {:through}}]}
     section.half
-      h3 {sysconf}{br}Define and setup a machine
+      h3 {sysconf}{s https://github.com/sysconf/sysconf.base/blob/master/tree/usr/bin/sysconf}{br}Define and setup a machine
       h4 A {a(href=reference/sysconf/convention/) simple convention} for packaging common files
       h4 No abstraction. Works with symbolic links only.
       h4 Designed for production server as well as home use
@@ -40,8 +42,8 @@ page
     section.half
       h3 {gitted}{br}Import/export state as Git data
       h4 Multiple {a(href=reference/gitted/state-drivers/) state drivers}: git-remote, local dir, databases...
-      h4 Data snapshots and restore whatever, whenever
-      h4 {sysconf} itself is synced like regular data, {i Sysconf being Gitted}
+      h4 Data snapshots to restore whatever, whenever
+      h4 {sysconf} itself is synced like regular data
 
     section.half
       h3 {gitted-target}{br}Push-to-deploy and fetch-to-backup
