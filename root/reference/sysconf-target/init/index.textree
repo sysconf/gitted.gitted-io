@@ -1,6 +1,6 @@
 page Sysconf-target
 
-  site-header {e {a(href=../) sysconf-target} init}
+  site-header {e init}
 
   section
     h2 Usage instructions

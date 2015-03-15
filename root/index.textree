@@ -49,7 +49,7 @@ page
 
     section.half
       h3 {gitted-target}{span.source [{ext(href=https://github.com/sysconf/sysconf.gitted/blob/master/tree/usr/bin/gitted-target) source code}]}{br}Push-to-deploy and fetch-to-backup
-      h4 Gitted as a git-remote: {e git fetch gitted:ssh:USER@HOST}
+      h4 Gitted as a git-remote: {e git fetch gitted:ssh:HOST}
       h4 Re-build machines, migrate data from one another
 
 

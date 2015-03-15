@@ -1,6 +1,6 @@
 page Sysconf-target
 
-  site-header {e {a(href=../) sysconf-target} attach}
+  site-header {e attach}
 
   section
     h2 Usage instructions

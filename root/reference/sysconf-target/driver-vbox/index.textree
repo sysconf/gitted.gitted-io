@@ -1,6 +1,6 @@
 page Sysconf-target
 
-  site-header {a(href=../) Sysconf-target} drivers{span.sep }VirtualBox
+  site-header VirtualBox driver
 
   section
     p.expr

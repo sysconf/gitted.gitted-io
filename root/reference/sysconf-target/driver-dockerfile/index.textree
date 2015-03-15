@@ -1,6 +1,6 @@
 page Sysconf-target
 
-  site-header {a(href=../) Sysconf-target} drivers{span.sep }Dockerfile
+  site-header Dockerfile driver
 
   section
     p.expr

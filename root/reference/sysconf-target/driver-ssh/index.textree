@@ -1,6 +1,6 @@
 page Sysconf-target
 
-  site-header {a(href=../) Sysconf-target} drivers{span.sep }SSH
+  site-header SSH driver
 
   section
     p.expr

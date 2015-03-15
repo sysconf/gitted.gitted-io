@@ -33,7 +33,7 @@ page Sysconf-target
       |     {a(href=driver-lxc/) lxc:}CONTAINER                 | Manage Linux LXC containers
       |     {a(href=driver-docker/) docker:}[CONTAINER][:IMAGE]    | Manage Docker.IO containers and images
       |     {a(href=driver-dockerfile/) dockerfile:}DIRECTORY          | Generate a Dockerfile directory
-      |     {a(href=driver-vbox/) vbox:}:VM                       | Manage VirtualBox machines
+      |     {a(href=driver-vbox/) vbox:}VM                       | Manage VirtualBox machines
       |
 
   site-footer

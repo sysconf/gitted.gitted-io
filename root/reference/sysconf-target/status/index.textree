@@ -1,6 +1,6 @@
 page Sysconf-target
 
-  site-header {e {a(href=../) sysconf-target} status}
+  site-header {e status}
 
   section
     h2 Usage instructions
