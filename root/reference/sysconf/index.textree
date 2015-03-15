@@ -12,9 +12,9 @@ page Sysconf
     h2 Just a bash script
     p As a shell script, the sysconf tool provides commands to manipulate the /sysconf tree:
     p.expr.
-      Usage: /usr/bin/sysconf [-options] <command> [-options] [command_args]
+      Usage: /usr/bin/sysconf [-options] &lt;command&gt; [-options] [command_args]
 
-      // Where <command> is one of:
+      // Where &lt;command&gt; is one of:
 
       //     compile
       //         (re)populates the general "compiled" directory with symlinks
