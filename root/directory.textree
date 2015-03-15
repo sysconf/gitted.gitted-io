@@ -70,12 +70,10 @@
     h1
       a.logo(href=/) Gitted I/O
       span.sep
-      :var _url = ""
       :each component, idx in title_components
-        // :eval _url = _url + "../"
-        :var _url = title_components.slice(idx).map(function() \{ return ".."\}).join("/")
+        :var url = title_components.slice(idx).map(function() \{ return ".."\}).join("/")
         a
-          = 1 && \{ type: "attr", name: "href", value: _url \}
+          = 1 && \{ type: "attr", name: "href", value: url \}
           = component
         span.sep
       :through
