@@ -1,3 +1,5 @@
+:eval title_components.pop()
+
 page Sysconf
 
   site-header Sysconf
