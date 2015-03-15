@@ -21,7 +21,7 @@ page Sysconf
       |  COMMANDS
       |
       |     init	&lt;target&gt; [&lt;sysconf-dir&gt;]
-      |     attach	&lt;target&gt; { -c &lt;shell code&gt; | [--] COMMAND ... }
+      |     attach	&lt;target&gt; \{ -c &lt;shell code&gt; | [--] COMMAND ... \}
       |     status	&lt;target&gt; [--state] [--driver] [--system] [--sysconf]
       |     help	[&lt;command&gt; | &lt;driver&gt;:]
       |
