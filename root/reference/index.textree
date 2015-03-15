@@ -13,7 +13,7 @@ page Sysconf/Gitted Reference overview
       ul.compact
         li
           e
-            a(href=/reference/update/) sysconf update
+            a(href=/reference/sysconf/) sysconf update
           | — setup or fix the system after sysconf
         // li {e sysconf update} – setup or fix the system after sysconf
         li
