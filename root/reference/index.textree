@@ -13,12 +13,12 @@ page Sysconf/Gitted Reference overview
       ul.compact
         li
           e
-            a(href=/reference/sysconf/update/) sysconf update
+            a(href=/reference/update/) sysconf update
           | — setup or fix the system after sysconf
         // li {e sysconf update} – setup or fix the system after sysconf
         li
           e
-            a(href=/reference/sysconf/add/) sysconf add
+            a(href=/reference/sysconf/) sysconf add
             | /usr/bin/custom-script
           | — add a custom script to be managed by sysconf
 
