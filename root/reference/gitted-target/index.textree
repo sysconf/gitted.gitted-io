@@ -21,26 +21,26 @@ page Gitted-target-reference
       |   - integrate both for easy use from the "git" command (register)
     p.expr
       | Add -h or --help to any command for detailed information. Run command
-      | 'help <target> <command> -h' to get full usage from given target’s Gitted.
+      | 'help &lt;target&gt; &lt;command&gt; -h' to get full usage from given target’s Gitted.
     p.expr
     p.expr
     p.expr
       | GITTED SERVER COMMANDS
     p.expr
-      |     status	[<target>] [<state branches>] [--quiet | --branches | --list | --diff]
-      |     commit	[<target>]  <state branches>  [-m <message>]
-      |     reset	[<target>]  <state branches>  [--to <commit>] [<mode>]
+      |     status	[&lt;target&gt;] [&lt;state branches&gt;] [--quiet | --branches | --list | --diff]
+      |     commit	[&lt;target&gt;]  &lt;state branches&gt;  [-m &lt;message&gt;]
+      |     reset	[&lt;target&gt;]  &lt;state branches&gt;  [--to &lt;commit&gt;] [&lt;mode&gt;]
     p.expr
       | GIT INTEGRATION COMMANDS
     p.expr
-      |     init	<target> [ -- <sysconf-target-options>]
+      |     init	&lt;target&gt; [ -- &lt;sysconf-target-options&gt;]
       |     register	[what] [git-config-scope]
-      |     git-upload-pack	<target>
-      |     git-receive-pack	<target>
+      |     git-upload-pack	&lt;target&gt;
+      |     git-receive-pack	&lt;target&gt;
     p.expr
       | OTHER COMMANDS
     p.expr
-      |     help	[<target>] [command]
+      |     help	[&lt;target&gt;] [command]
 
 
   site-footer
