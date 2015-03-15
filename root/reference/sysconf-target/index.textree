@@ -1,6 +1,6 @@
 page Sysconf-target
 
-  site-header Sysconf-target
+  site-header {e sysconf-target}
 
   section
     h2 Usage instructions
