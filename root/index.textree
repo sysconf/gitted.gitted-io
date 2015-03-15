@@ -58,14 +58,14 @@ page
     section#status.half
       h2 Download Sources &amp; Resources
       ul
-        li {ext(href=https://github.com/sysconf/sysconf.base) GitHub repository} of the {e sysconf.base} layer containing Sysconf
-        li {ext(href=https://github.com/sysconf/sysconf.gitted) GitHub repository} of the {e sysconf.gitted} layer containing Gitted
+        li Sysconf: {ext(href=https://github.com/sysconf/sysconf.base) GitHub repository} of the {e sysconf.base} layer
+        li Gitted: {ext(href=https://github.com/sysconf/sysconf.gitted) GitHub repository} of the {e sysconf.gitted} layer
 
       h3 Sources of this {e gitted.io} website
       p The sources of this {a(href=/) gitted.io} website are {ext(href=http://github.com/sysconf/gitted.gitted-io/tree/textree) available on GitHub}. The repository comes with 2 branches:
       ul
-        li {ext(href=http://github.com/sysconf/gitted.gitted-io/tree/sysconf/master) {e sysconf/master}} for the Sysconf profile of the server running the website
-        li {ext(href=http://github.com/sysconf/gitted.gitted-io/tree/textree) {e textree}} for the website page contents, written in the Textree format.
+        li {ext(href=http://github.com/sysconf/gitted.gitted-io/tree/sysconf/master) {e sysconf/master}}: Sysconf profile of website server
+        li {ext(href=http://github.com/sysconf/gitted.gitted-io/tree/textree) {e textree}}: website contents, in the Textree format.
 
     section#docs.half
       h2 Learn more
@@ -89,7 +89,7 @@ page
 
     section#docs.half
       h2 Licence
-      p Not decided yet. Probably
+      p Not decided yet. Probably very permissive.
 
   site-footer
 
