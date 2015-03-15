@@ -1,0 +1,29 @@
+page Sysconf-target
+
+  site-header {a(href=../) Sysconf-target} drivers{span.sep }Local
+
+  section
+    p.expr
+      | Driver: lxc:CONTAINER                 | Manage Linux LXC containers
+      | -------------------------------------------------------------------
+      |
+      | LXC (Linux Containers) is an operating-system-level virtualization environment
+      | for running multiple isolated Linux systems (containers) on a single Linux
+      | control host. Learn more at: https://linuxcontainers.org/
+      |
+      | The "lxc" driver is used to manage the LXC container CONTAINER_NAME.
+      | Historically, it was the first driver, the one that inspired sysconf-target.
+      |
+      | $ sysconf-target init   lxc:CONTAINER
+      |
+      |     Creates and/or fix the given container about Sysconf, using
+      |     lxc-create(1), lxc-start(1) and lxc-attach(1).
+      |
+      | $ sysconf-target attach lxc:CONTAINER COMMAND
+      |
+      |     With lxc-attach(1), run COMMAND inside the LXC container CONTAINER.
+      |
+
+  site-footer
+
+:end

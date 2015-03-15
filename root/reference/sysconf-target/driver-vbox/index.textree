@@ -1,0 +1,40 @@
+page Sysconf-target
+
+  site-header {a(href=../) Sysconf-target} drivers{span.sep }Local
+
+  section
+    p.expr
+      | Driver: vbox:VM                       | Manage VirtualBox machines
+      | ------------------------------------------------------------------
+      |
+      | VirtualBox is a powerful x86 and AMD64/Intel64 virtualization product for
+      | enterprise as well as home use. Learn more at: https://www.virtualbox.org/
+      |
+      | This driver manages will create, start and attach virtual machines through
+      | the 'vboxmanager' command which is part is the VirtualBox distribution.
+      |
+      | The <VM> argument is the machine UUID of an existing VM or the NAME of a machine
+      | existing or to create.
+      |
+      | To attach a command, the target VM needs the guest additions to be installed
+      | and enabled, which should be the case for VM creates by 'sysconf-target init'.
+      |
+      | $ sysconf-target init vbox:VM         (not implemented yet)
+      |
+      |     The 'init' command creates the virtual machine named VM.
+      |
+      | $ sysconf-target attach vbox:VM -- COMMAND
+      |
+      |     Run COMMAND in a the running named VM using 'vboxmanage guestcontrol'.
+      |     If VM is paused, it is resumed. If stopped, it is started
+      |     (using 'vboxmanage startvm' and 'vboxmanage controlvm').
+      |
+      | $ sysconf-target status vbox:VM --driver
+      |
+      |     Run 'vboxmanage showvminfo <VM>' to show information.
+      |     With --verbose, it also prints the VM log.
+      |
+
+  site-footer
+
+:end

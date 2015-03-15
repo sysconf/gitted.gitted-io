@@ -1,0 +1,58 @@
+page Sysconf-target
+
+  site-header {a(href=../) Sysconf-target} drivers{span.sep }Local
+
+  section
+    p.expr
+      | Driver: docker:[CONTAINER][:IMAGE]    | Manage Docker.IO containers and images
+      | ------------------------------------------------------------------------------
+      |
+      | Docker is an open-source project that automates the deployment of applications
+      | inside software containers. Learn more at: https://www.docker.com/
+      |
+      | The "docker" driver enables sysconf-target to work with both Docker images
+      | and running Docker containers. In the image-only mode (specified as
+      | "docker::IMAGE"), the "init" command will use "docker build" to create the
+      | image and the "attach" command will run a new temporary container and then
+      | save it to a new image with the same name, using 'docker commit'.
+      |
+      | $ sysconf-target init   docker:CONTAINER:IMAGE
+      |
+      |     Build the Docker image named IMAGE and then run a new Docker container named
+      |     CONTAINER.
+      |
+      | $ sysconf-target attach docker:CONTAINER:IMAGE -- COMMAND
+      |
+      |     Use 'docker exec' to run the specified command into the running container.
+      |     If the container is stopped, it is started. If it does not exist, it is
+      |     created with 'docker run' with a new image created with 'docker build'.
+      |
+      | $ sysconf-target init   docker:CONTAINER
+      |
+      |     Same as "docker:CONTAINER:IMAGE" except the Docker image is not named.
+      |     Run 'sysconf-target status docker:CONTAINER --driver' for information.
+      |
+      | $ sysconf-target attach docker:CONTAINER -- COMMAND
+      |
+      |     Same as "docker:CONTAINER:IMAGE" except the Docker image is not named.
+      |     If need be, the image that is built has no tag, just an ID.
+      |     Run 'sysconf-target status docker:CONTAINER --driver' for information.
+      |
+      | $ sysconf-target init   docker::IMAGE
+      |
+      |     Create the named Docker image. It is like running 'init dockerfile:tmp/dir'
+      |     followed by 'docker build -t IMAGE'. No container is created appart from
+      |     the build process.
+      |
+      | $ sysconf-target attach docker::IMAGE -- COMMAND
+      |
+      |     Run COMMAND in a new crontainer from the given IMAGE (name or ID).
+      |     After the command stops, the container is 'docker commit'-ed to the same
+      |     IMAGE name (repo, repo/tag or none) and then deleted.
+      |
+      |     This is like upgrading IMAGE with each subsequent attached COMMAND.
+      |
+
+  site-footer
+
+:end

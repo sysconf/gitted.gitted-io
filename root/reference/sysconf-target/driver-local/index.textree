@@ -4,7 +4,42 @@ page Sysconf-target
 
   section
     p.expr
-
+      | Driver: local:[ROOT-DIR]              | Install on the local system
+      | -------------------------------------------------------------------
+      | 
+      | This driver manages the Sysconf installation on the local system.
+      | 
+      | It is only meaningful with the 'init' and 'status' commands.
+      | It has little added-value over the remote/virtualization drivers as 'init' is
+      | the same as copying Sysconf to ROOT-DIR/sysconf/ and running 'sysconf' from there
+      | to install it on ROOT-DIR.
+      | 
+      | ROOT-DIR (default: "/") is the root directory where Sysconf symlinks are installed.
+      | 
+      | # sysconf-target init   local:
+      | 
+      |     The Sysconf is copied to ROOT-DIR/sysconf/ and then installed on ROOT-DIR/.
+      | 
+      |     Be careful when using --force, espacially if ROOT-DIR is "/" as it may
+      |     override files in your existing ROOT-DIR/sysconf/ pointed to by symlinks in ROOT-DIR.
+      | 
+      | $ sysconf-target init   local:$HOME
+      | 
+      |     As an unprivileged user, install Sysconf to our HOME directory and use
+      |     ~/sysconf/ to store the Sysconf layers.
+      |     This makes sense for *user* Sysconf layers (typically for managing user
+      |     settings, .bashrc and the like).
+      | 
+      | $ sysconf-target init   local:/some/check --no-setup
+      | 
+      |     Can be used to check what is installed on a target: the Sysconf layers
+      |     in /some/check/sysconf and all the symlinks installed in /some/check.
+      | 
+      | # sysconf-target attach local:/some/dir --hybrid -- COMMAND
+      | 
+      |     The 'attach' command just executes the command. It is dummy for such a local
+      |     target, but it works with the --hybrid option.
+      | 
   site-footer
 
 :end

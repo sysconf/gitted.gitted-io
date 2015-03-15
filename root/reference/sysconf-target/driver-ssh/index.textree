@@ -1,0 +1,35 @@
+page Sysconf-target
+
+  site-header {a(href=../) Sysconf-target} drivers{span.sep }Local
+
+  section
+    p.expr
+      | Driver: ssh:USER@HOST                 | Connect to a SSH server
+      | ---------------------------------------------------------------
+      |
+      | OpenSSH (OpenBSD Secure Shell) is a set of computer programs that provides
+      | encrypted communication sessions over a computer network using the SSH protocol.
+      |
+      | This driver uses the 'ssh' command to forward 'attach' commands to the specified
+      | SSH server. The "ssh:USER@HOST" syntax designates the usual user and host that
+      | is given to the 'ssh' command. It can be HOST only and can use ssh_config(5)
+      | host definitions.
+      |
+      | The GIT_SSH_COMMAND environment variable can be set to override the SSH command
+      | (and optional arguments). Example:
+      | $ GIT_SSH_COMMAND='ssh -i git_id' sysconf-target status ssh:user@host
+      |
+      | $ sysconf-target init   ssh:USER@HOST
+      |
+      |     Initialise or fix (with --force) the remote HOST system as identity USER.
+      |     Most often with 'init', USER must be "root" to modify /sysconf.
+      |
+      | $ sysconf-target attach ssh:USER@HOST -- COMMAND
+      |
+      |     Run COMMAND inside the HOST server, under identity of USER.
+      |     This is like running 'ssh USER@HOST COMMAND'.
+      |
+
+  site-footer
+
+:end
