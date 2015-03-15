@@ -14,7 +14,7 @@ page Sysconf
     p.expr.
       Usage: /usr/bin/sysconf [-options] &lt;command&gt; [-options] [command_args]
 
-      Where &lt;command> is one of:
+      Where &lt;command&gt; is one of:
 
           update
               Perform the 3 operations at once: compile, install, setup
@@ -22,7 +22,7 @@ page Sysconf
     p.expr
       | Usage: /usr/bin/sysconf [-options] &lt;command&gt; [-options] [command_args]
       |
-      | Where &lt;command> is one of:
+      | Where &lt;command&gt; is one of:
       |
       |     update
       |         Perform the 3 operations at once: compile, install, setup
