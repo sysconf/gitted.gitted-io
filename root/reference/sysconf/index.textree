@@ -11,7 +11,7 @@ page Sysconf
   section
     h2 Just a bash script
     p As a shell script, the sysconf tool provides commands to manipulate the /sysconf tree:
-    p.expr.
+    p.expr
       | Usage: /usr/bin/sysconf [-options] &lt;command&gt; [-options] [command_args]
       |
       | Where &lt;command> is one of:
