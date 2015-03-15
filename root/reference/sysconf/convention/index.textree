@@ -64,10 +64,10 @@ page Sysconf convention
     p Where the pattern is enabled, it is easy to have sysconf-managed files, for example: /etc/nginx/sites-available/, /etc/logrotate.d/, etc.
     p But there are programs distributed with a unique config file:
     ul
-      li some allow include directives with wildcards: it is the case of /etc/network/interfaces to which we can add: source /etc/network/interfaces.d/*.interfaces;
-      li some allow include directives without wildcard: it is the case of /etc/gitconfig where included files need to be listed explicitely under the [include] section;
-      li some do not allow any includes anyway: it is the case of /etc/hosts which need to be updated in place with the concatenation of /etc/hosts/*.hosts.
-    p Once the mecanism is enabled for a particular file (for example, /etc/hosts), every Sysconf profile can take advantage of it by providing its specific config (/etc/hosts/profile-a.hosts for example) in a clean and non-obstrusive way.
+      li some allow include directives with wildcards: it is the case of {e /etc/network/interfaces} to which we can add: source {e /etc/network/interfaces.d/*.interfaces};
+      li some allow include directives without wildcard: it is the case of {e /etc/gitconfig} where included files need to be listed explicitely under the {e [include]} section;
+      li some do not allow any includes anyway: it is the case of {e /etc/hosts} which need to be updated in place with the concatenation of {e /etc/hosts/*.hosts}.
+    p Once the mecanism is enabled for a particular file (for example, {e /etc/hosts}), every Sysconf profile can take advantage of it by providing its specific config (/etc/hosts/profile-a.hosts for example) in a clean and non-obstrusive way.
     p This is why Sysconf provides sysconf-etc.d, a generic tool that fix the required config files, which are by default:
     ul
       li {e /etc/hosts} out of {e /etc/hosts/*.hosts}
