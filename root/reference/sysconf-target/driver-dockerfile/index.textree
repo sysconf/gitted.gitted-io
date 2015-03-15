@@ -6,28 +6,28 @@ page Sysconf-target
     p.expr
       | Driver: dockerfile:DIRECTORY          | Generate a Dockerfile directory
       | -----------------------------------------------------------------------
-      |
+    p.expr
       | Docker is an open-source project that automates the deployment of applications
       | inside software containers. Learn more at: https://www.docker.com/
-      |
+    p.expr
       | This driver generates a Dockerfile definition that 'docker build' can use to
       | build an image or share as a repository.
-      |
+    p.expr
       | See also the 'docker' driver, which works with live Docker containers and images.
-      |
+    p.expr
       | $ sysconf-target init dockerfile:DIRECTORY
-      |
+    p.expr
       |     The 'init' command creates DIRECTORY and generates the "Dockerfile" inside
       |     with a copy of Sysconf. Run 'docker build <directory>' to build
       |     the image including Sysconf and its updates.
-      |
+    p.expr
       | $ sysconf-target attach dockerfile:/directory/path --hybrid -- COMMAND
-      |
+    p.expr
       |     Run COMMAND in /directory/path. Be careful: it will run on the main system
       |     with the plain environment (this is not a "real" attach, just a simulation
       |     to help working with the Dockerfile dir).
       |     The --hybrid option is for safety of confirmation.
-      |
+
   site-footer
 
 :end
