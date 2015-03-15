@@ -1,6 +1,6 @@
 page Sysconf-target
 
-  site-header {a(href=../) Sysconf-target} drivers{span.sep }Local
+  site-header {a(href=../) Sysconf-target} drivers{span.sep }LXC
 
   section
     p.expr
