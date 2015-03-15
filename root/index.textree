@@ -42,19 +42,19 @@ page
       h4 Designed for production server as well as home use
 
     section.half
-      h3 {sysconf-target}{br}Access &amp; deploy machines
+      h3 {sysconf-target}{span.source [{ext(href=https://github.com/sysconf/sysconf.base/blob/master/tree/usr/bin/sysconf-target) source code}]}{br}Access &amp; deploy machines
       h4 Multiple {a(href=/reference/sysconf-target/#drivers) target drivers}: local, ssh, lxc, docker...
       h4 Setup {sysconf} on any target, run commands as well
       h4 Auto-create containers or virtual machines
 
     section.half
-      h3 {gitted}{br}Import/export state as Git data
+      h3 {gitted}{span.source [{ext(href=https://github.com/sysconf/sysconf.gitted/blob/master/tree/usr/bin/gitted) source code}]}{br}Import/export state as Git data
       h4 Multiple {a(href=reference/gitted/state-drivers/) state drivers}: git-remote, local dir, databases...
       h4 Data snapshots to restore whatever, whenever
       h4 {sysconf} itself is synced like regular data
 
     section.half
-      h3 {gitted-target}{br}Push-to-deploy and fetch-to-backup
+      h3 {gitted-target}{span.source [{ext(href=https://github.com/sysconf/sysconf.gitted/blob/master/tree/usr/bin/gitted-target) source code}]}{br}Push-to-deploy and fetch-to-backup
       h4 Gitted as a git-remote: {e git fetch gitted:ssh:USER@HOST}
       h4 Re-build machines, migrate data from one another
 
