@@ -5,26 +5,26 @@ page Sysconf
   section
     p.expr
       | SYSCONF-target tool -- init target system with sysconf or create/attach command
-      |
+    p.expr
       | Run 'sysconf-target help &lt;driver-name&gt;:' for full driver information.
       | Add -h or --help to any command for detailed information.
-      |
+    p.expr
       | Learn more about Sysconf at: http://gitted.net/sysconf/
-      |
+    p.expr
       | EXAMPLES
       |     sysconf-target init   lxc:mycontainer
       |     sysconf-target init   ssh:root@myhost /sysconf
       |     sysconf-target attach lxc:mycontainer /bin/echo something
       |     sysconf-target attach ssh:myhost      service xyz reload
       |
-      |
+    p.expr
       |  COMMANDS
       |
       |     init	&lt;target&gt; [&lt;sysconf-dir&gt;]
       |     attach	&lt;target&gt; \{ -c &lt;shell code&gt; | [--] COMMAND ... \}
       |     status	&lt;target&gt; [--state] [--driver] [--system] [--sysconf]
       |     help	[&lt;command&gt; | &lt;driver&gt;:]
-      |
+    p.expr
       | DRIVERS available for &lt;target&gt;:
       |
       |     local:[ROOT-DIR]              | Install on the local system
