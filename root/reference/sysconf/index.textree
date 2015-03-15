@@ -16,16 +16,16 @@ page Sysconf
 
       // Where <command> is one of:
 
-          compile
-              (re)populates the general "compiled" directory with symlinks
-              from CONFIG and its deps (CONFIG has precedence).
-              If CONFIG is not provided, the actual root config is used.
+      //     compile
+      //         (re)populates the general "compiled" directory with symlinks
+      //         from CONFIG and its deps (CONFIG has precedence).
+      //         If CONFIG is not provided, the actual root config is used.
 
-          install
-              Install the compiled directory content to target
+      //     install
+      //         Install the compiled directory content to target
 
-          setup
-              Execute updates (setup.rc) for given config and recursive deps
+      //     setup
+      //         Execute updates (setup.rc) for given config and recursive deps
 
           update
               Perform the 3 operations at once: compile, install, setup
