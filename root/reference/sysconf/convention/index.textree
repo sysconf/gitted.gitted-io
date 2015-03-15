@@ -8,12 +8,33 @@ page Sysconf convention
     p
       e /etc/cron.daily/some-task
     p The idea is to move the file to a central versionned tree in {e /sysconf} and replace {e /etc/cron.daily/some-task} with a symbolic link pointing to it:
-    p
-      e /etc/cron.daily/some-task -> /sysconf/actual/tree/etc/cron.daily/some-task
-    p
-      e /sysconf/actual/tree/etc/cron.daily/some-task
+    p.expr.
+      /etc/cron.daily/some-task -> /sysconf/actual/tree/etc/cron.daily/some-task
+      /sysconf/actual/tree/etc/cron.daily/some-task
     p With this organisation, the /sysconf directory can be versionned, backed-up and synced between different systems.
     p And still, files can be edited in place as usual ({e /etc/cron.daily/some-task} in this example) while being tracked easily in {e /sysconf}, because of the symbolic links.
+
+  section
+    h2 Separating between profiles
+    p In most cases, it is not enough to make a single separation between system-maintained files (managed by apt-get, yum, etc.) and custom sysconf-maintained files. Any system serves a purpose that can be structed in different layers. These layers are called profiles.
+    section
+      h3 Example: a developer team's desktop system
+      p ... can be devided into these layers:
+      ul
+        li host-specific: what is unique to this very system, for example /etc/hosts; this layer is named: actual
+        li shared with team: what is shared with the colleagues, for example a /usr/share/git-hook/commit-msg script responsible for the validation of the team projects' commit messages; this layer is named: team
+        li personal settings: what the developer shares with his home computer, for example shell aliases in /etc/bash.bashrc; this layer is named: personal
+
+      p Profiles lie in their respective directory into /sysconf:
+      p.expr.
+        /sysconf/actual/tree/etc/hosts
+        /sysconf/sysconf.team/tree/usr/share/git-hook/commit-msg
+        /sysconf/sysconf.personal/tree/etc/bash.bashrc
+      p The symbolic links become as follows:
+      p.expr.
+        /etc/hosts                     -> /sysconf/actual/tree/etc/hosts
+        /usr/share/git-hook/commit-msg -> /sysconf/sysconf.team/tree/usr/share/git-hook/commit-msg
+        /etc/bash.bashrc               -> /sysconf/sysconf.personal/tree/etc/bash.bashrc
 
 
 :end
