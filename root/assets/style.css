@@ -32,7 +32,7 @@ a.through { color: inherit; display: block; }
 /* "orange" est commun avec "publication h2" plus bas */
 .quote:before { content: "“" }
 .quote:after { content: "”" }
-.expr { background: #000; font-family: monospace; font-size: 1.1em; padding: 0 3px; whitespace: pre; }
+.expr { background: #0b433c; font-family: monospace; font-size: 1.1em; padding: 0 3px; whitespace: pre; }
 .center { text-align: center; }
 .half { width: 46%; display: inline-block; vertical-align: top; margin: 0 1em 1em 1em; }
 @media (max-width: 790px) {
