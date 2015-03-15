@@ -31,8 +31,8 @@ page
     section.half
       h3 {sysconf-target}{br}Access &amp; deploy machines
       h4 Multiple {a(href=/reference/sysconf-target/#drivers) target drivers}: local, ssh, lxc, docker...
-      h4 Run commands or setup {sysconf} on target
-      h4 Auto-create containers and virtual machines
+      h4 Run commands or setup {sysconf} on any target
+      h4 Auto-create containers or virtual machines
 
     section.half
       h3 {gitted}{br}Import/export state as Git data
@@ -59,9 +59,18 @@ page
     section#status.half
       h2 Download Sources &amp; Resources
       ul
-        li {ext(href=https://github.com/sysconf/sysconf.base) GitHub {e sysconf.base} layer} which contains Sysconf
+        li {ext(href=https://github.com/sysconf/sysconf.base) GitHub repository} of the {e sysconf.base} layer containing Sysconf
           ul {ext(href=https://github.com/sysconf/sysconf.base/blob/master/tree/usr/bin/sysconf) Direct link} to {e bin/sysconf}
           ul {ext(href=https://github.com/sysconf/sysconf.base/blob/master/tree/usr/bin/sysconf-target) Direct link} to {e bin/sysconf-target}
+
+        li {ext(href=https://github.com/sysconf/sysconf.gitted) GitHub repository} of the {e sysconf.gitted} layer containing Gitted
+          ul {ext(href=https://github.com/sysconf/sysconf.gitted/blob/master/tree/usr/bin/gitted) Direct link} to {e bin/gitted}
+          ul {ext(href=https://github.com/sysconf/sysconf.base/blob/master/tree/usr/bin/gitted-target) Direct link} to {e bin/gitted-target}
+
+        li The sources of this {a(href=/) gitted.io} website are {ext(href=http://github.com/sysconf/gitted.gitted-io/tree/textree) available on GitHub}. The repository comes with 2 branches:
+          ul
+            li {ext(href=http://github.com/sysconf/gitted.gitted-io/tree/sysconf/master) {e sysconf/master}} for the Sysconf profile of the server running the website
+            li {ext(href=http://github.com/sysconf/gitted.gitted-io/tree/textree) {e textree}} for the website page contents, written in the Textree format.
 
   section
     section#status.half
