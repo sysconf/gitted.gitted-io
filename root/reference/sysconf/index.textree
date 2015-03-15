@@ -11,47 +11,39 @@ page Sysconf
   section
     h2 Just a bash script
     p As a shell script, the sysconf tool provides commands to manipulate the /sysconf tree:
-    p.expr.
-      Usage: /usr/bin/sysconf [-options] &lt;command&gt; [-options] [command_args]
-
-      Where &lt;command&gt; is one of:
-
-          update
-              Perform the 3 operations at once: compile, install, setup
-
     p.expr
       | Usage: /usr/bin/sysconf [-options] &lt;command&gt; [-options] [command_args]
       |
       | Where &lt;command&gt; is one of:
       |
-      |     update
-      |         Perform the 3 operations at once: compile, install, setup
+      |   update
+      |       Perform the 3 operations at once: compile, install, setup
       |
-      |     compile
-      |         (re)populates the general "compiled" directory with symlinks
-      |         from CONFIG and its deps (CONFIG has precedence).
-      |         If CONFIG is not provided, the actual root config is used.
+      |   compile
+      |       (re)populates the general "compiled" directory with symlinks
+      |       from CONFIG and its deps (CONFIG has precedence).
+      |       If CONFIG is not provided, the actual root config is used.
       |
-      |     install
-      |         Install the compiled directory content to target
+      |   install
+      |       Install the compiled directory content to target
       |
-      |     setup
-      |         Execute updates (setup.rc) for given config and recursive deps
+      |   setup
+      |       Execute updates (setup.rc) for given config and recursive deps
       |
-      |     add file_1 [file_2 [file_N]]
-      | 	      Move given (real) files to CONFIG’s tree and replace them with a symlink.
-      | 	      This is a frequently used command as we move/"standardize" config/misc
-      | 	      files from real location (like /etc) to a sysconf repository.
+      |   add file_1 [file_2 [file_N]]
+      |       Move given (real) files to CONFIG’s tree and replace them with a symlink.
+      |       This is a frequently used command as we move/"standardize" config/misc
+      |       files from real location (like /etc) to a sysconf repository.
       |
-      | 	      Use the '-c' option to specify the sysconf profile to use
-      |               (default to 'actual').
+      |       Use the '-c' option to specify the sysconf profile to use
+      |             (default to 'actual').
       |
-      |     cmd command [command_args]
-      | 	      Execute given command in CONFIG’s dir and recursive dep dirs.
-      | 	      This is useful with Git, like: sysconf cmd git status
+      |   cmd command [command_args]
+      |       Execute given command in CONFIG’s dir and recursive dep dirs.
+      |       This is useful with Git, like: sysconf cmd git status
       |
-      |     list [pattern]
-      |         List compiled symlinks, optionally filtering pattern through 'grep'.
+      |   list [pattern]
+      |       List compiled symlinks, optionally filtering pattern through 'grep'.
       |
       | Options are:
       |     -c CONFIG
@@ -79,6 +71,7 @@ page Sysconf
       |         are sourced (one stage before). Useful to define variables that
       |         may be overloaded by higher profiles that affect the setup.rc of
       |         lower profiles.
+      |
 
 
   section
