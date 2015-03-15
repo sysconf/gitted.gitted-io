@@ -34,7 +34,7 @@ page
     section.half
       h3 {sysconf-target}{br}Access &amp; deploy machines
       h4 Multiple {a(href=/reference/sysconf-target/#drivers) target drivers}: local, ssh, lxc, docker...
-      h4 Run commands or setup {sysconf} on any target
+      h4 Setup {sysconf} on any target, run commands as well
       h4 Auto-create containers or virtual machines
 
     section.half
