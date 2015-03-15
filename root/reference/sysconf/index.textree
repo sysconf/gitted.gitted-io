@@ -14,7 +14,7 @@ page Sysconf
     p.expr.
       Usage: /usr/bin/sysconf [-options] <command> [-options] [command_args]
 
-      Where <command> is one of:
+      // Where <command> is one of:
 
           compile
               (re)populates the general "compiled" directory with symlinks
