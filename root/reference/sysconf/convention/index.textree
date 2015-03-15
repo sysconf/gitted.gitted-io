@@ -51,11 +51,11 @@ page Sysconf convention
       p Sysconf will start by processing {e /sysconf/actual}, then recurse into the profiles whose names are listed in {e /sysconf/actual/deps} and so on.
 
   section
-    h2 Dynamic settings: the install.sh script
+    h2 Dynamic settings: the setup.rc script
     p Statically organised files are not enough when you need to generate some files, install packages or more generally, execute custom commands.
-    p To do that, profiles may define an {e install.sh} file containing shell commands which are executed the command sysconf update.
-    p For multiple profiles, the {e install.sh} scripts of the dependencies are executed before the {e install.sh} script of the profile that depend on them.
-    p In other words, if {e A} depends on {e B}, the order will be: (1) {e /sysconf/sysconf.A/install.sh}, then (2) {e /sysconf/sysconf.B/install.sh} .
+    p To do that, profiles may define an {e setup.rc} file containing shell commands which are executed the command sysconf update.
+    p For multiple profiles, the {e setup.rc} scripts of the dependencies are executed before the {e setup.rc} script of the profile that depend on them.
+    p In other words, if {e A} depends on {e B}, the order will be: (1) {e /sysconf/sysconf.A/setup.rc}, then (2) {e /sysconf/sysconf.B/setup.rc} .
 
 
   section
