@@ -10,7 +10,7 @@ page
     #reference h2 { margin: 0; }
     #reference h3 { margin: 0.5em 0; }
     #reference h3 > a { font-weight: bold; }
-    #reference h3 .source { font-weight: normal; font-size: 0.4em; }
+    #reference h3 .source { font-weight: normal; font-size: 0.5em; margin-left: 1em; float: right; }
     #reference h4 { font-size: 1.1em; font-weight: normal; margin: 0.2em 0; }
     #reference h4:before { content: "‣"; padding-right: 0.5em; font: 1.2em bold; }
 
@@ -27,8 +27,15 @@ page
     h2 4 bash scripts to rule them all...
             // li {ext(href=https://github.com/sysconf/sysconf.base/blob/master/tree/usr/bin/sysconf-target) Direct link} to {e bin/sysconf-target}
     // :: s {span.source [{ext {:through}source}]}
+
+    :: title
     section.half
-      h3 {sysconf}{span.source [{ext(href=https://github.com/sysconf/sysconf.base/blob/master/tree/usr/bin/sysconf) source}]}{br}Define and setup a machine
+      h3
+        span.source [{ext(href=https://github.com/sysconf/sysconf.base/blob/master/tree/usr/bin/sysconf) source code}]
+        sysconf
+        br
+        | Define and setup a machine
+      // h3 {sysconf}{span.source [{ext(href=https://github.com/sysconf/sysconf.base/blob/master/tree/usr/bin/sysconf) source code}]}{br}Define and setup a machine
       h4 A {a(href=reference/sysconf/convention/) simple convention} for packaging common files
       h4 No abstraction. Works with symbolic links only.
       h4 Designed for production server as well as home use
