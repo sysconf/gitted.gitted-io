@@ -1,0 +1,3 @@
+:eval title_components.push("Gitted-client")
+
+:shift-directory

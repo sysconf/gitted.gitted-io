@@ -1,0 +1,48 @@
+:eval title_components.pop()
+
+page Gitted-target-reference
+
+  site-header {e gitted-target}
+
+  section
+    h2 Usage instructions
+    p.expr
+      | gitted-target: manage a target Gitted through sysconf-target -- http://gitted.net
+    p.expr
+      | Gitted is a shell framework that turn a UNIX system into a Git repository
+      | where the machine state is seen as a "Git work data" which can be
+      | checked out/commited from/to Git branches (the "IO" branches).
+    p.expr
+      | This command is the client that talks to the gitted server command
+      | through sysconf-target. The client provides 3 functionalities:
+    p.expr
+      |   - send Gitted commands to a target system (commit, reset, status)
+      |   - forward Git push/pull to target (using the Git ext:: remote protocol)
+      |   - integrate both for easy use from the "git" command (register)
+    p.expr
+      | Add -h or --help to any command for detailed information. Run command
+      | 'help <target> <command> -h' to get full usage from given target’s Gitted.
+    p.expr
+    p.expr
+    p.expr
+      | GITTED SERVER COMMANDS
+    p.expr
+      |     status	[<target>] [<state branches>] [--quiet | --branches | --list | --diff]
+      |     commit	[<target>]  <state branches>  [-m <message>]
+      |     reset	[<target>]  <state branches>  [--to <commit>] [<mode>]
+    p.expr
+      | GIT INTEGRATION COMMANDS
+    p.expr
+      |     init	<target> [ -- <sysconf-target-options>]
+      |     register	[what] [git-config-scope]
+      |     git-upload-pack	<target>
+      |     git-receive-pack	<target>
+    p.expr
+      | OTHER COMMANDS
+    p.expr
+      |     help	[<target>] [command]
+
+
+  site-footer
+
+:end
