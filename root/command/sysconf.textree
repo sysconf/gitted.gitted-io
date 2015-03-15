@@ -1,5 +1,0 @@
-
-page bin/sysconf
-  p sysconf...
-
-:end
