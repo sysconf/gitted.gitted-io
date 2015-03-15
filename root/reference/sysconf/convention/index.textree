@@ -21,11 +21,11 @@ page Sysconf convention
       h3 Example: a developer team's desktop system
       p ... can be devided into these layers:
       ul
-        li host-specific: what is unique to this very system, for example /etc/hosts; this layer is named: actual
-        li shared with team: what is shared with the colleagues, for example a /usr/share/git-hook/commit-msg script responsible for the validation of the team projects' commit messages; this layer is named: team
-        li personal settings: what the developer shares with his home computer, for example shell aliases in /etc/bash.bashrc; this layer is named: personal
+        li {i host-specific}: what is unique to this very system, for example {e /etc/hosts}; this layer is named: {e actual}
+        li {i shared with team}: what is shared with the colleagues, for example a {e /usr/share/git-hook/commit-msg} script responsible for the validation of the team projects' commit messages; this layer is named: {e team}
+        li {i personal settings}: what the developer shares with his home computer, for example shell aliases in {e /etc/bash.bashrc}; this layer is named: {e personal}
 
-      p Profiles lie in their respective directory into /sysconf:
+      p Profiles lie in their respective directory into {e /sysconf}:
       p.expr.
         /sysconf/actual/tree/etc/hosts
         /sysconf/sysconf.team/tree/usr/share/git-hook/commit-msg
@@ -36,5 +36,24 @@ page Sysconf convention
         /usr/share/git-hook/commit-msg -> /sysconf/sysconf.team/tree/usr/share/git-hook/commit-msg
         /etc/bash.bashrc               -> /sysconf/sysconf.personal/tree/etc/bash.bashrc
 
+    section
+      h3 Profile inheritance and file overloading
+      p Overloading is a an Object-oriented programming concept which in our case lets a Sysconf profile define a file that is already defined by another profile.
+      p Suppose you have a profile {e A} meant to customize profile {e B} with a more specific version of a given file, say, {e /etc/bash.bashrc}. We would have the following /sysconf tree:
+      p.expr.
+        /sysconf/sysconf.A/tree/etc/bash.bashrc
+        /sysconf/sysconf.B/tree/etc/bash.bashrc
+      p The symbolic link {e /etc/bash.bashrc} should point to {e A}'s, not {e B}'s. To indicate this, a deps file is created into {e /sysconf/sysconf.A} which specifies that {e A} depends on {e B}, that {e A} extends {e B}: {e A}'s tree takes precedence over {e B}'s tree.
 
+    section
+      h3 The root profile: actual
+      p If profiles can extend each other, dependant profiles must be processed last. It is necessary to know what is the first profile: by convention, it is named actual. In Object-oriented programming it is said to be the final concrete class (profile).
+      p Sysconf will start by processing {e /sysconf/actual}, then recurse into the profiles whose names are listed in {e /sysconf/actual/deps} and so on.
+
+  section
+    h2 Dynamic settings: the install.sh script
+    p Statically organised files are not enough when you need to generate some files, install packages or more generally, execute custom commands.
+    p To do that, profiles may define an {e install.sh} file containing shell commands which are executed the command sysconf update.
+    p For multiple profiles, the {e install.sh} scripts of the dependencies are executed before the {e install.sh} script of the profile that depend on them.
+    p In other words, if {e A} depends on {e B}, the order will be: (1) {e /sysconf/sysconf.A/install.sh}, then (2) {e /sysconf/sysconf.B/install.sh} .
 :end
