@@ -14,21 +14,21 @@ page Sysconf
     p.expr.
       Usage: /usr/bin/sysconf [-options] &lt;command&gt; [-options] [command_args]\
 
-      Where &lt;command&gt; is one of:
+      Where &lt;command&gt; is one of:\
 
-      //     compile
-      //         (re)populates the general "compiled" directory with symlinks
-      //         from CONFIG and its deps (CONFIG has precedence).
-      //         If CONFIG is not provided, the actual root config is used.
+          compile
+              (re)populates the general "compiled" directory with symlinks
+              from CONFIG and its deps (CONFIG has precedence).
+              If CONFIG is not provided, the actual root config is used.\
 
-      //     install
-      //         Install the compiled directory content to target
+          install
+              Install the compiled directory content to target\
 
-      //     setup
-      //         Execute updates (setup.rc) for given config and recursive deps
+          setup
+              Execute updates (setup.rc) for given config and recursive deps\
 
           update
-              Perform the 3 operations at once: compile, install, setup
+              Perform the 3 operations at once: compile, install, setup\
 
           add file_1 [file_2 [file_N]]
       // 	Move given (real) files to CONFIG’s tree and replace them with a symlink.
