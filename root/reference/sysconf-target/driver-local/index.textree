@@ -1,6 +1,6 @@
 page Sysconf-target
 
-  site-header {a(href=../) Sysconf-target} {span.sep} Local
+  site-header {a(href=../) Sysconf-target} {span.sep } Local
 
   section
     p.expr
