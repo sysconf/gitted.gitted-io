@@ -5,7 +5,7 @@ page Sysconf-target
   section
     h2 Command line
     p.expr
-      | usage: sysconf-target attach &lt;target&gt; { -c &lt;shell code> | [--] COMMAND ... }
+      | usage: sysconf-target attach &lt;target&gt; \{ -c &lt;shell code> | [--] COMMAND ... \}
     p.expr
       | Start target if needed and run the given command inside
     p.expr
@@ -26,6 +26,7 @@ page Sysconf-target
       |                       (instead of a "physical" command)
       |   --no-start          Don't start a stopped machine
       |   --no-resume       Don't resume a paused machine
+      |
 
   site-footer
 
