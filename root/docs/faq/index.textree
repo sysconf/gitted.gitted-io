@@ -2,6 +2,42 @@
 :: items += /item/
 
 item
+  question Is Git mandatory? Can I use SubVersion, Bazaar or nothing at all?
+  answer
+    p You are free. Sysconf is not tight with any version management system.
+    p The logic of Sysconf defines how the /sysconf directory is organised, not how it should be versionned or synced.
+
+item
+  question Can /sysconf be located somewhere else?
+  answer
+    p Yes. A different path can be specified through the environment variable {e SYSCONF_PATH}.
+    p You can specify it at call time:
+    p.expr SYSCONF_PATH=/custom/sysconf/path sysconf <cmd> ...
+    p Or make it permanent by adding {e export SYSCONF_PATH=/custom/sysconf/path} into your {e /etc/bash.bashrc} or {e ~/.bashrc}.
+
+item
+  question Can Sysconf symlinks be installed somewhere else than the root tree /?
+  answer
+    p Yes.
+    p Edit {e /sysconf/target} (or {e $SYSCONF_PATH/target} if {sysconf} is located somewhere else) and change its content from {e /} to the directory you want the symlinks be installed into.
+    p When you are done, run sysconf install to install the symlinks on the new location. You should probably clean any old symlinks: see How to uninstall sysconf below.
+
+item
+  question Can Sysconf be used by unpriviledged users?
+  answer
+    p Yes.
+    p Of course if you can’t write to {e /}, you need to customize {e SYSCONF_PATH} and {e $SYSCONF_PATH/target} like explained above.
+    p Using {sysconf} at the user level is a common use case, to manage user config files like {e ~/.bashrc}, {e ~/.ssh/config}, {e ~/.gitconfig}, etc.
+    p For that use, set {e SYSCONF_PATH} to {e /home/toto/sysconf} (for example) and put a single line {e /home/toto} into the file: {e /home/toto/sysconf/target}. Append the profiles you need and run {e /home/toto/sysconf/sysconf.base/tree/usr/bin/sysconf update} to get everything installed.
+
+item
+  question How to uninstall sysconf?
+    p First, remove all links which have been installed by sysconf:
+    p.expr # find /usr/bin/ /etc/ -type l -lname '/sysconf/*' | xargs rm
+    p Then, remove sysconf itself and its repositories:
+    p.expr # rm -rf /sysconf
+
+item
   question How are Sysconf and Gitted related?
   answer
     p Sysconf does not depend on Gitted and Gitted does not depend on Sysconf. Although Gitted is commonly distributed through the {e sysconf.gitted} layer, it can be installed by other means and work properly without Sysconf at all.
