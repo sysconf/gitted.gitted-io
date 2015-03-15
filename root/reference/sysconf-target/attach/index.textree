@@ -22,9 +22,9 @@ page Sysconf-target
     p.expr
       | Options can be given at any position:
     p.expr
-      |   -c                  Code to run in a shell (like sh -c, see sh(1))
-      |                       (instead of a "physical" command)
-      |   --no-start          Don't start a stopped machine
+      |   -c               Code to run in a shell (like sh -c, see sh(1))
+      |                    (instead of a "physical" command)
+      |   --no-start       Don't start a stopped machine
       |   --no-resume       Don't resume a paused machine
       |
 
