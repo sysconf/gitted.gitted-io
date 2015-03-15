@@ -32,6 +32,7 @@ item
 
 item
   question How to uninstall sysconf?
+  answer
     p First, remove all links which have been installed by sysconf:
     p.expr # find /usr/bin/ /etc/ -type l -lname '/sysconf/*' | xargs rm
     p Then, remove sysconf itself and its repositories:
