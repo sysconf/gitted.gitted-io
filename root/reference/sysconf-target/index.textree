@@ -1,3 +1,5 @@
+:eval title_components.pop()
+
 page Sysconf-target
 
   site-header {e sysconf-target}
