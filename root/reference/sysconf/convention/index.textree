@@ -1,6 +1,6 @@
 page Sysconf convention
 
-  site-header
+  site-header Directory convention
 
   section
     h2 A way to centralize configuration files
