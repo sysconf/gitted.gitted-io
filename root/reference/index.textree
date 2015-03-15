@@ -7,7 +7,7 @@ page Sysconf/Gitted Reference overview
   section
     // h3 Define and setup a machine with {sysconf}
     h3 {sysconf}: define and setup a machine
-    p The {a(href=/reference/sysconf/directory/) Sysconf directory convention} defines a directory structure similar to {e Dockerfile}’s or {e .deb} for packaging files that are installed on the target system and the setup scripts which run the commands needed to configure the system. Check the {ext(href=//github.com/sysconf/gitted.gitted-io) Sysconf profile of this gitted.io website} as an example.
+    p The {a(href=/reference/sysconf/convention/) Sysconf directory convention} defines a directory structure similar to {e Dockerfile}’s or {e .deb} for packaging files that are installed on the target system and the setup scripts which run the commands needed to configure the system. Check the {ext(href=//github.com/sysconf/gitted.gitted-io) Sysconf profile of this gitted.io website} as an example.
     section.examples
       h4 Examples:
       ul.compact
