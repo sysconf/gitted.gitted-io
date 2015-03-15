@@ -1,12 +1,5 @@
 :eval title_components.pop()
 
-:: target-driver
-  :: name := TEXT
-  :through
-  a
-    = 1 && \{ type: "attr", name: "href", value: "/reference/sysconf-target/driver-" + name + "/" \}
-    = name
-
 page Sysconf/Gitted Reference overview
 
   site-header Reference overview

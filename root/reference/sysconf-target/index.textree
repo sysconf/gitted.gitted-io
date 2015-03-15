@@ -30,10 +30,10 @@ page Sysconf-target
       |
       |     {a(href=driver-local/) local:}[ROOT-DIR]              | Install on the local system
       |     {a(href=driver-ssh/) ssh:}USER@HOST                 | Connect to a SSH server
-      |     lxc:CONTAINER                 | Manage Linux LXC containers
-      |     docker:[CONTAINER][:IMAGE]    | Manage Docker.IO containers and images
-      |     dockerfile:DIRECTORY          | Generate a Dockerfile directory
-      |     vbox:VM                       | Manage VirtualBox machines
+      |     {a(href=driver-lxc/) lxc:}CONTAINER                 | Manage Linux LXC containers
+      |     {a(href=driver-docker/) docker:}[CONTAINER][:IMAGE]    | Manage Docker.IO containers and images
+      |     {a(href=driver-dockerfile/) dockerfile:}DIRECTORY          | Generate a Dockerfile directory
+      |     {a(href=driver-vbox/) vbox:}:VM                       | Manage VirtualBox machines
       |
 
   site-footer

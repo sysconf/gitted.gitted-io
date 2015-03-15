@@ -111,7 +111,12 @@
   a(href=/reference/gitted/) Gitted
 :: gitted-target
   a(href=/reference/gitted-target/) Gitted-target
-
+:: target-driver
+  :: name := TEXT
+  :through
+  a
+    = 1 && \{ type: "attr", name: "href", value: "/reference/sysconf-target/driver-" + name + "/" \}
+    = name
 
 ////////////////////////////////////////////////////////////////////////////////
 // GEONEF COMMON TEMPLATES
