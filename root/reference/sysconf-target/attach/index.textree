@@ -3,7 +3,7 @@ page Sysconf-target
   site-header {a(href=../) sysconf-target} attach
 
   section
-    h2 Command line
+    h2 Usage instructions
     p.expr
       | usage: sysconf-target attach &lt;target&gt; \{ -c &lt;shell code> | [--] COMMAND ... \}
     p.expr

@@ -3,7 +3,7 @@ page Sysconf-target
   site-header {a(href=../) sysconf-target} status
 
   section
-    h2 Command line
+    h2 Usage instructions
     p.expr
       | usage: sysconf-target status &lt;target&gt; [--state] [--driver] [--system] [--sysconf]
     p.expr

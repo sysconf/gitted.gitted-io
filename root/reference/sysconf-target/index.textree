@@ -3,7 +3,7 @@ page Sysconf-target
   site-header Sysconf-target
 
   section
-    h2 The shell command
+    h2 Usage instructions
     p.expr
       | SYSCONF-target tool -- init target system with sysconf or create/attach command
     p.expr
