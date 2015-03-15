@@ -1,6 +1,6 @@
 page Sysconf-target
 
-  site-header {a(href=../) sysconf-target} init
+  site-header {e {a(href=../) sysconf-target} init}
 
   section
     h2 Main command line
