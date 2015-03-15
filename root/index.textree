@@ -40,13 +40,13 @@ page
     section.half
       h3 {gitted}{br}Import/export state as Git data
       h4 Multiple {a(href=reference/gitted/state-drivers/) state drivers}: git-remote, local dir, databases...
-      h4 Make snapshots of the data and restore whatever, whenever
+      h4 Data snapshots and restore whatever, whenever
       h4 {sysconf} itself is synced like regular data, {i Sysconf being Gitted}
 
     section.half
       h3 {gitted-target}{br}Push-to-deploy and fetch-to-backup
-      h4 Use Gitted as a Git remote, like {e git fetch gitted:ssh:USER@HOST}
-      h4
+      h4 Gitted as a git-remote: {e git fetch gitted:ssh:USER@HOST}
+      h4 Re-build machines, migrate data from one another
 
 
   section
