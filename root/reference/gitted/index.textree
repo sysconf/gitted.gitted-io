@@ -19,7 +19,7 @@ page Gitted-reference
       | IO are defined in /etc/gitted/state/ where the state branch &lt;name&gt; is defined
       | by a &lt;name&gt;.conf file. See examples in /usr/share/doc/gitted/state.examples/.
     p.expr
-      | {a(href=state-driver/) State drivers are usually found in {ext(href=https://github.com/sysconf/sysconf.gitted/tree/master/tree/usr/lib/gitted) /usr/lib/gitted} (driver-sysconf, driver-mysql, etc.)
+      | {a(href=state-driver/) State drivers} are usually found in {ext(href=https://github.com/sysconf/sysconf.gitted/tree/master/tree/usr/lib/gitted) /usr/lib/gitted} (driver-sysconf, driver-mysql, etc.)
     p.expr
       | Add -h or --help to any command for detailed information.
     p.expr
