@@ -4,9 +4,21 @@
 #
 . /usr/lib/sysconf.base/common.sh
 
+_packages=
+
+# Textree
 # Install NodeJS and fix bon/node -> nodejs
 # python and build-essential are required to build the nodegit module
-sysconf_require_packages nodejs python build-essential memcached
+_packages="$_packages nodejs python build-essential memcached"
+
+if [ "$SYSCONF_TEXTREE_ENABLE_NGINX" != no ]; then
+    # NginX
+    _packages="$_packages nginx"
+    _packages="$_packages bind9-host dnsutils"
+fi
+
+sysconf_require_packages $_packages
+
 [ -x /usr/bin/node ] || ln -s nodejs /usr/bin/node
 
 # Install NPM
@@ -75,4 +87,12 @@ if service textree status >/dev/null; then
 else
     service textree start \
         || nef_fatal "could not start textree"
+fi
+
+if [ "$SYSCONF_TEXTREE_ENABLE_NGINX" != no ]; then
+    if ps x | grep " nginx:" | grep -vq grep; then
+        service nginx reload
+    else
+        service nginx start
+    fi
 fi
