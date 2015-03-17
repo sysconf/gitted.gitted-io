@@ -68,7 +68,7 @@ page Gitted state drivers
     p On middle-term, {gitted} will support setting UNIX user and group for any given {i state branch} configuration. Drivers will get a {e GIT_DIR} pointing to a temporary {b shallow repository} to read and write Git objects without affecting the refs in {e /local.repository.git}. The latter will use {e 711} permissions on {e objects/} and afterwards fetch back the refs from the driver shallow repository.
     p Anticipating the need, the {i Gitted driver interface} does not expect any driver to read any reference from Gitted. Only {e GIT_DIR} being set (where, is none of the driver’s business), and any reference is given as a commit ID in an environment variable.
 
-  section
+  section.half
     h2 Drivers currently supported
     section
       h3 {a(href=) {e driver-dummy}}
@@ -77,7 +77,7 @@ page Gitted state drivers
     section
       h3 {a(href=) {e driver-gitted-target}}
 
-  section
+  section.half
     h2 Drivers TODO
     ul
       li MySQL
