@@ -37,6 +37,7 @@ page Gitted state drivers
       p This is primarily used for double-star expansion ({e gitted status '**'}).
 
   section
+    h2 Simple in design
 
     section.half
       h3 Any data, from live reporting to databases
@@ -82,9 +83,9 @@ page Gitted state drivers
     section.half
       h3 Drivers TODO
       ul
-        li MySQL
-        li PostgreSQL
-        li MongoDB
+        li {e driver-mysql}
+        li {e driver-postgresql}
+        li {e driver-mongodb}
 
   site-footer
 
