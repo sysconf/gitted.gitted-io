@@ -35,8 +35,8 @@ page Gitted-reference
     p.expr
       | GIT INTEGRATION COMMANDS
     p.expr
-      |     {a(href=git-upload-pack/) git-upload-pack}
-      |     {a(href=git-receive-pack/) git-receive-pack}
+      |     {a(href=git-upload-pack/) git-upload-pack}{br}
+      |     {a(href=git-receive-pack/) git-receive-pack}	[--push-mode <mode>]
       |     {a(href=git-hook-update/) git-hook-update}	&lt;ref-name&gt; &lt;old-commit&gt; &lt;new-commit&gt;
     p.expr
       | OTHER COMMANDS
