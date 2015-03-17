@@ -1,0 +1,22 @@
+page gitted git-upload-pack
+
+  site-header {e git-upload-pack}
+
+  section
+    h2 Usage instructions
+    p.expr
+     | usage: gitted git-upload-pack
+    p.expr
+     | GIT INTEGRATION COMMAND:
+     | Forward Git protocol /local.repository.git
+    p.expr
+     | This is not meant to be used directly, but through Git remote commands
+     | such as git-fetch(1).
+    p.expr
+     | Usage examples:
+     |   git fetch "ext::gitted %S" sysconf
+     |   git fetch "ext::gitted %S" mysql
+
+  site-footer
+
+:end

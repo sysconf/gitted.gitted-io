@@ -1,0 +1,26 @@
+page gitted git-receive-pack
+
+  site-header {e git-receive-pack}
+
+  section
+    h2 Usage instructions
+    p.expr
+     | usage: gitted git-receive-pack
+    p.expr
+     | GIT INTEGRATION COMMAND:
+     | Forward Git protocol to /local/repository.git
+    p.expr
+     | This is not meant to be used directly, but through Git remote commands such as
+     | git-push(1).
+    p.expr
+     | Usage examples:
+     |   git push "ext::gitted %S" sysconf
+     |   git push "ext::gitted %S" mysql_bak:mysql
+    p.expr
+     | Options:
+    p.expr
+     |   --push-mode &lt;mode&gt;          Mode for the reset action (soft, hard, keep, merge)
+
+  site-footer
+
+:end
