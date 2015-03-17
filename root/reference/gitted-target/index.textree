@@ -27,16 +27,16 @@ page Gitted-target-reference
     p.expr
       | GITTED SERVER COMMANDS
     p.expr
-      |     status	[&lt;target&gt;] [&lt;state branches&gt;] [--quiet | --branches | --list | --diff]
-      |     commit	[&lt;target&gt;]  &lt;state branches&gt;  [-m &lt;message&gt;]
-      |     reset	[&lt;target&gt;]  &lt;state branches&gt;  [--to &lt;commit&gt;] [&lt;mode&gt;]
+      |     {a(href=remote-command/) status}	[&lt;target&gt;] [&lt;state branches&gt;] [--quiet | --branches | --list | --diff]
+      |     {a(href=remote-command/) commit}	[&lt;target&gt;]  &lt;state branches&gt;  [-m &lt;message&gt;]
+      |     {a(href=remote-command/) reset}	[&lt;target&gt;]  &lt;state branches&gt;  [--to &lt;commit&gt;] [&lt;mode&gt;]
     p.expr
       | GIT INTEGRATION COMMANDS
     p.expr
-      |     init	&lt;target&gt; [ -- &lt;sysconf-target-options&gt;]
-      |     register	[what] [git-config-scope]
-      |     git-upload-pack	&lt;target&gt;
-      |     git-receive-pack	&lt;target&gt;
+      |     {a(href=init) init}	&lt;target&gt; [ -- &lt;sysconf-target-options&gt;]
+      |     {a(href=register) register}	[what] [git-config-scope]
+      |     {a(href=git-upload-pack) git-upload-pack}	&lt;target&gt;
+      |     {a(href=git-receive-pack) git-receive-pack}	&lt;target&gt;
     p.expr
       | OTHER COMMANDS
     p.expr

@@ -1,0 +1,52 @@
+:eval title_components.pop()
+
+page Remot commands-Gitted-target
+
+  site-header Remote commands
+
+  section
+    h2 {e status}
+    p.expr
+     | usage: gitted-target status [&lt;target&gt;] [&lt;state branches&gt;] [--quiet | --branches | --list | --diff]
+     |
+     | GITTED SERVER COMMAND:
+     | Show status of &lt;state branches&gt; inside target.
+     | If not provided, &lt;target&gt; is guessed from the curent branch’s upstream remote.
+     |
+     |
+     | This is a SERVER COMMAND whose arguments are forward to the server "gitted" command.
+     |
+     | For the full help from the server, run: gitted-target help &lt;target&gt; status
+
+  section
+    h2 {e commit}
+    p.expr
+     | usage: gitted-target commit [&lt;target&gt;]  &lt;state branches&gt;  [-m &lt;message&gt;]
+     |
+     | GITTED SERVER COMMAND:
+     | Commit current state of &lt;state branches&gt; inside target.
+     | If not provided, &lt;target&gt; is guessed from the curent branch’s upstream remote.
+     |
+     |
+     | This is a SERVER COMMAND whose arguments are forward to the server "gitted" command.
+     |
+     | For the full help from the server, run: gitted-target help &lt;target&gt; commit
+
+
+  section
+    h2 {e status}
+    p.expr
+     | usage: gitted-target reset [&lt;target&gt;]  &lt;state branches&gt;  [--to &lt;commit&gt;] [&lt;mode&gt;]
+     |
+     | GITTED SERVER COMMAND:
+     | Reset current state of &lt;state branches&gt; inside target.
+     | If not provided, &lt;target&gt; is guessed from the curent branch’s upstream remote.
+     |
+     |
+     | This is a SERVER COMMAND whose arguments are forward to the server "gitted" command.
+     |
+     | For the full help from the server, run: gitted-target help &lt;target&gt; reset
+
+  site-footer
+
+:end

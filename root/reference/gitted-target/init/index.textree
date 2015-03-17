@@ -1,0 +1,31 @@
+:eval title_components.pop()
+
+page Gitted-target init
+
+  site-header {e init}
+
+  section
+    h2 Usage instructions
+    p.expr
+     | usage: gitted-target init &lt;target&gt; [ -- &lt;sysconf-target-options&gt;]
+     |
+     | GIT INTEGRATION COMMAND:
+     | Helper command to get started with a running Gitted machine
+     |
+     | Calling this command will:
+     |   - Register gitted-target on the local repo and setup the "ted" git alias
+     |   - Create the &lt;target&gt; machine/remote (if needed)
+     |   - Copy this local sysconf branch to it
+     |   - Register/check a Git remote on the local repo to control &lt;target&gt; easily
+     |
+     | The Git remote that is created is name after &lt;target&gt;, having stripped off
+     | its 'DRIVER:' prefix.
+     |
+     | Example: target 'lxc:machine42' makes a Git remote 'machine42'.
+     |
+     | &lt;sysconf-target-options&gt; are options, as multiple arguments, that are passed
+     | to the 'sysconf-target init' command.
+
+  site-footer
+
+:end

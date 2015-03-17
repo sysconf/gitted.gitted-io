@@ -5,7 +5,7 @@ page gitted git-receive-pack
   section
     h2 Usage instructions
     p.expr
-     | usage: gitted git-receive-pack
+     | usage: gitted git-receive-pack [--push-mode <mode>]
     p.expr
      | GIT INTEGRATION COMMAND:
      | Forward Git protocol to /local/repository.git
