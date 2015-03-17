@@ -14,7 +14,7 @@ page Sysconf/Gitted Reference overview
         li
           e
             a(href=/reference/sysconf/) sysconf update
-          | — setup or fix the system after sysconf
+          | — setup or fix the system against sysconf
         // li {e sysconf update} – setup or fix the system after sysconf
         li
           e
