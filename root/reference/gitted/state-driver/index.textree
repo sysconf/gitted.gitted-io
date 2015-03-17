@@ -33,7 +33,7 @@ page Gitted state drivers
     section.half
       h3 driver {e list}
       p A {i state branch} in {gitted} is actually a mount point in which the driver manages its own sub-branches. These sub-branches are processed normally through the {e reset} and {e commit} commands.
-      p The driver should print the name of the sub-branches, below the {i mount point}; that is, without the leading part. Example: {e my-db-1} instead of {e mysql/my-db-1}.
+      p The driver should print the name of the sub-branches, below the {i mount point}; that is, without the leading part. Example: {e my-db-1} instead of {e mysql/my-db-1}, having {e /etc/gitted/sync/mysql.config}.
       p This is primarily used for double-star expansion ({e gitted status '**'}).
 
   section
