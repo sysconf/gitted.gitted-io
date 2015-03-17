@@ -41,7 +41,6 @@ page Gitted state drivers
     section.half
       h3 Any data, from live reporting to databases
       section
-        h4 Databases
         p MySQL, PostgreSQL, MongoDB and databases in general: these are state-oriented data, being read/written by client apps; basically the driver dumps the database at {e commit} and restore dumps at {e reset}.
         p Given the situation it may work at database, schema, tablespace, table or table row level to split into files and facilitate Git 3-way merges.
 
@@ -71,12 +70,12 @@ page Gitted state drivers
 
   section.half
     h2 Drivers currently supported
-    section
-      h3 {a(href=) {e driver-dummy}}
-    section
-      h3 {a(href=) {e driver-git-remote}}
-    section
-      h3 {a(href=) {e driver-gitted-target}}
+    ul
+      li {a(href=https://github.com/sysconf/sysconf.gitted/blob/master/tree/usr/lib/gitted/driver-skeleton) {e driver-skeleton}}
+      li {a(href=https://github.com/sysconf/sysconf.gitted/blob/master/tree/usr/lib/gitted/driver-dummy) {e driver-dummy}}
+      li {a(href=https://github.com/sysconf/sysconf.gitted/blob/master/tree/usr/lib/gitted/driver-dummy-nested) {e driver-dummy-nested}}
+      li {a(href=https://github.com/sysconf/sysconf.gitted/blob/master/tree/usr/lib/gitted/driver-git-remote) {e driver-git-remote}}
+      li {a(href=https://github.com/sysconf/sysconf.gitted/blob/master/tree/usr/lib/gitted/driver-gitted-target) {e driver-gitted-target}}
 
   section.half
     h2 Drivers TODO
