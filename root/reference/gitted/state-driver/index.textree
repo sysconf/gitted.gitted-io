@@ -68,21 +68,23 @@ page Gitted state drivers
       p On middle-term, {gitted} will support setting UNIX user and group for any given {i state branch} configuration. Drivers will get a {e GIT_DIR} pointing to a temporary {b shallow repository} to read and write Git objects without affecting the refs in {e /local.repository.git}. The latter will use {e 711} permissions on {e objects/} and afterwards fetch back the refs from the driver shallow repository.
       p Anticipating the need, the {i Gitted driver interface} does not expect any driver to read any reference from Gitted. Only {e GIT_DIR} being set (where, is none of the driver’s business), and any reference is given as a commit ID in an environment variable.
 
-  section.half
-    h2 Drivers currently supported
-    ul
-      li {a(href=https://github.com/sysconf/sysconf.gitted/blob/master/tree/usr/lib/gitted/driver-skeleton) {e driver-skeleton}}
-      li {a(href=https://github.com/sysconf/sysconf.gitted/blob/master/tree/usr/lib/gitted/driver-dummy) {e driver-dummy}}
-      li {a(href=https://github.com/sysconf/sysconf.gitted/blob/master/tree/usr/lib/gitted/driver-dummy-nested) {e driver-dummy-nested}}
-      li {a(href=https://github.com/sysconf/sysconf.gitted/blob/master/tree/usr/lib/gitted/driver-git-remote) {e driver-git-remote}}
-      li {a(href=https://github.com/sysconf/sysconf.gitted/blob/master/tree/usr/lib/gitted/driver-gitted-target) {e driver-gitted-target}}
+  section
+    h2 Current support
+    section.half
+      h3 Drivers currently supported
+      ul
+        li {a(href=https://github.com/sysconf/sysconf.gitted/blob/master/tree/usr/lib/gitted/driver-skeleton) {e driver-skeleton}}
+        li {a(href=https://github.com/sysconf/sysconf.gitted/blob/master/tree/usr/lib/gitted/driver-dummy) {e driver-dummy}}
+        li {a(href=https://github.com/sysconf/sysconf.gitted/blob/master/tree/usr/lib/gitted/driver-dummy-nested) {e driver-dummy-nested}}
+        li {a(href=https://github.com/sysconf/sysconf.gitted/blob/master/tree/usr/lib/gitted/driver-git-remote) {e driver-git-remote}}
+        li {a(href=https://github.com/sysconf/sysconf.gitted/blob/master/tree/usr/lib/gitted/driver-gitted-target) {e driver-gitted-target}}
 
-  section.half
-    h2 Drivers TODO
-    ul
-      li MySQL
-      li PostgreSQL
-      li MongoDB
+    section.half
+      h3 Drivers TODO
+      ul
+        li MySQL
+        li PostgreSQL
+        li MongoDB
 
   site-footer
 
