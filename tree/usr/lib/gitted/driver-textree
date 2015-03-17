@@ -79,6 +79,10 @@ gitted_driver_reset() {
                 || nef_fatal "could not start textree after HEAD update"
         fi
     fi
+
+    nef_log "Flushing memcached..."
+    echo flush_all >/dev/tcp/127.0.0.1/11211
+
 }
 
 ################################################################################
