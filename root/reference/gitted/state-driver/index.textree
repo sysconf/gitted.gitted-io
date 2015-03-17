@@ -72,9 +72,9 @@ page Gitted state drivers
       p This is primarily used for double-star expansion ({e {a(href=../status/) gitted status} '**'}).
 
   section
-    h2 Current support
+    h2 Implemented drivers
     section.half
-      h3 Drivers currently supported
+      h3 From {ext(href=https://github.com/sysconf/sysconf.gitted) {e sysconf.gitted}}
       ul
         li {ext(href=https://github.com/sysconf/sysconf.gitted/blob/master/tree/usr/lib/gitted/driver-skeleton) {e driver-skeleton}}
         li {ext(href=https://github.com/sysconf/sysconf.gitted/blob/master/tree/usr/lib/gitted/driver-dummy) {e driver-dummy}}
@@ -88,6 +88,11 @@ page Gitted state drivers
         li {e driver-mysql}
         li {e driver-postgresql}
         li {e driver-mongodb}
+
+    section.half
+      h3 Drivers from other packages
+      ul
+        li {ext(href=https://github.com/sysconf/sysconf.textree/blob/master/tree/usr/lib/gitted/driver-textree) {e driver-textree}}
 
   site-footer
 
