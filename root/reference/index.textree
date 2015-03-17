@@ -93,7 +93,7 @@ page Sysconf/Gitted Reference overview
 
   section
     h3 {gitted-target}: Git push-to-deploy and fetch-to-backup
-    p The {gitted-target} command uses {sysconf-target} to run the {e gitted} command on a specific target. It will create containers or vritual machines on the fly, as supported by {sysconf-target}. It also provides a local {e init} command which configures a local {e git ted} aliase and proper remote for easy Git fetch &amp; push operations.
+    p The {gitted-target} command uses {sysconf-target} to run the {gitted} command on a specific target. It will create containers or vritual machines on the fly, as supported by {sysconf-target}. It also provides a local {e init} command which configures a local {e git ted} aliase and proper remote for easy Git fetch &amp; push operations.
     h4 Examples:
     ul.compact
         li
