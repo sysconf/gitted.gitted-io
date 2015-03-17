@@ -35,10 +35,9 @@ page Gitted-reference
     p.expr
       | GIT INTEGRATION COMMANDS
     p.expr
-      |     git-upload-pack
-      |     git-receive-pack
-      |     git-hook-pre-receive
-      |     git-hook-update	&lt;ref-name&gt; &lt;old-commit&gt; &lt;new-commit&gt;
+      |     {a(href=git-upload-pack/) git-upload-pack}
+      |     {a(href=git-receive-pack/) git-receive-pack}
+      |     {a(href=git-hook-update/) git-hook-update}	&lt;ref-name&gt; &lt;old-commit&gt; &lt;new-commit&gt;
     p.expr
       | OTHER COMMANDS
     p.expr
