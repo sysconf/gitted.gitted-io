@@ -1,0 +1,18 @@
+page gitted git-hook-update
+
+  site-header {e git-hook-update}
+
+  section
+    h2 Usage instructions
+    p.expr
+     | usage: gitted git-hook-update <ref-name> <old-commit> <new-commit>
+    p.expr
+     | GIT INTEGRATION COMMAND:
+     | Update a state branch
+    p.expr
+     | This command should not be used directly, but be called by
+     | /local.repository.git/hooks/update (setup with 'gitted init').
+
+  site-footer
+
+:end
