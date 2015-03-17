@@ -52,7 +52,7 @@ page Gitted state drivers
 
       section
         h4 One-way: reset-only or commit-only
-        p Some drivers may be {b reset-only}, which means the state will never change outside of Gitted, or just not support exporting the state. The state could still be updated by Gitted. The {a(href=https://github.com/geonef/sysconf.textree/) Textree text processor and web server} is an example of that, where the page content is read directly from Git and updates only require a pointer change.
+        p Some drivers may be {b reset-only}, which means the state will never change outside of Gitted, or just not support exporting the state. The state could still be updated by Gitted. The {ext(href=https://github.com/geonef/sysconf.textree/) Textree text processor and web server} is an example of that, where the page content is read directly from Git and updates only require a pointer change.
         p Other drivers may be {b commit-only}: state data may not be updated by Gitted but it could still be exported to it.
 
     section.half
@@ -74,11 +74,11 @@ page Gitted state drivers
     section.half
       h3 Drivers currently supported
       ul
-        li {a(href=https://github.com/sysconf/sysconf.gitted/blob/master/tree/usr/lib/gitted/driver-skeleton) {e driver-skeleton}}
-        li {a(href=https://github.com/sysconf/sysconf.gitted/blob/master/tree/usr/lib/gitted/driver-dummy) {e driver-dummy}}
-        li {a(href=https://github.com/sysconf/sysconf.gitted/blob/master/tree/usr/lib/gitted/driver-dummy-nested) {e driver-dummy-nested}}
-        li {a(href=https://github.com/sysconf/sysconf.gitted/blob/master/tree/usr/lib/gitted/driver-git-remote) {e driver-git-remote}}
-        li {a(href=https://github.com/sysconf/sysconf.gitted/blob/master/tree/usr/lib/gitted/driver-gitted-target) {e driver-gitted-target}}
+        li {ext(href=https://github.com/sysconf/sysconf.gitted/blob/master/tree/usr/lib/gitted/driver-skeleton) {e driver-skeleton}}
+        li {ext(href=https://github.com/sysconf/sysconf.gitted/blob/master/tree/usr/lib/gitted/driver-dummy) {e driver-dummy}}
+        li {ext(href=https://github.com/sysconf/sysconf.gitted/blob/master/tree/usr/lib/gitted/driver-dummy-nested) {e driver-dummy-nested}}
+        li {ext(href=https://github.com/sysconf/sysconf.gitted/blob/master/tree/usr/lib/gitted/driver-git-remote) {e driver-git-remote}}
+        li {ext(href=https://github.com/sysconf/sysconf.gitted/blob/master/tree/usr/lib/gitted/driver-gitted-target) {e driver-gitted-target}}
 
     section.half
       h3 Drivers TODO
