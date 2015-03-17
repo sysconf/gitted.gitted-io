@@ -9,29 +9,29 @@ page Gitted state drivers
     p A given state branch specifies the driver to use with the {e state.driver = xx} setting in its configuration file at {e /etc/gitted/sync}.
 
   section
-    h3 Everything in 3 commands
-    p A driver may support 3 commands, which correspond to the {gitted} commands {a(href=../reset/) {e reset}}, {a(href=../commit/) {e commit}} and {a(href=../status/) {e status}}. The core business of Gitted lies into these 3 commands, the rest being made of helpers, wrappers and CLI code.
+    h2 Everything in 3 commands
+    // p A driver may support 3 commands, which correspond to the {gitted} commands {a(href=../reset/) {e reset}}, {a(href=../commit/) {e commit}} and {a(href=../status/) {e status}}. The core business of Gitted lies into these 3 commands, the rest being made of helpers, wrappers and CLI code.
 
     section
-      h4 driver {e reset}
+      h3 driver {e reset}
       p When called with {e GITTED_CONFIG_DRIVER_ACTION=reset}, the driver is supposed to update the state data according to the commit specified by {e GITTED_CONFIG_RESET_COMMIT}. The operation may fail and return a failed status code.
       p {e GITTED_CONFIG_RESET_MODE} can be {e hard}, {e keep} or {e merge} as given to the Gitted {a(href=../reset/) {e reset}} command. The actual behaviour depends on the driver.
       p A {i smart driver} will look at the changes that occured between GITTED_CONFIG_STATE_COMMIT and GITTED_CONFIG_RESET_COMMIT and only update what what has changed in directly, file or line levels.
 
     section
-      h4 driver {e commit}
+      h3 driver {e commit}
       p The driver is called with {e GITTED_CONFIG_DRIVER_ACTION=commit} in order to do the opposite of {e reset}: commit the current state data to one or more Git commits on top of an existing Git branch tree or as new commits.
       p The driver should not do anything if the status is clean. {gitted} calls the driver {e commit} command without checking this (for efficiency), so this is left to the driver.
       p A {i smart driver} is clever about any existing Git history and use it to decide what part of the state should be dumped/exported or not.
       p To build the Git commit, the driver may need a working tree, Git index only, or manipulates the Git objects directly. Method is free, the driver is only provided with a commit ID and must create its Git index if it needs one in order to build its commit more easily.
 
     section
-      h4 driver {e status}
+      h3 driver {e status}
       p When called with {e GITTED_CONFIG_DRIVER_ACTION=status}, the driver must indicates the status of the state data against {e GITTED_CONFIG_STATE_COMMIT} by returning a standard status code (clean, changed, added, removed).
       p Depending on {e GITTED_CONFIG_STATUS_REPORT} ({e quiet}, {e branches}, {e list} and {e diff}, see {a(href=../status/) {e gitted status}}), print information on standard output.
 
     section
-      h4 driver {e list}
+      h3 driver {e list}
       p A {i state branch} in {gitted} is actually a mount point in which the driver manages its own sub-branches. These sub-branches are processed normally through the {e reset} and {e commit} commands.
       p The driver should print the name of the sub-branches, below the {i mount point}; that is, without the leading part. Example: {e my-db-1} instead of {e mysql/my-db-1}.
       p This is primarily used for double-star expansion ({e gitted status '**'}).
