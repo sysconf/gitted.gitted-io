@@ -9,6 +9,41 @@ page Gitted state drivers
     p A given state branch specifies the driver to use with the {e state.driver = xx} setting in its configuration file at {e /etc/gitted/sync}.
 
   section
+    h2 Simple in design
+
+    section.half
+      h3 Any data, from live reporting to databases
+      section
+        p MySQL, PostgreSQL, MongoDB and databases in general: these are state-oriented data, being read/written by client apps; basically the driver dumps the database at {e commit} and restore dumps at {e reset}.
+        p Given the situation it may work at database, schema, tablespace, table or table row level to split files and facilitate any Git 3-way merge.
+
+      section
+        h4 Directory, Git working tree, remote repository
+        p A local directory may be synced as a standalone Git repository where branches are fetched/pushed by the driver.
+        p Like a local Git repository, remote repositories can be fetched/pushed. Their branches (or tags, or all refs) become synced with they local Gitted counterpart with the same name, under the driver mount point.
+
+      section
+        h4 One-way: reset-only or commit-only
+        p Some drivers may be {b reset-only}, which means the state will never change outside of Gitted, or just not support exporting the state. The state could still be updated by Gitted. The {ext(href=https://github.com/geonef/sysconf.textree/) Textree text processor} is an example of that, where the source for HTML pages is read directly from Git and updates just require a pointer change.
+        p Other drivers may be {b commit-only}: state data may not be updated by Gitted but it could still be exported to it. Rotated log files, for example, may be {i commit-only}.
+        p
+
+    section.half
+      h3 Any language, from shell code to compiled binaries
+      p Drivers can be implemented in any language. What matters is to respect the {i Gitted driver interface}:
+      ul
+        li Be named {e /usr/lib/gitted/driver-xx} where {e xx} is the driver name
+        li Be executable (+x permission), be it a shell script, Python, NodeJS, Java or C
+        li Receive parameters as process environment variables
+        li Communicate back using standard output, error and status code
+
+      h3 Secure, isolated design
+      p For now, drivers are runned by Gitted in the same user identity, most often {e root}, with {e GIT_DIR} set to {e /local.repository.git}, giving the driver the right to update branches outside of its {i mount point} (it is {i trusted} not to).
+      p On middle-term, {gitted} will support setting UNIX user and group in {i state branch} configurations. Drivers will get a {e GIT_DIR} pointing to a temporary {b shallow repository} to read and write Git objects without affecting the refs in {e /local.repository.git}. The latter will use {e 711}/{e 644} permissions on {e objects/} and afterwards fetch back the refs from the driver shallow repository.
+      p Anticipating the need, the {i Gitted driver interface} does not expect any driver to read any reference from Gitted. Only {e GIT_DIR} being set (where, is none of the driver’s business), and any reference is given as a commit ID in an environment variable.
+
+
+  section
     h2 Everything in 4 commands
     // p A driver may support 3 commands, which correspond to the {gitted} commands {a(href=../reset/) {e reset}}, {a(href=../commit/) {e commit}} and {a(href=../status/) {e status}}. The core business of Gitted lies into these 3 commands, the rest being made of helpers, wrappers and CLI code.
 
@@ -32,42 +67,9 @@ page Gitted state drivers
 
     section.half
       h3 driver {e list}
-      p A {i state branch} in {gitted} is actually a mount point in which the driver manages its own sub-branches. These sub-branches are processed normally through the {e reset} and {e commit} commands.
+      p A {i state branch} in {gitted} is actually a mount point in which the driver manages its own sub-branches. These sub-branches are processed normally through the {a(href=../reset/) {e reset}} and {a(href=../commit/) {e commit}} commands.
       p The driver should print the name of the sub-branches, below the {i mount point}; that is, without the leading part. Example: {e my-db-1} instead of {e mysql/my-db-1}, having {e /etc/gitted/sync/mysql.config}.
-      p This is primarily used for double-star expansion ({e gitted status '**'}).
-
-  section
-    h2 Simple in design
-
-    section.half
-      h3 Any data, from live reporting to databases
-      section
-        p MySQL, PostgreSQL, MongoDB and databases in general: these are state-oriented data, being read/written by client apps; basically the driver dumps the database at {e commit} and restore dumps at {e reset}.
-        p Given the situation it may work at database, schema, tablespace, table or table row level to split into files and facilitate Git 3-way merges.
-
-      section
-        h4 Directory, Git working tree, remote repository
-        p A local directory may be synced as a standalone Git repository where branches are fetched/pushed by the driver.
-        p Like a local Git repository, remote repositories can be fetched/pushed. Their branches (or tags, or all refs) become synced with they local Gitted counterpart with the same name, under the driver mount point.
-
-      section
-        h4 One-way: reset-only or commit-only
-        p Some drivers may be {b reset-only}, which means the state will never change outside of Gitted, or just not support exporting the state. The state could still be updated by Gitted. The {ext(href=https://github.com/geonef/sysconf.textree/) Textree text processor and web server} is an example of that, where the page content is read directly from Git and updates only require a pointer change.
-        p Other drivers may be {b commit-only}: state data may not be updated by Gitted but it could still be exported to it.
-
-    section.half
-      h3 Any language, from shell code to compiled binaries
-      p Drivers can be implemented in any language. What matters is to respect the {i Gitted driver interface}:
-      ul
-        li Be named {e /usr/lib/gitted/driver-xx} where {e xx} is the driver name
-        li Be executable (+x permission), be it a shell script, Python, NodeJS, Java or C
-        li Receive parameters as process environment variables
-        li Communicate back using standard output, error and status code
-
-      h3 Secure, isolated design
-      p For now, drivers are runned by Gitted in the same user identity, most often {e root}, with {e GIT_DIR} set to {e /local.repository.git}, giving the driver the right to update branches outside of its {i mount point} (it is {i trusted} not to).
-      p On middle-term, {gitted} will support setting UNIX user and group for any given {i state branch} configuration. Drivers will get a {e GIT_DIR} pointing to a temporary {b shallow repository} to read and write Git objects without affecting the refs in {e /local.repository.git}. The latter will use {e 711} permissions on {e objects/} and afterwards fetch back the refs from the driver shallow repository.
-      p Anticipating the need, the {i Gitted driver interface} does not expect any driver to read any reference from Gitted. Only {e GIT_DIR} being set (where, is none of the driver’s business), and any reference is given as a commit ID in an environment variable.
+      p This is primarily used for double-star expansion ({e {a(href=../status/) gitted status} '**'}).
 
   section
     h2 Current support
