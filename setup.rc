@@ -19,7 +19,11 @@ fi
 
 sysconf_require_packages $_packages
 
-[ -x /usr/bin/node ] || ln -s nodejs /usr/bin/node
+[ -x /usr/bin/node ] \
+    || ln -s nodejs /usr/bin/node
+
+[ -f /etc/nginx/sites-enabled/default ] \
+    && rm -f /etc/nginx/sites-enabled/default
 
 # Install NPM
 if [ ! -x /usr/bin/npm ]; then
