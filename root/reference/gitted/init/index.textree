@@ -10,7 +10,7 @@ page gitted init
      | MANAGEMENT COMMAND:
      | This command initializes the local system with a Gitted repository.
     p.expr
-     | /local/repository.git and hooks are created/fixed for use by Gitted.
+     | /local.repository.git and hooks are created/fixed for use by Gitted.
      | State branches are initialized (command "init" of drivers).
     p.expr
      | It is safe to run "init" multiples times : no data will be erased, like with git-init(1).
