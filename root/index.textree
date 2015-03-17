@@ -24,7 +24,7 @@ page
 
 
   section#reference
-    h2 4 bash scripts to rule them all...
+    h2 4 bash scripts to rule them all
             // li {ext(href=https://github.com/sysconf/sysconf.base/blob/master/tree/usr/bin/sysconf-target) Direct link} to {e bin/sysconf-target}
     // :: s {span.source [{ext {:through}source}]}
 
