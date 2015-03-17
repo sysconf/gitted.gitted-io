@@ -36,7 +36,8 @@ page Gitted state drivers
       p The driver should print the name of the sub-branches, below the {i mount point}; that is, without the leading part. Example: {e my-db-1} instead of {e mysql/my-db-1}.
       p This is primarily used for double-star expansion ({e gitted status '**'}).
 
-    section
+  section
+    section.half
       h3 Any language, from shell code to compiled binaries
       p Drivers can be implemented in any language. What matters is to respect the {i Gitted driver interface}:
       ul
@@ -45,7 +46,7 @@ page Gitted state drivers
         li Receive parameters as process environment variables
         li Communicate back using standard output, error and status code
 
-    section
+    section.half
       h3 Any data, from live reporting to databases
       section
         h4 Databases
@@ -62,7 +63,7 @@ page Gitted state drivers
         p Some drivers may be {b reset-only}, which means the state will never change outside of Gitted, or just not support exporting the state. The state could still be updated by Gitted. The {a(href=https://github.com/geonef/sysconf.textree/) Textree text processor and web server} is an example of that, where the page content is read directly from Git and updates only require a pointer change.
         p Other drivers may be {b commit-only}: state data may not be updated by Gitted but it could still be exported to it.
 
-  section
+    section.half
     h2 Secure, isolated design
     p For now, drivers are runned by Gitted in the same user identity, most often {e root}, with {e GIT_DIR} set to {e /local.repository.git}, giving the driver the right to update branches outside of its {i mount point} (it is {i trusted} not to).
     p On middle-term, {gitted} will support setting UNIX user and group for any given {i state branch} configuration. Drivers will get a {e GIT_DIR} pointing to a temporary {b shallow repository} to read and write Git objects without affecting the refs in {e /local.repository.git}. The latter will use {e 711} permissions on {e objects/} and afterwards fetch back the refs from the driver shallow repository.
