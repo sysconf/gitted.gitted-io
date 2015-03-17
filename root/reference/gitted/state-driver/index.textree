@@ -37,14 +37,6 @@ page Gitted state drivers
       p This is primarily used for double-star expansion ({e gitted status '**'}).
 
   section
-    section.half
-      h3 Any language, from shell code to compiled binaries
-      p Drivers can be implemented in any language. What matters is to respect the {i Gitted driver interface}:
-      ul
-        li Be named {e /usr/lib/gitted/driver-xx} where {e xx} is the driver name
-        li Be executable (+x permission), be it a shell script, Python, NodeJS, Java or C
-        li Receive parameters as process environment variables
-        li Communicate back using standard output, error and status code
 
     section.half
       h3 Any data, from live reporting to databases
@@ -62,6 +54,15 @@ page Gitted state drivers
         h4 One-way: reset-only or commit-only
         p Some drivers may be {b reset-only}, which means the state will never change outside of Gitted, or just not support exporting the state. The state could still be updated by Gitted. The {a(href=https://github.com/geonef/sysconf.textree/) Textree text processor and web server} is an example of that, where the page content is read directly from Git and updates only require a pointer change.
         p Other drivers may be {b commit-only}: state data may not be updated by Gitted but it could still be exported to it.
+
+    section.half
+      h3 Any language, from shell code to compiled binaries
+      p Drivers can be implemented in any language. What matters is to respect the {i Gitted driver interface}:
+      ul
+        li Be named {e /usr/lib/gitted/driver-xx} where {e xx} is the driver name
+        li Be executable (+x permission), be it a shell script, Python, NodeJS, Java or C
+        li Receive parameters as process environment variables
+        li Communicate back using standard output, error and status code
 
     section.half
     h2 Secure, isolated design
