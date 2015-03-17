@@ -1,0 +1,89 @@
+page Gitted state drivers
+
+  site-header State drivers
+
+  section
+    h2 Git commit ↔ State data
+    p State drivers are responsible for synchronising data with Git history.
+    p They are located at {e /usr/lib/gitted} and should be named {e driver-xx} where {e xx} is the driver name.
+    p A given state branch specifies the driver to use with the {e state.driver = xx} setting in its configuration file at {e /etc/gitted/sync}.
+
+  section
+    h3 Everything in 3 commands
+    p A driver may support 3 commands, which correspond to the {gitted} commands {a(href=../reset/) {e reset}}, {a(href=../commit/) {e commit}} and {a(href=../status/) {e status}}. The core business of Gitted lies into these 3 commands, the rest being made of helpers, wrappers and CLI code.
+
+    section
+      h4 driver {e reset}
+      p When called with {e GITTED_CONFIG_DRIVER_ACTION=reset}, the driver is supposed to update the state data according to the commit specified by {e GITTED_CONFIG_RESET_COMMIT}. The operation may fail and return a failed status code.
+      p {e GITTED_CONFIG_RESET_MODE} can be {e hard}, {e keep} or {e merge} as given to the Gitted {a(href=../reset/) {e reset}} command. The actual behaviour depends on the driver.
+      p A {i smart driver} will look at the changes that occured between GITTED_CONFIG_STATE_COMMIT and GITTED_CONFIG_RESET_COMMIT and only update what what has changed in directly, file or line levels.
+
+    section
+      h4 driver {e commit}
+      p The driver is called with {e GITTED_CONFIG_DRIVER_ACTION=commit} in order to do the opposite of {e reset}: commit the current state data to one or more Git commits on top of an existing Git branch tree or as new commits.
+      p The driver should not do anything if the status is clean. {gitted} calls the driver {e commit} command without checking this (for efficiency), so this is left to the driver.
+      p A {i smart driver} is clever about any existing Git history and use it to decide what part of the state should be dumped/exported or not.
+      p To build the Git commit, the driver may need a working tree, Git index only, or manipulates the Git objects directly. Method is free, the driver is only provided with a commit ID and must create its Git index if it needs one in order to build its commit more easily.
+
+    section
+      h4 driver {e status}
+      p When called with {e GITTED_CONFIG_DRIVER_ACTION=status}, the driver must indicates the status of the state data against {e GITTED_CONFIG_STATE_COMMIT} by returning a standard status code (clean, changed, added, removed).
+      p Depending on {e GITTED_CONFIG_STATUS_REPORT} ({e quiet}, {e branches}, {e list} and {e diff}, see {a(href=../status/) {e gitted status}}), print information on standard output.
+
+    section
+      h4 driver {e list}
+      p A {i state branch} in {gitted} is actually a mount point in which the driver manages its own sub-branches. These sub-branches are processed normally through the {e reset} and {e commit} commands.
+      p The driver should print the name of the sub-branches, below the {i mount point}; that is, without the leading part. Example: {e my-db-1} instead of {e mysql/my-db-1}.
+      p This is primarily used for double-star expansion ({e gitted status '**'}).
+
+    section
+      h3 Any language, from shell code to compiled binaries
+      p Drivers can be implemented in any language. What matters is to respect the {i Gitted driver interface}:
+      ul
+        li Be named {e /usr/lib/gitted/driver-xx} where {e xx} is the driver name
+        li Be executable (+x permission), be it a shell script, Python, NodeJS, Java or C
+        li Receive parameters as process environment variables
+        li Communicate back using standard output, error and status code
+
+    section
+      h3 Any data, from live reporting to databases
+      section
+        h4 Databases
+        p MySQL, PostgreSQL, MongoDB and databases in general: these are state-oriented data, being read/written by client apps; basically the driver dumps the database at {e commit} and restore dumps at {e reset}.
+        p Given the situation it may work at database, schema, tablespace, table or table row level to split into files and facilitate Git 3-way merges.
+
+      section
+        h4 Directory, Git working tree, remote repository
+        p A local directory may be synced as a standalone Git repository where branches are fetched/pushed by the driver.
+        p Like a local Git repository, remote repositories can be fetched/pushed. Their branches (or tags, or all refs) become synced with they local Gitted counterpart with the same name, under the driver mount point.
+
+      section
+        h4 One-way: reset-only or commit-only
+        p Some drivers may be {b reset-only}, which means the state will never change outside of Gitted, or just not support exporting the state. The state could still be updated by Gitted. The {a(href=https://github.com/geonef/sysconf.textree/) Textree text processor and web server} is an example of that, where the page content is read directly from Git and updates only require a pointer change.
+        p Other drivers may be {b commit-only}: state data may not be updated by Gitted but it could still be exported to it.
+
+  section
+    h2 Secure, isolated design
+    p For now, drivers are runned by Gitted in the same user identity, most often {e root}, with {e GIT_DIR} set to {e /local.repository.git}, giving the driver the right to update branches outside of its {i mount point} (it is {i trusted} not to).
+    p On middle-term, {gitted} will support setting UNIX user and group for any given {i state branch} configuration. Drivers will get a {e GIT_DIR} pointing to a temporary {b shallow repository} to read and write Git objects without affecting the refs in {e /local.repository.git}. The latter will use {e 711} permissions on {e objects/} and afterwards fetch back the refs from the driver shallow repository.
+    p Anticipating the need, the {i Gitted driver interface} does not expect any driver to read any reference from Gitted. Only {e GIT_DIR} being set (where, is none of the driver’s business), and any reference is given as a commit ID in an environment variable.
+
+  section
+    h2 Drivers currently supported
+    section
+      h3 {a(href=) {e driver-dummy}}
+    section
+      h3 {a(href=) {e driver-git-remote}}
+    section
+      h3 {a(href=) {e driver-gitted-target}}
+
+  section
+    h2 Drivers TODO
+    ul
+      li MySQL
+      li PostgreSQL
+      li MongoDB
+
+  site-footer
+
+:end

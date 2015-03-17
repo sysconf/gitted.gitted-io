@@ -20,7 +20,7 @@ page
   section
     h2 Setup and reproduce machine configuration &amp; data
     p This {b Free Software project} began as a research projet by {ext(href=http://www.geonef.fr/) Geonef}. The {sysconf} script was released in early 2014 as a helper tool for managing {b configuration files across systems} using the minimalist {a(href=reference/sysconf/convention/) symlink pattern convention}. Then {sysconf-target} was written to help setting up {sysconf} on {b remote systems} while being capable of {b auto-creating containers} and virtual machines.
-    p {gitted} does another job: {b import/export machine state} as Git branches. It features push-to-deploy and fetch-to-backup on various state data like databases or local directories (see: {a(href=reference/gitted/state-drivers/) Gitted drivers}). {gitted-target} is to {gitted} what {sysconf-target} is to Sysconf: manage a remote {gitted} system and git-fetch-push its data.
+    p {gitted} does another job: {b import/export machine state} as Git branches. It features push-to-deploy and fetch-to-backup on various state data like databases or local directories (see: {a(href=reference/gitted/state-driver/) Gitted drivers}). {gitted-target} is to {gitted} what {sysconf-target} is to Sysconf: manage a remote {gitted} system and git-fetch-push its data.
 
 
   section#reference
@@ -43,7 +43,7 @@ page
 
     section.half
       h3 {gitted}{span.source [{ext(href=https://github.com/sysconf/sysconf.gitted/blob/master/tree/usr/bin/gitted) source code}]}{br}Import/export state as Git data
-      h4 Multiple {a(href=reference/gitted/state-drivers/) state drivers}: git-remote, local dir, databases...
+      h4 Multiple {a(href=reference/gitted/state-driver/) state drivers}: git-remote, local dir, databases...
       h4 Data snapshots to restore whatever, whenever
       h4 {sysconf} itself is synced like regular data
 
