@@ -1,0 +1,31 @@
+page Gitted-target git-upload-pack
+
+  site-header {e git-upload-pack}
+
+  section
+    h2 Usage instructions
+    p.expr
+     | usage: gitted-target git-upload-pack &lt;target&gt;
+    p.expr
+     | GIT INTEGRATION COMMAND:
+     | Forward Git protocol to target’s "gitted git-receive-pack".
+    p.expr
+     | This is not meant to be used directly, but through Git remote commands
+     | such as git-fetch(1).
+    p.expr
+     | Usage examples:
+     |   git fetch "ext::/path/to/gitted-target %S lxc:container" sysconf
+     |   git fetch "ext::/path/to/gitted-target %S ssh:user@host" mysql
+    p.expr
+     | After running "gitted-target register", you may use the "gitted:" scheme:
+     |   git fetch gitted:lxc:container sysconf
+     |   git fetch gitted:ssh:user@host mysql
+    p.expr
+     | Or define it as a remote:
+     |   git remote add mylxc gitted:lxc:container42
+     |   git fetch mylxc sysconf
+     |   git checkout -b sysconf
+
+  site-footer
+
+:end

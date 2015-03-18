@@ -1,0 +1,30 @@
+page Gitted-target git-receive-pack
+
+  site-header {e git-receive-pack}
+
+  section
+    h2 Usage instructions
+    p.expr
+     | usage: gitted-target git-receive-pack &lt;target&gt;
+    p.expr
+     | GIT INTEGRATION COMMAND:
+     | Forward Git protocol to target’s "gitted git-receive-pack".
+    p.expr
+     | This is not meant to be used directly, but through Git remote commands such as
+     | git-push(1).
+    p.expr
+     | Usage examples:
+     |   git push "ext::/path/to/gitted-target %S lxc:container" sysconf
+     |   git push "ext::/path/to/gitted-target %S ssh:user@host" mysql_bak:mysql
+    p.expr
+     | After running "gitted-target register", you may use the "gitted:" scheme:
+     |   git push gitted:lxc:container42 mysql
+     |   git push gitted:ssh:user@host.net mysql_bak:mysql
+    p.expr
+     | Or define it as a remote:
+     |   git remote add mylxc gitted:lxc:container42
+     |   git push mylxc sysconf
+
+  site-footer
+
+:end
