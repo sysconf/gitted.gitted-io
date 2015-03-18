@@ -6,45 +6,45 @@ page Remot commands-Gitted-target
 
   section
     h2 {e status}
+    p See: {a(href=../../gitted/status/) gitted status}
     p.expr
      | usage: gitted-target status [&lt;target&gt;] [&lt;state branches&gt;] [--quiet | --branches | --list | --diff]
-     |
+    p.expr
      | GITTED SERVER COMMAND:
      | Show status of &lt;state branches&gt; inside target.
      | If not provided, &lt;target&gt; is guessed from the curent branch’s upstream remote.
-     |
-     |
+    p.expr
      | This is a SERVER COMMAND whose arguments are forward to the server "gitted" command.
-     |
+    p.expr
      | For the full help from the server, run: gitted-target help &lt;target&gt; status
 
   section
     h2 {e commit}
+    p See: {a(href=../../gitted/commit/) gitted commit}
     p.expr
      | usage: gitted-target commit [&lt;target&gt;]  &lt;state branches&gt;  [-m &lt;message&gt;]
-     |
+    p.expr
      | GITTED SERVER COMMAND:
      | Commit current state of &lt;state branches&gt; inside target.
      | If not provided, &lt;target&gt; is guessed from the curent branch’s upstream remote.
-     |
-     |
+    p.expr
      | This is a SERVER COMMAND whose arguments are forward to the server "gitted" command.
-     |
+    p.expr
      | For the full help from the server, run: gitted-target help &lt;target&gt; commit
 
 
   section
-    h2 {e status}
+    h2 {e reset}
+    p See: {a(href=../../gitted/reset/) gitted reset}
     p.expr
      | usage: gitted-target reset [&lt;target&gt;]  &lt;state branches&gt;  [--to &lt;commit&gt;] [&lt;mode&gt;]
-     |
+    p.expr
      | GITTED SERVER COMMAND:
      | Reset current state of &lt;state branches&gt; inside target.
      | If not provided, &lt;target&gt; is guessed from the curent branch’s upstream remote.
-     |
-     |
+    p.expr
      | This is a SERVER COMMAND whose arguments are forward to the server "gitted" command.
-     |
+    p.expr
      | For the full help from the server, run: gitted-target help &lt;target&gt; reset
 
   site-footer
