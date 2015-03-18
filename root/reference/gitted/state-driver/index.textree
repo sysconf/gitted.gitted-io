@@ -92,7 +92,7 @@ page Gitted state drivers
     section.half
       h3 Drivers from other packages
       ul
-        li {ext(href=https://github.com/sysconf/sysconf.textree/blob/master/tree/usr/lib/gitted/driver-textree) {e driver-textree}}
+        li {ext(href=https://github.com/geonef/sysconf.textree/blob/master/tree/usr/lib/gitted/driver-textree) {e driver-textree}}
 
   site-footer
 
