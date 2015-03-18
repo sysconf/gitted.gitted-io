@@ -1,5 +1,3 @@
-:eval title_components.pop()
-
 page Gitted-target register
 
   site-header {e register}
