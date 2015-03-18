@@ -31,7 +31,7 @@ page Gitted-reference
     p.expr
       | MANAGEMENT COMMANDS
     p.expr
-      |     init
+      |     {a(href=init) init}
     p.expr
       | GIT INTEGRATION COMMANDS
     p.expr
