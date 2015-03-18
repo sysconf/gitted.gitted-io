@@ -129,13 +129,13 @@ page Sysconf/Gitted Reference overview
           | — commit both states (MySQL data and {e /sysconf} master branch) to their respective Gitted branches
         li
           e
-            | git fetch {a(href=/reference/gitted-target/url-scheme/) gitted:
+            | git fetch gitted:
             a(href=/reference/sysconf-target/driver-lxc/) lxc:
             |mycont
           | — fetch branches from the Gitted LXC container {e mycont}
         li
           e
-            | git push {a(href=/reference/gitted-target/url-scheme/) gitted:
+            | git push gitted:
             a(href=/reference/sysconf-target/driver-ssh/) ssh:
             |USER@HOST sysconf/master mysql
           | — push branches to Gitted SSH host and update Sysconf &amp; MySQL database
