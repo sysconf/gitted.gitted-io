@@ -33,10 +33,10 @@ page Gitted-target-reference
     p.expr
       | GIT INTEGRATION COMMANDS
     p.expr
-      |     {a(href=init) init}	&lt;target&gt; [ -- &lt;sysconf-target-options&gt;]
-      |     {a(href=register) register}	[what] [git-config-scope]
-      |     {a(href=git-upload-pack) git-upload-pack}	&lt;target&gt;
-      |     {a(href=git-receive-pack) git-receive-pack}	&lt;target&gt;
+      |     {a(href=init/) init}	&lt;target&gt; [ -- &lt;sysconf-target-options&gt;]
+      |     {a(href=register/) register}	[what] [git-config-scope]
+      |     {a(href=git-upload-pack/) git-upload-pack}	&lt;target&gt;
+      |     {a(href=git-receive-pack/) git-receive-pack}	&lt;target&gt;
     p.expr
       | OTHER COMMANDS
     p.expr
