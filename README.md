@@ -25,7 +25,7 @@ http://github.com/sysconf/gitted.gitted-io
 
 ## This _sysconf/master_ branch: machine definition of the website server
 
-* Learn more about Sysconf at: http://gitted.io/sysconf/
+* Learn more about Sysconf at: http://gitted.io/reference/sysconf/
 
 ## How to deploy on a local LXC container
 
